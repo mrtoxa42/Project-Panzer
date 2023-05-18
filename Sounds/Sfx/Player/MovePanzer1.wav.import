@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MovePanzer1.wav-48a273af57e88423a93736084aeb9bfe.sample"
+
+[deps]
+
+source_file="res://Sounds/Sfx/Player/MovePanzer1.wav"
+dest_files=[ "res://.import/MovePanzer1.wav-48a273af57e88423a93736084aeb9bfe.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=9999
+edit/loop_end=-9999
+compress/mode=0

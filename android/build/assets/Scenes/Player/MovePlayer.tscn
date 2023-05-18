@@ -1,0 +1,134 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Scripts/Player/MovePlayer.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GUI/ButtonTimeAni1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/PlayerAssets/TankAssets/panzerpng1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/PlayerAssets/TankAssets/tank gif2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/PlayerAssets/TankAssets/tank gif1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/PlayerAssets/TankAssets/tank gif3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/PlayerAssets/TankAssets/FullTank.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 47, 84.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 54, 99.5 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 448, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 512, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 13 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Shoot",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Fire",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="MovePlayer" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -25, 0 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="AreaMovePlayer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaMovePlayer"]
+position = Vector2( -29, 2 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DownButton" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 144, 494 )
+normal = ExtResource( 3 )
+
+[node name="UpDown" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 42, 500 )
+normal = ExtResource( 3 )
+
+[node name="ShootButton" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2( 1056, 503 )
+normal = ExtResource( 3 )
+
+[node name="ShootButtonAni" type="AnimatedSprite" parent="CanvasLayer"]
+self_modulate = Color( 1, 1, 1, 0.607843 )
+position = Vector2( 1086, 534 )
+frames = SubResource( 15 )
+
+[node name="ShootPosition" type="Position2D" parent="."]
+position = Vector2( 110, 1 )
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="PlayerAnimated" type="AnimatedSprite" parent="."]
+rotation = 1.5708
+frames = SubResource( 14 )
+playing = true
+
+[connection signal="area_entered" from="AreaMovePlayer" to="." method="_on_AreaMovePlayer_area_entered"]
+[connection signal="pressed" from="CanvasLayer/DownButton" to="." method="_on_DownButton_pressed"]
+[connection signal="released" from="CanvasLayer/DownButton" to="." method="_on_DownButton_released"]
+[connection signal="pressed" from="CanvasLayer/UpDown" to="." method="_on_UpDown_pressed"]
+[connection signal="released" from="CanvasLayer/UpDown" to="." method="_on_UpDown_released"]
+[connection signal="pressed" from="CanvasLayer/ShootButton" to="." method="_on_ShootButton_pressed"]
+[connection signal="animation_finished" from="CanvasLayer/ShootButtonAni" to="." method="_on_ShootButtonAni_animation_finished"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
+[connection signal="animation_finished" from="PlayerAnimated" to="." method="_on_PlayerAnimated_animation_finished"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Extras/TankTools/smoke3.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Extras/MoveSmoke.gd" type="Script" id=2]
+
+[node name="MoveSmoke" type="CPUParticles2D"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( -17, 0 )
+scale = Vector2( 0.8, 0.8 )
+z_index = 1
+emitting = false
+amount = 1
+lifetime = 10.0
+one_shot = true
+texture = ExtResource( 1 )
+gravity = Vector2( -58, 0 )
+script = ExtResource( 2 )
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
