@@ -24,11 +24,6 @@ shape = SubResource( 1 )
 rotation = 1.5708
 texture = ExtResource( 1 )
 
-[node name="LookTimer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
-autostart = true
-
 [node name="MissileArea" type="Area2D" parent="." groups=["Missile1"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MissileArea"]
@@ -44,7 +39,6 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
 shape = SubResource( 3 )
 
-[connection signal="timeout" from="LookTimer" to="." method="_on_LookTimer_timeout"]
 [connection signal="area_entered" from="MissileArea" to="." method="_on_MissileArea_area_entered"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
 [connection signal="area_entered" from="DetectArea" to="." method="_on_DetectArea_area_entered"]

@@ -1133,22 +1133,25 @@ playing = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ExplosionAni"]
 position = Vector2( 368, 100 )
 frames = SubResource( 56 )
-frame = 6
+frame = 11
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="ExplosionAni"]
 position = Vector2( 362, 238 )
 frames = SubResource( 56 )
+frame = 5
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="ExplosionAni"]
 position = Vector2( 490, 112 )
 frames = SubResource( 56 )
+frame = 5
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="ExplosionAni"]
 position = Vector2( 507, 182 )
 frames = SubResource( 56 )
+frame = 5
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

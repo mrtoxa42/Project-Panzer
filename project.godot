@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Project Panzer"
-run/main_scene="res://Scenes/Menu/StartScreen.tscn"
+run/main_scene="res://Scenes/TestScenes/PlayServicesTest.tscn"
 boot_splash/image="res://Logo/42.5.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://Assets/Extras/Cinematics/portre.png"

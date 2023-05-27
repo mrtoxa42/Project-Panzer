@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/EnemyAssets/tank_enemy.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Enemies/GangEnemy.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/EnemyAssets/tank_enemy_gif3.png" type="Texture" id=4]
 [ext_resource path="res://Assets/EnemyAssets/tank_enemy_gif4.png" type="Texture" id=5]
 [ext_resource path="res://Assets/EnemyAssets/tank_enemy_gif2.png" type="Texture" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 89, 44 )
@@ -92,9 +93,16 @@ collision_mask = 15
 collide_with_areas = true
 collide_with_bodies = false
 
+[node name="CrossButton" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.00392157 )
+position = Vector2( -118, -76 )
+scale = Vector2( 3, 2.1875 )
+normal = ExtResource( 7 )
+
 [connection signal="area_entered" from="GangEnemyArea" to="." method="_on_GangEnemyArea_area_entered"]
 [connection signal="area_exited" from="GangEnemyArea" to="." method="_on_GangEnemyArea_area_exited"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
 [connection signal="area_entered" from="DetectArea" to="." method="_on_DetectArea_area_entered"]
 [connection signal="area_exited" from="DetectArea" to="." method="_on_DetectArea_area_exited"]
+[connection signal="pressed" from="CrossButton" to="." method="_on_CrossButton_pressed"]

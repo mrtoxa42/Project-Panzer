@@ -11,7 +11,11 @@ func _ready():
 		play_service.init(true,true,true,"759723462404-pb08d5e04ulon4co35kpah0s83vu6dh6.apps.googleusercontent.com")
 		
 		play_service.connect("_on_sign_in_success",self,"_on_sign_in_success")
+		play_service.connect("_on_sign_in_failed",self,"_on_sign_in_failed")
 		
 		
 func _on_sign_in_success(userprofil):
-	pass
+	print(userprofil)
+	
+func _on_sign_in_failed(error):
+	print("Error: " + error )

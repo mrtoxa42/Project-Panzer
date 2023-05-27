@@ -6,7 +6,7 @@
 script = ExtResource( 1 )
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 7.0
 
 [node name="StartTimer" type="Timer" parent="."]
 one_shot = true

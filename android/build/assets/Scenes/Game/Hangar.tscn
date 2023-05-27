@@ -246,7 +246,7 @@ scale = Vector2( 1.5, 1.6 )
 normal = ExtResource( 20 )
 
 [node name="LevelsButton" type="TouchScreenButton" parent="."]
-position = Vector2( 1027, 510 )
+position = Vector2( 1020, 472 )
 scale = Vector2( 1.5, 1.8 )
 normal = ExtResource( 21 )
 
@@ -307,10 +307,10 @@ custom_fonts/font = SubResource( 5 )
 text = "0"
 
 [node name="LevelsLabel" type="Label" parent="."]
-margin_left = 1055.0
-margin_top = 548.0
-margin_right = 1179.0
-margin_bottom = 587.0
+margin_left = 1051.0
+margin_top = 511.0
+margin_right = 1175.0
+margin_bottom = 550.0
 custom_fonts/font = SubResource( 6 )
 text = "LEVELS"
 
@@ -382,6 +382,7 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 19 )
 
 [node name="ResetLoad" type="TouchScreenButton" parent="."]
+visible = false
 position = Vector2( 943, 300 )
 scale = Vector2( 2.25, 1.59375 )
 normal = ExtResource( 2 )

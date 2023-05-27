@@ -37,7 +37,7 @@ energy = 1.34
 shadow_enabled = true
 
 [node name="MoveTimer" type="Timer" parent="."]
-wait_time = 23.0
+wait_time = 3.0
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
