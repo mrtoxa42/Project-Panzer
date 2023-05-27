@@ -15,7 +15,7 @@ func _ready():
 
 
 func _input(event):
-	if touched == true:
+	if touched == true and GameManager.playertank != null: 
 		var distance = event.position.distance_to(big_circle.global_position)
 		if not touched:
 			if distance<max_distance:
