@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Assets/Environment/GroundTile/tile1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Environment/GroundTile/tile7.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Environment/GroundTile/tile8.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Environment/GroundTile/tile6.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Environment/Bush&Tree/bush2.png" type="Texture" id=11]
+[ext_resource path="res://Fonts/DynaPuff-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://Scripts/Levels/Level1.gd" type="Script" id=13]
 [ext_resource path="res://icon.png" type="Texture" id=14]
 [ext_resource path="res://Assets/PlayerAssets/TankAssets/panzerpng1.png" type="Texture" id=15]
@@ -930,7 +931,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/Cinematic2/OrgLabel3:percent_visible")
+tracks/1/path = NodePath("CanvasLayer/Cinematic2/Text/RussianLabel:percent_visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1007,7 +1008,7 @@ tracks/2/keys = {
 
 [sub_resource type="DynamicFont" id=49]
 size = 10
-font_data = ExtResource( 23 )
+font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=50]
 size = 32
@@ -1196,7 +1197,7 @@ tile_data = PoolIntArray( -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -6
 
 [node name="Tank1" type="Sprite" parent="."]
 self_modulate = Color( 0.819608, 0.929412, 0.278431, 1 )
-position = Vector2( 154, 461 )
+position = Vector2( 500, 461 )
 rotation = 1.5708
 texture = ExtResource( 15 )
 __meta__ = {
@@ -1211,7 +1212,7 @@ shape = SubResource( 30 )
 
 [node name="Tank3" type="Sprite" parent="."]
 self_modulate = Color( 0.662745, 1, 0.913725, 1 )
-position = Vector2( 153, 719 )
+position = Vector2( 500, 719 )
 rotation = 1.5708
 texture = ExtResource( 15 )
 __meta__ = {
@@ -1268,7 +1269,7 @@ current = true
 offset_h = 0.98
 
 [node name="Tank2" type="Sprite" parent="Cinematic1"]
-position = Vector2( 154, 357 )
+position = Vector2( 500, 357 )
 rotation = 1.5708
 texture = ExtResource( 15 )
 
@@ -1277,27 +1278,27 @@ texture = ExtResource( 15 )
 [node name="BlackBoundary" type="Sprite" parent="Cinematic1/Boundarys"]
 self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 27, 348.5 )
-scale = Vector2( 1.5, 12 )
+scale = Vector2( 2.71875, 12 )
 texture = ExtResource( 14 )
 
 [node name="BlackBoundary3" type="Sprite" parent="Cinematic1/Boundarys"]
 self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 624.123, 23.2928 )
 rotation = 1.5708
-scale = Vector2( 1.5, 20 )
+scale = Vector2( 2.50915, 20 )
 texture = ExtResource( 14 )
 
 [node name="BlackBoundary2" type="Sprite" parent="Cinematic1/Boundarys"]
 self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 624.123, 702.622 )
 rotation = 1.5708
-scale = Vector2( 1.5, 20 )
+scale = Vector2( 2.2618, 20 )
 texture = ExtResource( 14 )
 
 [node name="BlackBoundary4" type="Sprite" parent="Cinematic1/Boundarys"]
 self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 1242.5, 420.5 )
-scale = Vector2( 1.5, 13.6719 )
+scale = Vector2( 2.95312, 13.6719 )
 texture = ExtResource( 14 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Cinematic1"]
@@ -1306,30 +1307,29 @@ anims/CameraShake = SubResource( 8 )
 anims/RESET = SubResource( 9 )
 
 [node name="CircleShadow" type="Sprite" parent="Cinematic1"]
-visible = false
 modulate = Color( 1, 1, 1, 0.215686 )
 position = Vector2( 483.5, 486 )
 scale = Vector2( 4.54688, 2.34375 )
 texture = ExtResource( 25 )
 
 [node name="CircleShadow2" type="Sprite" parent="Cinematic1"]
-visible = false
 modulate = Color( 1, 1, 1, 0.215686 )
 position = Vector2( 460, 225 )
 scale = Vector2( 4.54, 2.34 )
 texture = ExtResource( 25 )
 
 [node name="Missile2Deneme" type="Sprite" parent="Cinematic1"]
-position = Vector2( 464, -51 )
+position = Vector2( 464, 469 )
 texture = ExtResource( 26 )
 
 [node name="Missile2Deneme2" type="Sprite" parent="Cinematic1"]
-position = Vector2( 464, -51 )
+position = Vector2( 464, 206 )
 texture = ExtResource( 26 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Cinematic2" type="Node2D" parent="CanvasLayer"]
+pause_mode = 2
 
 [node name="General" type="Sprite" parent="CanvasLayer/Cinematic2"]
 position = Vector2( 364, 477 )
@@ -1340,7 +1340,16 @@ position = Vector2( 627.5, 537 )
 scale = Vector2( 4, 3 )
 texture = ExtResource( 22 )
 
-[node name="OrgLabel" type="Label" parent="CanvasLayer/Cinematic2"]
+[node name="Cinematic2End" type="Timer" parent="CanvasLayer/Cinematic2"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Cinematic2timer" type="Timer" parent="CanvasLayer/Cinematic2"]
+one_shot = true
+
+[node name="Text" type="Node2D" parent="CanvasLayer/Cinematic2"]
+
+[node name="TurkLabel" type="Label" parent="CanvasLayer/Cinematic2/Text"]
 margin_left = 431.0
 margin_top = 503.0
 margin_right = 825.0
@@ -1351,7 +1360,7 @@ ederek bizimle radyo istasyonunda bizimle buluş.
  Kurtar kendini oradan."
 percent_visible = 0.0
 
-[node name="OrgLabel2" type="Label" parent="CanvasLayer/Cinematic2"]
+[node name="EnglishLabel" type="Label" parent="CanvasLayer/Cinematic2/Text"]
 margin_left = 431.0
 margin_top = 503.0
 margin_right = 825.0
@@ -1362,7 +1371,7 @@ Meet us at the radio station by
  Get yourself out of there."
 percent_visible = 0.0
 
-[node name="OrgLabel3" type="Label" parent="CanvasLayer/Cinematic2"]
+[node name="RussianLabel" type="Label" parent="CanvasLayer/Cinematic2/Text"]
 margin_left = 431.0
 margin_top = 503.0
 margin_right = 907.0
@@ -1372,13 +1381,6 @@ text = "Asker! Bu bir tuzak. Çabuk radyo sinyallerini takip
 ederek bizimle radyo istasyonunda bizimle buluş.
  Kurtar kendini oradan."
 percent_visible = 0.0
-
-[node name="Cinematic2End" type="Timer" parent="CanvasLayer/Cinematic2"]
-wait_time = 2.0
-one_shot = true
-
-[node name="Cinematic2timer" type="Timer" parent="CanvasLayer/Cinematic2"]
-one_shot = true
 
 [node name="BoundaryStatic" type="StaticBody2D" parent="."]
 position = Vector2( -136, 422 )

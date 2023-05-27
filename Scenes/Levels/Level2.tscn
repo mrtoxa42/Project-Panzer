@@ -274,7 +274,7 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Cinematic2/OrgLabel:percent_visible")
+tracks/2/path = NodePath("Cinematic2/TurkLabel:percent_visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -310,7 +310,7 @@ tracks/4/keys = {
 "values": [ true, false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Cinematic2/OrgLabel:text")
+tracks/5/path = NodePath("Cinematic2/TurkLabel:text")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -389,7 +389,7 @@ tracks/2/keys = {
 "values": [ Vector2( 1766, 536 ), Vector2( 1102, 536 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Cinematic2/OrgLabel:text")
+tracks/3/path = NodePath("Cinematic2/TurkLabel:text")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -404,7 +404,7 @@ Seninle çok daha fazla görüşücez gibi.
 Şimdi üste dönebilirsin. Aferin asker aferin." ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Cinematic2/OrgLabel:percent_visible")
+tracks/4/path = NodePath("Cinematic2/TurkLabel:percent_visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -707,7 +707,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Cinematic2/OrgLabel:percent_visible")
+tracks/2/path = NodePath("Cinematic2/TurkLabel:percent_visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -779,7 +779,7 @@ tracks/7/keys = {
 "values": [ Vector2( 2398, 536 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Cinematic2/OrgLabel:text")
+tracks/8/path = NodePath("Cinematic2/TurkLabel:text")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -1175,7 +1175,7 @@ position = Vector2( 625, 553 )
 scale = Vector2( 4, 3 )
 texture = ExtResource( 18 )
 
-[node name="OrgLabel" type="Label" parent="Cinematic2"]
+[node name="TurkLabel" type="Label" parent="Cinematic2"]
 margin_left = 431.0
 margin_top = 503.0
 margin_right = 825.0
@@ -1187,7 +1187,7 @@ Biz oraya gelene kadar radyo istasyonunu koru.
 Unutma evlat orası bizim için çok önemli"
 percent_visible = 0.0
 
-[node name="OrgLabel2" type="Label" parent="Cinematic2"]
+[node name="EnglishLabel" type="Label" parent="Cinematic2"]
 margin_left = 431.0
 margin_top = 503.0
 margin_right = 839.0
@@ -1199,7 +1199,7 @@ Guard the radio station until we get there.
 Remember, son, it's very important to us."
 percent_visible = 0.0
 
-[node name="OrgLabel3" type="Label" parent="Cinematic2"]
+[node name="RussianLabel" type="Label" parent="Cinematic2"]
 margin_left = 431.0
 margin_top = 503.0
 margin_right = 825.0

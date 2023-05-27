@@ -20,9 +20,28 @@ func _ready():
 	GameManager.playedlevel = self
 	GameManager.CurrentLevel = 1
 #	GameManager.levelend = $Level1EndArea.global_position 
-	
-	
-
+	if GameManager.game_data.Language == "Turkish":
+		$Tutorial/DirectionLabel.text = "                                        [CEPHANE]" + "\n" + "Buradan oyuncu kalan mermi sayısını görebilir," + "\n"+ "Cephanesindeki diğer mermilerlle  burdan ulaşır" + "\n" + "Tamir kitine buradan ulaşır"
+		$Tutorial/InventoryLabel.text = "                                        [PAUSE]" +"\n"+ "Oyunu durdur."+ "\n"+ "Bölüm resetleme ve hangara ulaşmayı sağlar."
+		$Tutorial/StatLabel.text = "                                             [STATLAR] " + " \n " + "Kırmızı stat oyuncunun canını gösterir." + "\n" + "Yeşil stat oyuncunun zırhını gösterir."
+		$Tutorial/JoystickLabel.text = "                                         [TANK KONTROL]"+"\n"+"Tankın yönünü ve hareketini buradan kontrol edilir."
+		$Tutorial/DirectionLabel.text = "                                        [TANK KONTROL]" + "\n" + "Tank topunun nişan aldığı yön  sağ-sol butonları ile yönlendirilir."
+		$Tutorial/ShootLabel.text = "                                            [TANK KONTROL]" + "\n" + "Top tüfeiğini ateşlememizi sağlar." + "\n"  +"Aktif kullanılan füze türünü gösterir."
+		$Tutorial/SkipTime.text = "GEÇMEK İÇİN... 7"
+	if GameManager.game_data.Language == "English":
+		$Tutorial/DirectionLabel.text = ""
+		$Tutorial/InventoryLabel.text = ""
+		$Tutorial/JoystickLabel.text = ""
+		$Tutorial/DirectionLabel.text = ""
+		$Tutorial/ShootLabel.text = ""
+		$Tutorial/SkipTime.text = ""
+	if GameManager.game_data.Language == "Russian":
+		$Tutorial/DirectionLabel.text = ""
+		$Tutorial/InventoryLabel.text = ""
+		$Tutorial/JoystickLabel.text = ""
+		$Tutorial/DirectionLabel.text = ""
+		$Tutorial/ShootLabel.text = ""
+		$Tutorial/SkipTime.text = ""
 func _process(delta):
 	if $Enemy1 != null and $Tutorial2/FingerPoint != null:
 		$Tutorial2/FingerPoint.global_position = $Enemy1.global_position
