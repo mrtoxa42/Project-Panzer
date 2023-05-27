@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var hp = 10
-var speed = 250
+var speed = 2500
 var directionx = 0
 var directiony = 0
 var direction = 'Right'
