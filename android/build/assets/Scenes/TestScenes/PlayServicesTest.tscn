@@ -9,3 +9,61 @@ script = ExtResource( 1 )
 margin_right = 187.0
 margin_bottom = 86.0
 text = "LOGIN"
+
+[node name="TestAchevement" type="Button" parent="."]
+margin_left = 1.0
+margin_top = 140.0
+margin_right = 224.0
+margin_bottom = 245.0
+text = "TestHedef1"
+
+[node name="IncAchevement" type="Button" parent="."]
+margin_left = 2.0
+margin_top = 259.0
+margin_right = 216.0
+margin_bottom = 344.0
+text = "arttırmalı hedf"
+
+[node name="RevealtestAchevement" type="Button" parent="."]
+margin_left = 223.0
+margin_top = 10.0
+margin_right = 437.0
+margin_bottom = 95.0
+text = "revealTest Achievemnt"
+
+[node name="showAchevemetns" type="Button" parent="."]
+margin_left = 5.0
+margin_top = 367.0
+margin_right = 219.0
+margin_bottom = 452.0
+text = "show Achevemetns"
+
+[node name="LoadAchevementInfo" type="Button" parent="."]
+margin_left = 245.0
+margin_top = 119.0
+margin_right = 459.0
+margin_bottom = 204.0
+text = "Load AchevementInfo"
+
+[node name="SubmitToLeaderboard" type="Button" parent="."]
+margin_left = 492.0
+margin_top = 13.0
+margin_right = 706.0
+margin_bottom = 98.0
+text = "Submit to leader board"
+
+[node name="ShowLeaderBoard" type="Button" parent="."]
+margin_left = 492.0
+margin_top = 133.0
+margin_right = 706.0
+margin_bottom = 218.0
+text = "Show Leader Board"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="TestAchevement" to="." method="_on_TestAchevement_pressed"]
+[connection signal="pressed" from="IncAchevement" to="." method="_on_IncAchevement_pressed"]
+[connection signal="pressed" from="RevealtestAchevement" to="." method="_on_RevealtestAchevement_pressed"]
+[connection signal="pressed" from="showAchevemetns" to="." method="_on_showAchevemetns_pressed"]
+[connection signal="pressed" from="LoadAchevementInfo" to="." method="_on_LoadAchevementInfo_pressed"]
+[connection signal="pressed" from="SubmitToLeaderboard" to="." method="_on_SubmitToLeaderboard_pressed"]
+[connection signal="pressed" from="ShowLeaderBoard" to="." method="_on_ShowLeaderBoard_pressed"]
