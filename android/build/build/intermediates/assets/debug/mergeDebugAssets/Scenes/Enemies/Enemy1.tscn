@@ -1,0 +1,116 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/EnemyAssets/tank_enemy_gif4.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Enemies/Enemy1.gd" type="Script" id=2]
+[ext_resource path="res://Assets/EnemyAssets/tank_enemy.png" type="Texture" id=3]
+[ext_resource path="res://Assets/EnemyAssets/tank_enemy_gif3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/EnemyAssets/tank_enemy_gif5.png" type="Texture" id=5]
+[ext_resource path="res://Assets/EnemyAssets/tank_enemy_gif2.png" type="Texture" id=6]
+[ext_resource path="res://icon.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 84.5, 46 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 600.053
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Shoot",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 87, 47.5 )
+
+[sub_resource type="DynamicFont" id=7]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="Enemy1" type="KinematicBody2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -28.5, -2 )
+shape = SubResource( 1 )
+
+[node name="EnemyDetectArea" type="Area2D" parent="." groups=["Enemy", "Enemy1"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetectArea"]
+shape = SubResource( 2 )
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+rotation = 1.5708
+frames = SubResource( 3 )
+animation = "Idle"
+
+[node name="ShootPosition" type="Position2D" parent="."]
+position = Vector2( 112, 0 )
+
+[node name="EnemyArea" type="Area2D" parent="." groups=["Enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyArea"]
+position = Vector2( -25, 0.5 )
+shape = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -129.0
+margin_top = -45.0
+margin_right = -41.0
+margin_bottom = -31.0
+rect_rotation = 90.0
+custom_fonts/font = SubResource( 7 )
+custom_styles/fg = SubResource( 5 )
+custom_styles/bg = SubResource( 6 )
+max_value = 3.0
+
+[node name="DetectTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="CrossButton" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0.00392157 )
+position = Vector2( -126, -70 )
+scale = Vector2( 3.46875, 2.09375 )
+normal = ExtResource( 7 )
+
+[node name="TankTracks" type="Node2D" parent="."]
+
+[node name="TankTrackPos" type="Position2D" parent="TankTracks"]
+position = Vector2( -112, -1 )
+
+[node name="TankTrackPos2" type="Position2D" parent="TankTracks"]
+position = Vector2( 48, -1 )
+
+[node name="TrackTimer" type="Timer" parent="TankTracks"]
+wait_time = 0.06
+one_shot = true
+
+[connection signal="area_entered" from="EnemyDetectArea" to="." method="_on_EnemyDetectArea_area_entered"]
+[connection signal="area_exited" from="EnemyDetectArea" to="." method="_on_EnemyDetectArea_area_exited"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="area_entered" from="EnemyArea" to="." method="_on_EnemyArea_area_entered"]
+[connection signal="timeout" from="DetectTimer" to="." method="_on_DetectTimer_timeout"]
+[connection signal="pressed" from="CrossButton" to="." method="_on_CrossButton_pressed"]
+[connection signal="timeout" from="TankTracks/TrackTimer" to="." method="_on_TrackTimer_timeout"]

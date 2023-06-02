@@ -1,0 +1,18 @@
+[gd_scene format=2]
+
+[node name="BossFaze3Spawner" type="Node2D"]
+
+[node name="Pos1" type="Position2D" parent="."]
+position = Vector2( 128, 384 )
+
+[node name="Pos2" type="Position2D" parent="."]
+position = Vector2( 384, 384 )
+
+[node name="Pos3" type="Position2D" parent="."]
+position = Vector2( 640, 384 )
+
+[node name="Pos4" type="Position2D" parent="."]
+position = Vector2( 896, 384 )
+
+[node name="Pos5" type="Position2D" parent="."]
+position = Vector2( 1152, 384 )
