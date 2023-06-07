@@ -917,7 +917,7 @@ tracks/17/keys = {
 
 [sub_resource type="Animation" id=44]
 resource_name = "Ani3"
-length = 2.5
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("CanvasLayer/Cinematic2:visible")
 tracks/0/interp = 1
@@ -1226,7 +1226,6 @@ position = Vector2( 6.10352e-05, 27 )
 shape = SubResource( 30 )
 
 [node name="FireTank2" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 478, 707 )
 frames = SubResource( 11 )
 animation = "Fire"
@@ -1234,7 +1233,6 @@ frame = 11
 playing = true
 
 [node name="FireTank" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 431, 433 )
 frames = SubResource( 11 )
 animation = "Fire"
@@ -1242,7 +1240,6 @@ frame = 11
 playing = true
 
 [node name="FireTank3" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 519, 438 )
 frames = SubResource( 11 )
 animation = "Fire"
@@ -1250,7 +1247,6 @@ frame = 11
 playing = true
 
 [node name="FireTank4" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 450, 688 )
 frames = SubResource( 11 )
 animation = "Fire"
@@ -1380,7 +1376,6 @@ custom_fonts/font = SubResource( 6 )
 text = "Asker! Bu bir tuzak. Çabuk radyo sinyallerini takip 
 ederek bizimle radyo istasyonunda bizimle buluş.
  Kurtar kendini oradan."
-percent_visible = 0.0
 
 [node name="BoundaryStatic" type="StaticBody2D" parent="."]
 position = Vector2( -136, 422 )

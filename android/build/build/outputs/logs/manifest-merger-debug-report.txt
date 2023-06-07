@@ -10,6 +10,7 @@ INJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project 
 INJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:2:1-102:12
 MERGED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:2:1-102:12
 MERGED from [godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:2:1-27:12
+MERGED from [GodotGooglePlayBilling.2.0.0-rc.1.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\0cd3dea123f50232469b0afe469c1d23\transformed\jetified-GodotGooglePlayBilling.2.0.0-rc.1.release\AndroidManifest.xml:2:1-15:12
 MERGED from [GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\c1754f81df30fd17c21401ebbe02e27f\transformed\jetified-GodotPlayGamesServices.release\AndroidManifest.xml:2:1-19:12
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:17:1-40:12
 MERGED from [com.google.android.gms:play-services-games:21.0.0] C:\Users\emirc\.gradle\caches\transforms-3\09f3b52d0d3181409d0ea9f7185f0d8e\transformed\jetified-play-services-games-21.0.0\AndroidManifest.xml:17:1-24:12
@@ -20,6 +21,7 @@ MERGED from [com.google.android.gms:play-services-base:17.4.0] C:\Users\emirc\.g
 MERGED from [com.google.android.gms:play-services-tasks:17.2.0] C:\Users\emirc\.gradle\caches\transforms-3\278181d011c397973cc5439219d012d6\transformed\jetified-play-services-tasks-17.2.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-basement:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\0cfd6faa7c8045d92071638eeefcb51c\transformed\jetified-play-services-basement-17.4.0\AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\emirc\.gradle\caches\transforms-3\3988ca109072542b599ce7e9be34dfe8\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:2:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\emirc\.gradle\caches\transforms-3\6edfcb648373c0ad51363e82c3afc324\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\emirc\.gradle\caches\transforms-3\fa4b3f3ca5f827858e8f0bfb923ccf93\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.2.4] C:\Users\emirc\.gradle\caches\transforms-3\6a40eb428c79527d2fbac40add7e530b\transformed\jetified-activity-1.2.4\AndroidManifest.xml:17:1-24:12
@@ -85,6 +87,8 @@ MERGED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Pa
 MERGED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:5-100:19
 MERGED from [godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:11:5-25:19
 MERGED from [godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:11:5-25:19
+MERGED from [GodotGooglePlayBilling.2.0.0-rc.1.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\0cd3dea123f50232469b0afe469c1d23\transformed\jetified-GodotGooglePlayBilling.2.0.0-rc.1.release\AndroidManifest.xml:9:5-13:19
+MERGED from [GodotGooglePlayBilling.2.0.0-rc.1.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\0cd3dea123f50232469b0afe469c1d23\transformed\jetified-GodotGooglePlayBilling.2.0.0-rc.1.release\AndroidManifest.xml:9:5-13:19
 MERGED from [GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\c1754f81df30fd17c21401ebbe02e27f\transformed\jetified-GodotPlayGamesServices.release\AndroidManifest.xml:13:5-17:19
 MERGED from [GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\c1754f81df30fd17c21401ebbe02e27f\transformed\jetified-GodotPlayGamesServices.release\AndroidManifest.xml:13:5-17:19
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:22:5-38:19
@@ -99,6 +103,8 @@ MERGED from [com.google.android.gms:play-services-tasks:17.2.0] C:\Users\emirc\.
 MERGED from [com.google.android.gms:play-services-tasks:17.2.0] C:\Users\emirc\.gradle\caches\transforms-3\278181d011c397973cc5439219d012d6\transformed\jetified-play-services-tasks-17.2.0\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-basement:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\0cfd6faa7c8045d92071638eeefcb51c\transformed\jetified-play-services-basement-17.4.0\AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-basement:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\0cfd6faa7c8045d92071638eeefcb51c\transformed\jetified-play-services-basement-17.4.0\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:12:5-22:19
+MERGED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:12:5-22:19
 MERGED from [androidx.core:core:1.2.0] C:\Users\emirc\.gradle\caches\transforms-3\086694f904f7332915774462ffe124fb\transformed\core-1.2.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.2.0] C:\Users\emirc\.gradle\caches\transforms-3\086694f904f7332915774462ffe124fb\transformed\core-1.2.0\AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\emirc\.gradle\caches\transforms-3\4ce94109a7aceb15dcb584327b57b186\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
@@ -239,6 +245,8 @@ INJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project 
 INJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml
 MERGED from [godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:7:5-9:41
 MERGED from [godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:7:5-9:41
+MERGED from [GodotGooglePlayBilling.2.0.0-rc.1.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\0cd3dea123f50232469b0afe469c1d23\transformed\jetified-GodotGooglePlayBilling.2.0.0-rc.1.release\AndroidManifest.xml:5:5-7:41
+MERGED from [GodotGooglePlayBilling.2.0.0-rc.1.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\0cd3dea123f50232469b0afe469c1d23\transformed\jetified-GodotGooglePlayBilling.2.0.0-rc.1.release\AndroidManifest.xml:5:5-7:41
 MERGED from [GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\c1754f81df30fd17c21401ebbe02e27f\transformed\jetified-GodotPlayGamesServices.release\AndroidManifest.xml:7:5-9:41
 MERGED from [GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\c1754f81df30fd17c21401ebbe02e27f\transformed\jetified-GodotPlayGamesServices.release\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:20:5-44
@@ -259,6 +267,8 @@ MERGED from [com.google.android.gms:play-services-basement:17.4.0] C:\Users\emir
 MERGED from [com.google.android.gms:play-services-basement:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\0cfd6faa7c8045d92071638eeefcb51c\transformed\jetified-play-services-basement-17.4.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\emirc\.gradle\caches\transforms-3\3988ca109072542b599ce7e9be34dfe8\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\emirc\.gradle\caches\transforms-3\3988ca109072542b599ce7e9be34dfe8\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\emirc\.gradle\caches\transforms-3\6edfcb648373c0ad51363e82c3afc324\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\emirc\.gradle\caches\transforms-3\6edfcb648373c0ad51363e82c3afc324\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\emirc\.gradle\caches\transforms-3\fa4b3f3ca5f827858e8f0bfb923ccf93\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
@@ -327,6 +337,12 @@ ADDED from [godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c
 		ADDED from [godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:24:13-72
 	android:name
 		ADDED from [godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:21:13-70
+meta-data#org.godotengine.plugin.v1.GodotGooglePlayBilling
+ADDED from [GodotGooglePlayBilling.2.0.0-rc.1.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\0cd3dea123f50232469b0afe469c1d23\transformed\jetified-GodotGooglePlayBilling.2.0.0-rc.1.release\AndroidManifest.xml:10:9-12:101
+	android:value
+		ADDED from [GodotGooglePlayBilling.2.0.0-rc.1.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\0cd3dea123f50232469b0afe469c1d23\transformed\jetified-GodotGooglePlayBilling.2.0.0-rc.1.release\AndroidManifest.xml:12:13-98
+	android:name
+		ADDED from [GodotGooglePlayBilling.2.0.0-rc.1.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\0cd3dea123f50232469b0afe469c1d23\transformed\jetified-GodotGooglePlayBilling.2.0.0-rc.1.release\AndroidManifest.xml:11:13-76
 meta-data#org.godotengine.plugin.v1.GodotPlayGamesServices
 ADDED from [GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\c1754f81df30fd17c21401ebbe02e27f\transformed\jetified-GodotPlayGamesServices.release\AndroidManifest.xml:14:9-16:74
 	android:value
@@ -361,3 +377,23 @@ ADDED from [com.google.android.gms:play-services-base:17.4.0] C:\Users\emirc\.gr
 		ADDED from [com.google.android.gms:play-services-base:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\4987e801d34785b2bbad126507308c9c\transformed\jetified-play-services-base-17.4.0\AndroidManifest.xml:26:13-72
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\4987e801d34785b2bbad126507308c9c\transformed\jetified-play-services-base-17.4.0\AndroidManifest.xml:24:13-79
+uses-permission#com.android.vending.BILLING
+ADDED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:10:5-67
+	android:name
+		ADDED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:10:22-64
+meta-data#com.google.android.play.billingclient.version
+ADDED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:13:9-15:37
+	android:value
+		ADDED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:15:13-34
+	android:name
+		ADDED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:14:13-73
+activity#com.android.billingclient.api.ProxyBillingActivity
+ADDED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:17:9-21:75
+	android:exported
+		ADDED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:20:13-37
+	android:configChanges
+		ADDED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:19:13-96
+	android:theme
+		ADDED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:21:13-72
+	android:name
+		ADDED from [com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:18:13-78

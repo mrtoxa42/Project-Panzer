@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.studyo42.ProjectPanzer"
     android:installLocation="auto"
-    android:versionCode="1"
+    android:versionCode="6"
     android:versionName="1.0" >
 
     <uses-sdk
@@ -21,6 +21,8 @@
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
+
+    <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
         android:allowBackup="false"
@@ -76,6 +78,9 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <meta-data
+            android:name="org.godotengine.plugin.v1.GodotGooglePlayBilling"
+            android:value="org.godotengine.godot.plugin.googleplaybilling.GodotGooglePlayBilling" />
+        <meta-data
             android:name="org.godotengine.plugin.v1.GodotPlayGamesServices"
             android:value="io.cgisca.godot.gpgs.PlayGameServicesGodot" />
 
@@ -96,6 +101,16 @@
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.play.billingclient.version"
+            android:value="5.0.0" />
+
+        <activity
+            android:name="com.android.billingclient.api.ProxyBillingActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
     </application>

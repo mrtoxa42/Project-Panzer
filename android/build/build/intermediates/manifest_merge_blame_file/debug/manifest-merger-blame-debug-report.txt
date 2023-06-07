@@ -2,7 +2,7 @@
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="org.studyo42.ProjectPanzer"
 4    android:installLocation="auto"
-5    android:versionCode="1"
+5    android:versionCode="6"
 6    android:versionName="1.0" >
 7
 8    <uses-sdk
@@ -34,140 +34,168 @@
 23        android:required="true" />
 23-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:21:9-32
 24
-25    <application
-25-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:5-100:19
-26        android:allowBackup="false"
-26-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:68-95
-27        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-27-->[androidx.core:core:1.2.0] C:\Users\emirc\.gradle\caches\transforms-3\086694f904f7332915774462ffe124fb\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
-28        android:debuggable="true"
-29        android:hasFragileUserData="false"
-29-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:118-152
-30        android:icon="@mipmap/icon"
-30-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:238-265
-31        android:isGame="true"
-31-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:96-117
-32        android:label="@string/godot_project_name_string"
-32-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:18-67
-33        android:requestLegacyExternalStorage="false" >
-33-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:153-197
-34        <activity
-34-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:71:9-94:20
-35            android:name="com.godot.game.GodotApp"
-35-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:72:13-37
-36            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
-36-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:79:13-141
-37            android:excludeFromRecents="false"
-37-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:76:13-47
-38            android:exported="true"
-38-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:77:13-36
-39            android:label="@string/godot_project_name_string"
-39-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:73:13-62
-40            android:launchMode="singleTask"
-40-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:75:13-44
-41            android:resizeableActivity="true"
-41-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:80:13-47
-42            android:screenOrientation="landscape"
-42-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:78:13-50
-43            android:theme="@style/GodotAppSplashTheme" >
-43-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:74:13-55
-44            <intent-filter>
-44-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:86:13-93:29
-45                <action android:name="android.intent.action.MAIN" />
-45-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:87:17-69
-45-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:87:25-66
-46
-47                <category android:name="android.intent.category.LAUNCHER" />
-47-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:88:17-77
-47-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:88:27-74
+25    <uses-permission android:name="com.android.vending.BILLING" />
+25-->[com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:10:5-67
+25-->[com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:10:22-64
+26
+27    <application
+27-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:5-100:19
+28        android:allowBackup="false"
+28-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:68-95
+29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+29-->[androidx.core:core:1.2.0] C:\Users\emirc\.gradle\caches\transforms-3\086694f904f7332915774462ffe124fb\transformed\core-1.2.0\AndroidManifest.xml:24:18-86
+30        android:debuggable="true"
+31        android:hasFragileUserData="false"
+31-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:118-152
+32        android:icon="@mipmap/icon"
+32-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:238-265
+33        android:isGame="true"
+33-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:96-117
+34        android:label="@string/godot_project_name_string"
+34-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:18-67
+35        android:requestLegacyExternalStorage="false" >
+35-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:153-197
+36        <activity
+36-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:71:9-94:20
+37            android:name="com.godot.game.GodotApp"
+37-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:72:13-37
+38            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|density|keyboard|navigation|screenLayout|uiMode"
+38-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:79:13-141
+39            android:excludeFromRecents="false"
+39-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:76:13-47
+40            android:exported="true"
+40-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:77:13-36
+41            android:label="@string/godot_project_name_string"
+41-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:73:13-62
+42            android:launchMode="singleTask"
+42-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:75:13-44
+43            android:resizeableActivity="true"
+43-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:80:13-47
+44            android:screenOrientation="landscape"
+44-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:78:13-50
+45            android:theme="@style/GodotAppSplashTheme" >
+45-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:74:13-55
+46            <intent-filter>
+46-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:86:13-93:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:87:17-69
+47-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:87:25-66
 48
-49                <!--
-50                Enable access to OpenXR on Oculus mobile devices, no-op on other Android
-51                platforms.
-52                -->
-53                <category android:name="com.oculus.intent.category.VR" />
-53-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:92:17-74
-53-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:92:27-71
-54            </intent-filter>
-55        </activity>
-56        <!-- Records the version of the Godot editor used for building -->
-57        <meta-data
-58            android:name="org.godotengine.editor.version"
-59            android:value="3.5.2.stable" />
-60        <meta-data
-60-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:59:9-60:42
-61            android:name="com.google.android.gms.games.APP_ID"
-61-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:59:20-70
-62            android:value="@string/app_id" />
-62-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:60:9-39
-63        <meta-data
-63-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:62:9-63:64
-64            android:name="com.google.android.gms.version"
-64-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:62:20-65
-65            android:value="@integer/google_play_services_version" /> <!-- Records the version of the Godot library -->
-65-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:63:9-62
-66        <meta-data
-66-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:14:9-16:44
-67            android:name="org.godotengine.library.version"
-67-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:15:13-59
-68            android:value="3.5.2.stable" />
-68-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:16:13-41
-69
-70        <service android:name="org.godotengine.godot.GodotDownloaderService" />
-70-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:18:9-80
-70-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:18:18-77
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:88:17-77
+49-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:88:27-74
+50
+51                <!--
+52                Enable access to OpenXR on Oculus mobile devices, no-op on other Android
+53                platforms.
+54                -->
+55                <category android:name="com.oculus.intent.category.VR" />
+55-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:92:17-74
+55-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:92:27-71
+56            </intent-filter>
+57        </activity>
+58        <!-- Records the version of the Godot editor used for building -->
+59        <meta-data
+60            android:name="org.godotengine.editor.version"
+61            android:value="3.5.2.stable" />
+62        <meta-data
+62-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:59:9-60:42
+63            android:name="com.google.android.gms.games.APP_ID"
+63-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:59:20-70
+64            android:value="@string/app_id" />
+64-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:60:9-39
+65        <meta-data
+65-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:62:9-63:64
+66            android:name="com.google.android.gms.version"
+66-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:62:20-65
+67            android:value="@integer/google_play_services_version" /> <!-- Records the version of the Godot library -->
+67-->C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:63:9-62
+68        <meta-data
+68-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:14:9-16:44
+69            android:name="org.godotengine.library.version"
+69-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:15:13-59
+70            android:value="3.5.2.stable" />
+70-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:16:13-41
 71
-72        <activity
-72-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:20:9-24:75
-73            android:name="org.godotengine.godot.utils.ProcessPhoenix"
-73-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:21:13-70
-74            android:exported="false"
-74-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:22:13-37
-75            android:process=":phoenix"
-75-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:13-39
-76            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-76-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:24:13-72
-77
-78        <meta-data
-78-->[GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\c1754f81df30fd17c21401ebbe02e27f\transformed\jetified-GodotPlayGamesServices.release\AndroidManifest.xml:14:9-16:74
-79            android:name="org.godotengine.plugin.v1.GodotPlayGamesServices"
-79-->[GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\c1754f81df30fd17c21401ebbe02e27f\transformed\jetified-GodotPlayGamesServices.release\AndroidManifest.xml:15:13-76
-80            android:value="io.cgisca.godot.gpgs.PlayGameServicesGodot" />
-80-->[GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\c1754f81df30fd17c21401ebbe02e27f\transformed\jetified-GodotPlayGamesServices.release\AndroidManifest.xml:16:13-71
-81
-82        <activity
-82-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
-83            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-83-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:24:13-93
-84            android:excludeFromRecents="true"
-84-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:25:13-46
-85            android:exported="false"
-85-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:26:13-37
-86            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-86-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:27:13-72
-87        <!--
-88            Service handling Google Sign-In user revocation. For apps that do not integrate with
-89            Google Sign-In, this service will never be started.
-90        -->
-91        <service
-91-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
-92            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-92-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:34:13-89
-93            android:exported="true"
-93-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:35:13-36
-94            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-94-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:36:13-107
-95            android:visibleToInstantApps="true" />
-95-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:37:13-48
-96
-97        <activity
-97-->[com.google.android.gms:play-services-base:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\4987e801d34785b2bbad126507308c9c\transformed\jetified-play-services-base-17.4.0\AndroidManifest.xml:23:9-26:75
-98            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-98-->[com.google.android.gms:play-services-base:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\4987e801d34785b2bbad126507308c9c\transformed\jetified-play-services-base-17.4.0\AndroidManifest.xml:24:13-79
-99            android:exported="false"
-99-->[com.google.android.gms:play-services-base:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\4987e801d34785b2bbad126507308c9c\transformed\jetified-play-services-base-17.4.0\AndroidManifest.xml:25:13-37
-100            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-100-->[com.google.android.gms:play-services-base:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\4987e801d34785b2bbad126507308c9c\transformed\jetified-play-services-base-17.4.0\AndroidManifest.xml:26:13-72
-101    </application>
-102
-103</manifest>
+72        <service android:name="org.godotengine.godot.GodotDownloaderService" />
+72-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:18:9-80
+72-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:18:18-77
+73
+74        <activity
+74-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:20:9-24:75
+75            android:name="org.godotengine.godot.utils.ProcessPhoenix"
+75-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:21:13-70
+76            android:exported="false"
+76-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:22:13-37
+77            android:process=":phoenix"
+77-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:23:13-39
+78            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+78-->[godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:24:13-72
+79
+80        <meta-data
+80-->[GodotGooglePlayBilling.2.0.0-rc.1.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\0cd3dea123f50232469b0afe469c1d23\transformed\jetified-GodotGooglePlayBilling.2.0.0-rc.1.release\AndroidManifest.xml:10:9-12:101
+81            android:name="org.godotengine.plugin.v1.GodotGooglePlayBilling"
+81-->[GodotGooglePlayBilling.2.0.0-rc.1.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\0cd3dea123f50232469b0afe469c1d23\transformed\jetified-GodotGooglePlayBilling.2.0.0-rc.1.release\AndroidManifest.xml:11:13-76
+82            android:value="org.godotengine.godot.plugin.googleplaybilling.GodotGooglePlayBilling" />
+82-->[GodotGooglePlayBilling.2.0.0-rc.1.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\0cd3dea123f50232469b0afe469c1d23\transformed\jetified-GodotGooglePlayBilling.2.0.0-rc.1.release\AndroidManifest.xml:12:13-98
+83        <meta-data
+83-->[GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\c1754f81df30fd17c21401ebbe02e27f\transformed\jetified-GodotPlayGamesServices.release\AndroidManifest.xml:14:9-16:74
+84            android:name="org.godotengine.plugin.v1.GodotPlayGamesServices"
+84-->[GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\c1754f81df30fd17c21401ebbe02e27f\transformed\jetified-GodotPlayGamesServices.release\AndroidManifest.xml:15:13-76
+85            android:value="io.cgisca.godot.gpgs.PlayGameServicesGodot" />
+85-->[GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\c1754f81df30fd17c21401ebbe02e27f\transformed\jetified-GodotPlayGamesServices.release\AndroidManifest.xml:16:13-71
+86
+87        <activity
+87-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
+88            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+88-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:24:13-93
+89            android:excludeFromRecents="true"
+89-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:25:13-46
+90            android:exported="false"
+90-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:26:13-37
+91            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+91-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:27:13-72
+92        <!--
+93            Service handling Google Sign-In user revocation. For apps that do not integrate with
+94            Google Sign-In, this service will never be started.
+95        -->
+96        <service
+96-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
+97            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+97-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:34:13-89
+98            android:exported="true"
+98-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:35:13-36
+99            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+99-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:36:13-107
+100            android:visibleToInstantApps="true" />
+100-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\emirc\.gradle\caches\transforms-3\db72cc363fa7296772f17dbf61f17405\transformed\jetified-play-services-auth-19.0.0\AndroidManifest.xml:37:13-48
+101
+102        <activity
+102-->[com.google.android.gms:play-services-base:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\4987e801d34785b2bbad126507308c9c\transformed\jetified-play-services-base-17.4.0\AndroidManifest.xml:23:9-26:75
+103            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+103-->[com.google.android.gms:play-services-base:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\4987e801d34785b2bbad126507308c9c\transformed\jetified-play-services-base-17.4.0\AndroidManifest.xml:24:13-79
+104            android:exported="false"
+104-->[com.google.android.gms:play-services-base:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\4987e801d34785b2bbad126507308c9c\transformed\jetified-play-services-base-17.4.0\AndroidManifest.xml:25:13-37
+105            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+105-->[com.google.android.gms:play-services-base:17.4.0] C:\Users\emirc\.gradle\caches\transforms-3\4987e801d34785b2bbad126507308c9c\transformed\jetified-play-services-base-17.4.0\AndroidManifest.xml:26:13-72
+106
+107        <meta-data
+107-->[com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:13:9-15:37
+108            android:name="com.google.android.play.billingclient.version"
+108-->[com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:14:13-73
+109            android:value="5.0.0" />
+109-->[com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:15:13-34
+110
+111        <activity
+111-->[com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:17:9-21:75
+112            android:name="com.android.billingclient.api.ProxyBillingActivity"
+112-->[com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:18:13-78
+113            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+113-->[com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:19:13-96
+114            android:exported="false"
+114-->[com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:20:13-37
+115            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+115-->[com.android.billingclient:billing:5.0.0] C:\Users\emirc\.gradle\caches\transforms-3\b1d45c493f98c0d6e2b0f122f1c4df47\transformed\jetified-billing-5.0.0\AndroidManifest.xml:21:13-72
+116    </application>
+117
+118</manifest>
