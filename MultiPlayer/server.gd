@@ -45,3 +45,6 @@ func register_player():
 	
 sync func update_waiting_room():
 	get_tree().call_group("WaitingRoom", "refresh_players",players)
+
+
+	
