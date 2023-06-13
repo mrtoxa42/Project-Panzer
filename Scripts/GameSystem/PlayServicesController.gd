@@ -34,8 +34,6 @@ func _ready():
 		play_service.connect("_on_game_saved_fail",self,"_on_game_saved_fail")
 		play_service.connect("_on_game_load_fail",self,"_on_game_load_fail")
 		play_service.connect("_on_game_load_success",self,"_on_game_load_success")
-		play_service.connect("_on_game_saved_success",self,"_on_game_saved_success")
-		play_service.connect("_on_game_saved_fail",self,"_on_game_saved_fail")
 		play_service.connect("_on_create_new_snapshot",self,"_on_create_new_snapshot")
 
 		
@@ -46,6 +44,14 @@ func _on_sign_in_success(userprofil):
 func _on_sign_in_failed(error):
 	print("Error: " + str(error) )
 
+func yeni_baslangic():
+	play_service.unlockAchievement("CgkIhJ6wmI4WEAIQAg")
+func gizli_cevher():
+	play_service.unlockAchievement("CgkIhJ6wmI4WEAIQBA")
+func ilk_gorev():
+	play_service.unlockAchievement("CgkIhJ6wmI4WEAIQBw")
+func emret_komutanim():
+	play_service.unlockAchievement("CgkIhJ6wmI4WEAIQCA")
 
 func _on_Button_pressed():
 	play_service.signIn()

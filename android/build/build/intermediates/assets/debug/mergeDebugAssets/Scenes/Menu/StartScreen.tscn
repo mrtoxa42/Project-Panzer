@@ -326,6 +326,20 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0.65, 0.65 ), Vector2( 0.3, 0.3 ) ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "go_menu"
+} ]
+}
 
 [sub_resource type="Animation" id=6]
 length = 0.001
@@ -622,5 +636,3 @@ tree_root = SubResource( 16 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 17 )
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

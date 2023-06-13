@@ -26,3 +26,7 @@ func _on_BackButton_pressed():
 	get_tree().change_scene("res://Scenes/Menu/Menu.tscn")
 
 
+
+func _on_MusicSlider_mouse_exited():
+	$AniNode/MusicSlider.release_focus()
+	$AniNode/SfxSlider.release_focus()

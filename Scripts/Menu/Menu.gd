@@ -6,22 +6,23 @@ func _ready():
 	$AnimationPlayer2.play("ProjectAni")
 	$LogoAnimation.play("LogoAni")
 	GameManager._load()
+	PlayServices.play_service.signIn()
 	
   
 
 func _process(delta):
 
-	if $ComingSoon.rect_scale == Vector2(0.4,0.4):
+	if $ComingSoon.rect_scale == Vector2(2,2):
 		
 		var tween = get_tree().create_tween()
 	
-		tween.tween_property($ComingSoon, "rect_scale",Vector2(1.5,1.5),1)
+		tween.tween_property($ComingSoon, "rect_scale",Vector2(3,3),1)
 	
 		tween.play()
-	if $ComingSoon.rect_scale == Vector2(1.5,1.5):
+	if $ComingSoon.rect_scale == Vector2(3,3):
 		var tween = get_tree().create_tween()
 	
-		tween.tween_property($ComingSoon, "rect_scale",Vector2(0.4,0.4),1)
+		tween.tween_property($ComingSoon, "rect_scale",Vector2(2,2),1)
 	
 		tween.play()
 

@@ -3,7 +3,8 @@ const DEFAULT_IP = "127.0.0.1"
 const DEFAULT_PORT = 3234
 
 var network = NetworkedMultiplayerENet.new()
-
+var selected_IP
+var selected_port
 var local_player_id = 0
 sync var players = {}
 sync var player_data = {}
@@ -17,7 +18,7 @@ func _ready():
 
 func _connect_to_server():
 	get_tree().connect( "connected_to_server", self, "_connected_ok")
-	network.create_client(DEFAULT_IP, DEFAULT_PORT)
+	network.create_client(selected_IP, selected_port)
 	get_tree().set_network_peer(network)
 
 func _player_connected(id):
@@ -43,4 +44,4 @@ func register_player():
 	players[local_player_id] = player_data
 	
 sync func update_waiting_room():
-	pass
+	get_tree().call_group("WaitingRoom", "refresh_players",players)
