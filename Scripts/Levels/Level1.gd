@@ -161,3 +161,6 @@ func tut2area():
 
 func _on_ClickDestroyed_pressed():
 	$Tutorial2.queue_free()
+
+func vibrate():
+	Input.vibrate_handheld(500)

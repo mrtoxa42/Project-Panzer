@@ -25,3 +25,5 @@ func show_waiting_room():
 
 func _on_Ready_pressed():
 	ready_btn.disabled = true
+	Server.load_game()
+	Input.vibrate_handheld(500)

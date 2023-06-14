@@ -37,9 +37,9 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\emirc\.gradle
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] C:\Users\emirc\.gradle\caches\transforms-3\dc8283cc248de09f3304e4cb9480bb66\transformed\lifecycle-livedata-core-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\emirc\.gradle\caches\transforms-3\76de43940b62d644ec317b7e6994fa21\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\emirc\.gradle\caches\transforms-3\36eceb74a5fa1c30bc0cbcf5f002c0fb\transformed\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:2:1-31:12
 	package
 		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:4:5-29
 		INJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml
@@ -124,7 +124,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\em
 		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:68-95
 		REJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:68-95
 	tools:replace
-		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:17:9-123
+		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:19:9-123
 	android:isGame
 		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:96-117
 		REJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:30:96-117
@@ -135,7 +135,7 @@ meta-data#xr_mode_metadata_name
 ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:41:9-43:54
 REJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:41:9-43:54
 	tools:node
-		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:21:20-39
+		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:23:20-39
 	android:value
 		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:43:13-51
 	android:name
@@ -144,7 +144,7 @@ meta-data#xr_hand_tracking_metadata_name
 ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:48:9-50:62
 REJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:48:9-50:62
 	tools:node
-		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:23:20-39
+		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:25:20-39
 	android:value
 		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:50:13-60
 	android:name
@@ -153,7 +153,7 @@ meta-data#xr_hand_tracking_version_name
 ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:55:9-57:61
 REJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:55:9-57:61
 	tools:node
-		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:22:20-39
+		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:24:20-39
 	android:value
 		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:57:13-59
 	android:name
@@ -176,7 +176,7 @@ meta-data#com.oculus.supportedDevices
 ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:67:9-69:35
 REJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:67:9-69:35
 	tools:node
-		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:24:20-39
+		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:26:20-39
 	android:value
 		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:69:13-32
 	android:name
@@ -213,14 +213,14 @@ MERGED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Pa
 		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:74:13-55
 		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:74:13-55
 	tools:replace
-		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:25:58-153
+		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:27:58-153
 	android:name
 		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:72:13-37
 meta-data#com.oculus.vr.focusaware
 ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:84:13-87
 REJECTED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:84:13-87
 	tools:node
-		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:26:24-43
+		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:28:24-43
 	android:value
 		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\AndroidManifest.xml:84:64-84
 	android:name
@@ -317,6 +317,16 @@ MERGED from [GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\t
 MERGED from [GodotPlayGamesServices.release.aar] C:\Users\emirc\.gradle\caches\transforms-3\c1754f81df30fd17c21401ebbe02e27f\transformed\jetified-GodotPlayGamesServices.release\AndroidManifest.xml:11:5-67
 	android:name
 		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:11:22-64
+uses-permission#android.permission.VIBRATE
+ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:12:5-66
+	android:name
+		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:12:22-63
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:13:5-108
+	android:maxSdkVersion
+		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:13:79-105
+	android:name
+		ADDED from C:\Users\emirc\OneDrive\Masaüstü\GodotProje\ProjectPanzer\Project Panzer\android\build\src\debug\AndroidManifest.xml:13:22-78
 meta-data#org.godotengine.library.version
 ADDED from [godot-lib.debug.aar] C:\Users\emirc\.gradle\caches\transforms-3\dd0c94d33606cd3ab83a61ee6628b223\transformed\jetified-godot-lib.debug\AndroidManifest.xml:14:9-16:44
 	android:value
