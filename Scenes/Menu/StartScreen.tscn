@@ -397,5 +397,6 @@ rotation = 1.5708
 texture = ExtResource( 7 )
 
 [node name="Ship" type="Sprite" parent="ShipAni/aniship"]
+visible = false
 position = Vector2( 581, 261 )
 texture = ExtResource( 6 )

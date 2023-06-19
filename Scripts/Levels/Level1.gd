@@ -23,8 +23,8 @@ func _ready():
 #	GameManager.levelend = $Level1EndArea.global_position 
 	if GameManager.game_data.Language == "Turkish":
 		$Tutorial/DirectionLabel.text = "                                        [CEPHANE]" + "\n" + "Buradan oyuncu kalan mermi sayısını görebilir," + "\n"+ "Cephanesindeki diğer mermilerlle  burdan ulaşır" + "\n" + "Tamir kitine buradan ulaşır"
-		$Tutorial/InventoryLabel.text = "                                        [PAUSE]" +"\n"+ "Oyunu durdur."+ "\n"+ "Bölüm resetleme ve hangara ulaşmayı sağlar."
-		$Tutorial/StatLabel.text = "                                             [STATLAR] " + " \n " + "Kırmızı stat oyuncunun canını gösterir." + "\n" + "Yeşil stat oyuncunun zırhını gösterir."
+		$Tutorial/InventoryLabel.text = "                                       [PAUSE]" +"\n"+ "Oyunu durdur."+ "\n"+ "Bölüm resetleme ve hangara ulaşmayı sağlar."
+		$Tutorial/StatLabel.text = "                                              [STATLAR] " + " \n " + "Kırmızı stat oyuncunun canını gösterir." + "\n" + "Yeşil stat oyuncunun zırhını gösterir."
 		$Tutorial/JoystickLabel.text = "                                         [TANK KONTROL]"+"\n"+"Tankın yönünü ve hareketini buradan kontrol edilir."
 		$Tutorial/DirectionLabel.text = "                                        [TANK KONTROL]" + "\n" + "Tank topunun nişan aldığı yön  sağ-sol butonları ile yönlendirilir."
 		$Tutorial/ShootLabel.text = "                                            [TANK KONTROL]" + "\n" + "Top tüfeiğini ateşlememizi sağlar." + "\n"  +"Aktif kullanılan füze türünü gösterir."

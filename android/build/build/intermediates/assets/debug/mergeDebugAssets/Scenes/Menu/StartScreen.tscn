@@ -276,7 +276,7 @@ margin_top = -112.0
 margin_right = 1383.0
 margin_bottom = 811.0
 rect_pivot_offset = Vector2( 147, 106 )
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "EntertaimentAnimation"
@@ -291,7 +291,6 @@ texture = ExtResource( 3 )
 offset = Vector2( 0.5, 3 )
 
 [node name="Entertaiment" type="Node2D" parent="."]
-visible = false
 
 [node name="42Label" type="Label" parent="Entertaiment"]
 modulate = Color( 0.890196, 0.0666667, 0.0666667, 1 )
@@ -397,5 +396,6 @@ rotation = 1.5708
 texture = ExtResource( 7 )
 
 [node name="Ship" type="Sprite" parent="ShipAni/aniship"]
+visible = false
 position = Vector2( 581, 261 )
 texture = ExtResource( 6 )

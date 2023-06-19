@@ -94,12 +94,6 @@ text = "Join Game"
 
 [node name="WaitingRoom" parent="." instance=ExtResource( 2 )]
 
-[node name="VBoxContainer" parent="WaitingRoom/CenterContainer" index="0"]
-margin_left = 540.0
-margin_top = 328.0
-margin_right = 740.0
-margin_bottom = 392.0
-
 [node name="ItemList" parent="WaitingRoom/CenterContainer/VBoxContainer" index="1"]
 items = [ "Player 1", null, false, "Player 2", null, false, "Player 3", null, false, "Player 4", null, false ]
 

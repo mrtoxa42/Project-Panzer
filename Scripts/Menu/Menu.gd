@@ -6,7 +6,7 @@ func _ready():
 	$AnimationPlayer2.play("ProjectAni")
 	$LogoAnimation.play("LogoAni")
 	GameManager._load()
-	PlayServices.play_service.signIn()
+#	PlayServices.play_service.signIn()
 	
   
 
@@ -47,7 +47,7 @@ func _on_SettingsButton_pressed():
 
 
 func _on_Credits_pressed():
-	get_tree().change_scene("res://Scenes/Menu/Credits.tscn") 
+	get_tree().change_scene("res://MultiPlayer/lobby/lobby.tscn") 
 
 
 func _on_Logo42_pressed():

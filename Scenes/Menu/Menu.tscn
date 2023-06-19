@@ -104,15 +104,15 @@
 5/z_index = 0
 
 [sub_resource type="DynamicFont" id=1]
-size = 64
+size = 78
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 64
+size = 78
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 64
+size = 78
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -646,37 +646,37 @@ __meta__ = {
 
 [node name="PlayButton" type="TouchScreenButton" parent="."]
 light_mask = 3
-position = Vector2( 674.286, 265.714 )
-scale = Vector2( 2.8, 1.9 )
+position = Vector2( 617.143, 251.429 )
+scale = Vector2( 4, 3 )
 normal = ExtResource( 2 )
 pressed = ExtResource( 4 )
 
 [node name="PlayLabel" type="Label" parent="."]
-margin_left = 719.286
-margin_top = 270.714
-margin_right = 1055.29
-margin_bottom = 348.714
+margin_left = 701.429
+margin_top = 275.714
+margin_right = 1086.43
+margin_bottom = 370.714
 custom_fonts/font = SubResource( 1 )
 text = "CAMPAING"
 
 [node name="SettingsButton" type="TouchScreenButton" parent="."]
-position = Vector2( 1140, 488.571 )
-scale = Vector2( 2.8, 1.8 )
+position = Vector2( 1245.71, 585.714 )
+scale = Vector2( 4, 3 )
 normal = ExtResource( 2 )
 pressed = ExtResource( 4 )
 
 [node name="SettingsLabel" type="Label" parent="."]
-margin_left = 1188.0
-margin_top = 494.571
-margin_right = 1483.0
-margin_bottom = 572.571
+margin_left = 1352.86
+margin_top = 611.429
+margin_right = 1713.86
+margin_bottom = 706.429
 custom_fonts/font = SubResource( 2 )
 text = "SETTINGS"
 
 [node name="OnlinButton" type="TouchScreenButton" parent="."]
 modulate = Color( 1, 1, 1, 0.607843 )
-position = Vector2( 187.143, 480 )
-scale = Vector2( 2.8, 1.8 )
+position = Vector2( 80, 559.491 )
+scale = Vector2( 4, 3 )
 normal = ExtResource( 2 )
 pressed = ExtResource( 4 )
 
@@ -702,10 +702,10 @@ texture = ExtResource( 16 )
 
 [node name="OnlineLabel" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0.607843 )
-margin_left = 254.143
-margin_top = 486.0
-margin_right = 558.143
-margin_bottom = 564.0
+margin_left = 202.857
+margin_top = 592.349
+margin_right = 506.857
+margin_bottom = 687.349
 custom_fonts/font = SubResource( 3 )
 text = "ONLINE"
 
@@ -715,6 +715,9 @@ position = Vector2( 156, 608 )
 rotation = -0.618397
 scale = Vector2( 8, 8 )
 normal = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ProjectPanzer" type="RichTextLabel" parent="."]
 modulate = Color( 0, 0, 0, 1 )
@@ -726,10 +729,10 @@ custom_fonts/normal_font = SubResource( 4 )
 text = "PAZECT PROJZER"
 
 [node name="VersionLabel" type="Label" parent="."]
-margin_left = 1252.43
-margin_top = 784.286
-margin_right = 1461.43
-margin_bottom = 823.286
+margin_left = 1600.0
+margin_top = 960.0
+margin_right = 1809.0
+margin_bottom = 999.0
 custom_fonts/font = SubResource( 7 )
 text = "1.000 Version"
 percent_visible = 0.0
@@ -751,10 +754,10 @@ anims/RESET = SubResource( 16 )
 
 [node name="ComingSoon" type="Label" parent="."]
 modulate = Color( 1, 0, 0, 1 )
-margin_left = 222.857
-margin_top = 605.714
-margin_right = 374.857
-margin_bottom = 644.714
+margin_left = 220.0
+margin_top = 696.634
+margin_right = 372.0
+margin_bottom = 735.634
 rect_rotation = -39.6
 rect_scale = Vector2( 2, 2 )
 custom_fonts/font = SubResource( 13 )
