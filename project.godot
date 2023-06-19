@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Project Panzer"
-run/main_scene="res://MultiPlayer/Lobby.tscn"
+run/main_scene="res://MultiPlayer/lobby/lobby.tscn"
 boot_splash/image="res://Logo/42.5.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://Assets/Extras/Cinematics/portre.png"
@@ -19,9 +19,9 @@ config/icon="res://Assets/Extras/Cinematics/portre.png"
 [autoload]
 
 GameManager="*res://Scripts/GameSystem/GameManager.gd"
-Server="*res://MultiPlayer/server.gd"
-MultiPlayerSave="*res://MultiPlayer/MultiPlayerSave.gd"
 PlayServices="*res://Scripts/GameSystem/PlayServicesController.gd"
+Server="*res://MultiPlayer/server/server.gd"
+Save="*res://MultiPlayer/save/save.gd"
 
 [debug]
 

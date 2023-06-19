@@ -687,6 +687,20 @@ tracks/23/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/24/type = "method"
+tracks/24/path = NodePath(".")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 4.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "vibrate"
+} ]
+}
 
 [sub_resource type="Animation" id=43]
 resource_name = "Ani2"
@@ -1226,6 +1240,7 @@ position = Vector2( 6.10352e-05, 27 )
 shape = SubResource( 30 )
 
 [node name="FireTank2" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( 478, 707 )
 frames = SubResource( 11 )
 animation = "Fire"
@@ -1233,6 +1248,7 @@ frame = 11
 playing = true
 
 [node name="FireTank" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( 431, 433 )
 frames = SubResource( 11 )
 animation = "Fire"
@@ -1240,6 +1256,7 @@ frame = 11
 playing = true
 
 [node name="FireTank3" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( 519, 438 )
 frames = SubResource( 11 )
 animation = "Fire"
@@ -1247,6 +1264,7 @@ frame = 11
 playing = true
 
 [node name="FireTank4" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( 450, 688 )
 frames = SubResource( 11 )
 animation = "Fire"
@@ -1326,6 +1344,7 @@ texture = ExtResource( 26 )
 
 [node name="Cinematic2" type="Node2D" parent="CanvasLayer"]
 pause_mode = 2
+visible = false
 
 [node name="General" type="Sprite" parent="CanvasLayer/Cinematic2"]
 position = Vector2( 364, 477 )

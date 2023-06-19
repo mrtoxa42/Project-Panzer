@@ -34,7 +34,14 @@ var gameend = preload("res://Scenes/Game/GameEnd.tscn")
 
 var reload = true
 
+################################ MULTİPLAYER ######################################
 
+var motion = Vector2.ZERO
+
+const MAXSPEED = 100
+const ACCELERATION = 300
+const FRICTION = 200
+##################################MULTİPLAYER ####################
 
 func _ready():
 	$TopGun/CroosHair.modulate = Color.green
@@ -49,6 +56,18 @@ func _process(delta):
 		GameManager.playertank = null
 		queue_free()
 		
+		
+		################################ MULTİPLAYER #############################
+		
+	if is_network_master():
+		$Camera2D.current = true
+		$player_label.rect_position = Vector2(position.x - 40, position.y - 60)
+		apply_movement(velocity, delta)
+		apply_friction(velocity, delta)
+		motion = move_and_slide(velocity)
+		rpc_unreliable_id(1, "update_player", global_transform)
+		
+		################################ MULTİPLAYER #############################
 	$MobileController/ChangeWeaponsButton/Missile2Label.text = str(GameManager.player_data.Missile2)
 	$MobileController/ChangeWeaponsButton/Missile3Label.text = str(GameManager.player_data.Missile3)
 	$MobileController/ChangeWeaponsButton/RepairKitLabel.text = str(GameManager.player_data.RepairKit)
@@ -438,3 +457,17 @@ func cross_shoot():
 	tween.tween_property($TopGun/CroosHair,"scale",Vector2(2,2),1)
 	
 
+######################################### MULTİPLAYER ###############################################
+
+
+
+func apply_movement(input_vector, delta):
+	if input_vector != Vector2.ZERO:
+		motion = motion.move_toward(input_vector * MAXSPEED, ACCELERATION * delta)
+
+func apply_friction(input_vector, delta):
+	if input_vector == Vector2.ZERO:
+		motion = motion.move_toward(Vector2.ZERO, FRICTION * delta)
+
+func set_player_name ():
+	$player_label.text = Server.players[int(name)]["Player_name"]
