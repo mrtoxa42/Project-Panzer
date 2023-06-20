@@ -976,64 +976,6 @@ Gizlenmek için
 çalılıkları kullan."
 percent_visible = 0.0
 
-[node name="Bush" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1080, 810 )
-z_index = 1
-
-[node name="Bush2" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 31, 712 )
-
-[node name="Bush" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 176, 1146 )
-
-[node name="Bush3" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 799, 1404 )
-
-[node name="Bush4" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 1555, 1668 )
-
-[node name="Bush5" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 2214, 2015 )
-
-[node name="Bush6" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 3832, 2003 )
-
-[node name="Bush7" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 3784, 1410 )
-
-[node name="Bush8" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 4287, 1096 )
-
-[node name="Bush9" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 4118, 1030 )
-
-[node name="Bush10" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 3784, 313 )
-
-[node name="Bush11" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 3155, -226 )
-
-[node name="Bush12" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 1680, 721 )
-
-[node name="Bush13" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 2058, -280 )
-
-[node name="Bush14" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( -567, 265 )
-
-[node name="Bush15" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( -70, -442 )
-
-[node name="Bush16" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( -249, 2069 )
-
-[node name="Bush17" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 805, 26 )
-
-[node name="Bush18" parent="Bush" instance=ExtResource( 11 )]
-position = Vector2( 4212, 1056 )
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, 1216 )
 anchor_mode = 0
@@ -1133,25 +1075,25 @@ playing = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ExplosionAni"]
 position = Vector2( 368, 100 )
 frames = SubResource( 56 )
-frame = 11
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="ExplosionAni"]
 position = Vector2( 362, 238 )
 frames = SubResource( 56 )
-frame = 5
+frame = 7
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="ExplosionAni"]
 position = Vector2( 490, 112 )
 frames = SubResource( 56 )
-frame = 5
+frame = 7
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="ExplosionAni"]
 position = Vector2( 507, 182 )
 frames = SubResource( 56 )
-frame = 5
+frame = 7
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1203,6 +1145,41 @@ margin_right = 1278.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 60 )
 text = "GEÇMEK İÇİN TIKLAYIN"
+
+[node name="Bushs" type="Node2D" parent="."]
+
+[node name="Bush" parent="Bushs" instance=ExtResource( 11 )]
+position = Vector2( 1479, 2058 )
+
+[node name="Bush2" parent="Bushs" instance=ExtResource( 11 )]
+position = Vector2( 1824, 1308 )
+
+[node name="Bush3" parent="Bushs" instance=ExtResource( 11 )]
+position = Vector2( 2852, 1347 )
+
+[node name="Bush4" parent="Bushs" instance=ExtResource( 11 )]
+position = Vector2( 3577, 2069 )
+
+[node name="Bush5" parent="Bushs" instance=ExtResource( 11 )]
+position = Vector2( 2840, 2783 )
+
+[node name="Bush6" parent="Bushs" instance=ExtResource( 11 )]
+position = Vector2( 4317, 709 )
+
+[node name="Bush7" parent="Bushs" instance=ExtResource( 11 )]
+position = Vector2( 4802, 1634 )
+
+[node name="Bush8" parent="Bushs" instance=ExtResource( 11 )]
+position = Vector2( 1260, 700 )
+
+[node name="Bush9" parent="Bushs" instance=ExtResource( 11 )]
+position = Vector2( 3968, 1337 )
+
+[node name="Bush10" parent="Bushs" instance=ExtResource( 11 )]
+position = Vector2( 4678, 2284 )
+
+[node name="Bush11" parent="Bushs" instance=ExtResource( 11 )]
+position = Vector2( 2902, 484 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="area_entered" from="LevelFinished" to="." method="_on_LevelFinished_area_entered"]
