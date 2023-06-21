@@ -111,6 +111,7 @@ android {
         ndk {
             String[] export_abi_list = getExportEnabledABIs()
             abiFilters export_abi_list
+
         }
 
         manifestPlaceholders = [godotEditorVersion: getGodotEditorVersion()]

@@ -53,6 +53,7 @@ func _process(delta):
 	$MobileController/ChangeWeaponsButton/RepairKitLabel.text = str(GameManager.player_data.RepairKit)
 	if weapons == "Missile2":
 		$MobileController/ChangeWeaponsButton/CurrentMissileLabel.text = str(GameManager.player_data.Missile2)
+		print(GameManager.player_data.Missile2)
 	elif weapons == "Missile3":
 		$MobileController/ChangeWeaponsButton/CurrentMissileLabel.text = str(GameManager.player_data.Missile3)
 	else:
@@ -116,11 +117,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("2"):
 		change_weapons()
 		weapons = "Missile2"
-		$MobileController/FireShoot/CurrentMissile.texture = load("res://icon.png")
+		$MobileController/FireShoot/CurrentMissile.texture = load("res://Assets/Extras/Missiles/Missile2.png")
 	if Input.is_action_just_pressed("3"):
 		change_weapons()
 		weapons = "Missile3"
-		$MobileController/FireShoot/CurrentMissile.texture = load("res://Assets/Extras/Missiles/Missile2deneme.png")
+		$MobileController/FireShoot/CurrentMissile.texture = load("res://Assets/Extras/Missiles/Missile3.png")
 		
 	if Input.is_action_just_pressed("R"):
 		if GameManager.player_data.RepairKit >0:
@@ -146,27 +147,30 @@ func set_rotation(angle):
 
 func shoot():
 	if reload == true and tankrepair == false and bush == false: 
-		$MobileController/ShootButtonAni.play("Shoot")
+		$Sfx/Shoot.play()
 		if weapons == "Missile1":
+			$MobileController/ShootButtonAni.play("Shoot")
 			var Missile1 = missile1.instance()
 			get_tree().get_root().add_child(Missile1)
 			Missile1.global_position = $TopGun/ShootPosition.global_position
 		elif weapons == "Missile2":
 			if GameManager.player_data.Missile2 > 0:
 				GameManager.player_data.Missile2 -=1
+				$MobileController/ShootButtonAni.play("Shoot")
 				var Missile2 = missile2.instance()
 				get_tree().get_root().add_child(Missile2)
 				Missile2.global_position = $TopGun/ShootPosition.global_position 
 		elif weapons == "Missile3":
 			if GameManager.player_data.Missile3 >0:
 				GameManager.player_data.Missile3 -=1
+				$MobileController/ShootButtonAni.play("Shoot")
 				var Missile3 = missile3.instance()
 				get_tree().get_root().add_child(Missile3)
 				Missile3.global_position = $TopGun/ShootPosition.global_position
 		reload = false
 		var TankSmoke = tanksmoke.instance()
 		get_tree().get_root().add_child(TankSmoke)
-		TankSmoke.global_position = $TopGun/TopGunSprite.global_position 
+		TankSmoke.global_position = $TopGun/SmokePosition.global_position
 		$AnimationPlayer.play("Shoot")
 #		SoundController.tank_shoot1()
 #		$AnimatedSprite.play("Shoot")
@@ -225,7 +229,7 @@ func _on_Missile1_pressed():
 func _on_Missile2_pressed():
 	change_weapons()
 	weapons = "Missile2"
-	$MobileController/FireShoot/CurrentMissile.texture = load("res://icon.png")
+	$MobileController/FireShoot/CurrentMissile.texture = load("res://Assets/Extras/Missiles/Missile2.png")
 
 func _on_RepairButton_pressed():
 	if GameManager.player_data.RepairKit >0:
@@ -350,7 +354,7 @@ func _on_MoveSmokeTimer_timeout():
 func _on_Missile3_pressed():
 	change_weapons()
 	weapons = "Missile3"
-	$MobileController/FireShoot/CurrentMissile.texture = load("res://Assets/Extras/Missiles/Missile2deneme.png")
+	$MobileController/FireShoot/CurrentMissile.texture = load("res://Assets/Extras/Missiles/Missile3.png")
 
 
 func delete_player():

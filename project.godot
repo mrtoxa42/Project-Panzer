@@ -8,10 +8,14 @@
 
 config_version=4
 
+[NativeLib]
+
+Python="C:/Users/emirc/AppData/Local/Programs/Python/Python311/python.exe"
+
 [application]
 
 config/name="Project Panzer"
-run/main_scene="res://Scenes/Menu/StartScreen.tscn"
+run/main_scene="res://MultiPlayer/lobby/lobby.tscn"
 boot_splash/image="res://Logo/42.5.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://Assets/Extras/Cinematics/portre.png"
@@ -32,6 +36,10 @@ settings/fps/force_fps=60
 window/size/width=1280
 window/size/height=720
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/NativeLib/plugin.cfg" )
 
 [gui]
 

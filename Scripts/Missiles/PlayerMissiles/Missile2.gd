@@ -7,8 +7,9 @@ var playerdirection = ""
 var velocity = Vector2(0,0)
 var look = true
 func _ready():
-	velocity = GameManager.playertank.move
-	look_at(GameManager.playertank.CrossHair.global_position)
+	if GameManager.playertank !=null:
+		velocity = GameManager.playertank.move
+		look_at(GameManager.playertank.CrossHair.global_position)
 
 
 

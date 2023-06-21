@@ -45,7 +45,7 @@ var game_data = {
 var player_data = {
 	Medal1 = 100,
 	Medal2 = 0,
-	Missile2 = 10,
+	Missile2 = 100,
 	Missile3 = 10,
 	RepairKit = 5,
 	Armor = 100,
@@ -82,5 +82,6 @@ func delete_save():
 
 
 func _ready():
-	_load()
+#	_load()
+	pass
 	

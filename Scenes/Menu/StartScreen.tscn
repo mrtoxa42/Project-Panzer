@@ -253,7 +253,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, -672 ), Vector2( 0, -854 ) ]
+"values": [ Vector2( 0, -120 ), Vector2( 0, -672 ), Vector2( 0, -854 ) ]
 }
 
 [node name="StartScreenDeneme" type="Node2D"]
@@ -285,12 +285,13 @@ anims/PresentAnimation = SubResource( 2 )
 
 [node name="Nothing" type="Sprite" parent="AnimationPlayer"]
 modulate = Color( 0.890196, 0.0666667, 0.0666667, 1 )
-position = Vector2( 1366.54, 275 )
+position = Vector2( 1370, 275 )
 scale = Vector2( 2.6, 2.6 )
 texture = ExtResource( 3 )
 offset = Vector2( 0.5, 3 )
 
 [node name="Entertaiment" type="Node2D" parent="."]
+visible = false
 position = Vector2( 0, 75 )
 
 [node name="42Label" type="Label" parent="Entertaiment"]
@@ -410,3 +411,5 @@ texture = ExtResource( 7 )
 visible = false
 position = Vector2( 581, 261 )
 texture = ExtResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
