@@ -5,12 +5,14 @@ const ACCELERATION = 300
 const FRICTION = 200
 
 var motion = Vector2.ZERO
+var playername 
 
 onready var player_label = $Label
 onready var camera = $Camera2D
 
 func _ready():
 	player_label.set_as_toplevel(true)
+	playername = player_label.text
 	set_player_name()
 
 func _physics_process(delta):
@@ -18,7 +20,6 @@ func _physics_process(delta):
 		camera.current = true
 		player_label.rect_position = Vector2(position.x - 40, position.y - 60)
 		var input_vector = get_input_vector()
-		print(input_vector)
 		apply_movement(input_vector, delta)
 		apply_friction(input_vector, delta)
 		motion = move_and_slide(motion)

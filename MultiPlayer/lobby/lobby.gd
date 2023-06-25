@@ -15,8 +15,11 @@ func _on_JoinBtn_pressed():
 	Server.selected_IP = selected_IP.text
 	Server.selected_port = int(selected_port.text)
 	Server._connect_to_server()
-	show_waiting_room()
-
+#	show_waiting_room()
+#	get_tree().change_scene("res://MultiPlayer/lobby/ServerList.tscn")
+	Server.load_game()
+	queue_free()
+#	get_tree().change_scene("res://MultiPlayer/world/world.tscn")
 
 func _on_NameTextBox_text_changed(new_text):
 	Save.save_data["Player_name"] = player_name.text

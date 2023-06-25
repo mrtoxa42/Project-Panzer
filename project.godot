@@ -39,7 +39,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/NativeLib/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [gui]
 
