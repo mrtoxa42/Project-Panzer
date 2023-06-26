@@ -1,6 +1,6 @@
 extends Node
 
-const DEFAULT_IP = "161.35.239.33"
+const DEFAULT_IP = "127.0.0.1"
 const DEFAULT_PORT = 3234
 
 var network = NetworkedMultiplayerENet.new()
@@ -50,12 +50,15 @@ sync func update_waiting_room():
 func load_game():
 	rpc_id(1, "load_world")
 	
-	
 sync func start_game():
 	var world = preload("res://MultiPlayer/world/world.tscn").instance()
 	get_tree().get_root().add_child(world)
-	get_tree().get_root().get_node("Lobby").queue_free()
-	print("Start game")
+	if get_tree().get_root().get_node("Lobby") != null:
+		get_tree().get_root().get_node("Lobby").queue_free()
+	
+	
+	
+	
 	
 	
 	

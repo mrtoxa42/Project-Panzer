@@ -1,6 +1,6 @@
 extends Node2D
 
-const PLAYER = preload("res://MultiPlayer/player/player.tscn")
+const PLAYER = preload("res://Scenes/Player/PlayerTank.tscn")
 
 onready var player_spawn = $PlayerSpawn
 onready var players = $Players

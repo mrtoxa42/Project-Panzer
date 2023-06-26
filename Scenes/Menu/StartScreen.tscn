@@ -132,6 +132,20 @@ tracks/9/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/10/type = "method"
+tracks/10/path = NodePath(".")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 5.98 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "go_menu"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "PresentAnimation"

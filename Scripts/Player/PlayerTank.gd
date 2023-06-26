@@ -34,113 +34,128 @@ var gameend = preload("res://Scenes/Game/GameEnd.tscn")
 
 var reload = true
 
+#################################### MULTİPLAYER ################################
+onready var player_label = $Label
+var playername 
+onready var camera = $Camera2D
 func _ready():
 	$TopGun/CroosHair.modulate = Color.green
-	GameManager.levelcomplete = false
+	GameManager.levelcomplete = false 
 	GameManager.playertank = self 
 	shootposition = $TopGun/ShootPosition.global_position
 
 	$MobileController/MoveLeft.modulate.a = 0.5
 	$MobileController/MoveRight.modulate.a = 0.5
+	
+	player_label.set_as_toplevel(true)
+	playername = player_label.text
+#	set_player_name()
+remote func update_remote_player(transform):
+	if not is_network_master():
+		global_transform = transform
+		player_label.rect_position = Vector2(position.x - 40, position.y - 60)
+	
 func _process(delta):
 	if GameManager.inlevel == false:
 		GameManager.playertank = null
 		queue_free()
+	if is_network_master():
+		camera.current = true
+		player_label.rect_position = Vector2(position.x - 40, position.y - 60)
+		rpc_unreliable_id(1, "update_player", global_transform)
+		velocity = $MobileController/Joystick.get_velo()
+		$MobileController/ChangeWeaponsButton/Missile2Label.text = str(GameManager.player_data.Missile2)
+		$MobileController/ChangeWeaponsButton/Missile3Label.text = str(GameManager.player_data.Missile3)
+		$MobileController/ChangeWeaponsButton/RepairKitLabel.text = str(GameManager.player_data.RepairKit)
+		if weapons == "Missile2":
+			$MobileController/ChangeWeaponsButton/CurrentMissileLabel.text = str(GameManager.player_data.Missile2)
+			print(GameManager.player_data.Missile2)
+		elif weapons == "Missile3":
+			$MobileController/ChangeWeaponsButton/CurrentMissileLabel.text = str(GameManager.player_data.Missile3)
+		else:
+			$MobileController/ChangeWeaponsButton/CurrentMissileLabel.text = "∞"
+		GameManager.playerweapon = weapons
+		$PlayerStat/HealthBar.value = hp
+		$PlayerStat/ArmorBar.value = GameManager.player_data.Armor
 		
 
-	$MobileController/ChangeWeaponsButton/Missile2Label.text = str(GameManager.player_data.Missile2)
-	$MobileController/ChangeWeaponsButton/Missile3Label.text = str(GameManager.player_data.Missile3)
-	$MobileController/ChangeWeaponsButton/RepairKitLabel.text = str(GameManager.player_data.RepairKit)
-	if weapons == "Missile2":
-		$MobileController/ChangeWeaponsButton/CurrentMissileLabel.text = str(GameManager.player_data.Missile2)
-		print(GameManager.player_data.Missile2)
-	elif weapons == "Missile3":
-		$MobileController/ChangeWeaponsButton/CurrentMissileLabel.text = str(GameManager.player_data.Missile3)
-	else:
-		$MobileController/ChangeWeaponsButton/CurrentMissileLabel.text = "∞"
-	GameManager.playerweapon = weapons
-	$PlayerStat/HealthBar.value = hp
-	$PlayerStat/ArmorBar.value = GameManager.player_data.Armor
-	
-
-#	 (speed)
-	move = global_position - CrossHair.global_position 
-	
-
-#		move_and_slide(-move * speed)
-
-
-	$TopGun.rotation_degrees += rotationdegress * delta
-
-	if GameManager.crossenemy != null:
-		$TopGun.look_at(GameManager.crossenemy.global_position)
-#		$TopGun/CrossHair.global_position = GameManager.crossenemy.global_position
-
+	#	 (speed)
+		move = global_position - CrossHair.global_position 
 		
 
+	#		move_and_slide(-move * speed)
 
-	if Input.is_action_pressed("ui_up"):
-		if tankrepair == false:
-			$MoveSmokeTimer.start()
-#			SoundController.tank_move()
-			pressgas = true
-			gas = true
-		
-	if Input.is_action_just_released("ui_up"):
-		pressgas = false
-		$SpeedTimer.start()
-		$MoveSmokeTimer.stop()
-	if Input.is_action_just_pressed("ui_down"):
-		if tankrepair == false:
-			gas = false 
-			speed = 0
-			$BreakTimer.start()
-	if Input.is_action_just_released("ui_down"):
-		backbreak = false
-#		SoundController.tank_move_stop()
-		$BreakTimer.stop()
-	if Input.is_action_pressed("ui_right"):
-		rotationdegress = rotationspeed
-	if Input.is_action_just_released("ui_right"):
-		rotationdegress = 0
-	if Input.is_action_pressed("ui_left"):
-		rotationdegress = -rotationspeed
-	if Input.is_action_just_released("ui_left"):
-		rotationdegress = 0
-	if Input.is_action_just_pressed('Z'):
-		shoot()
 
-	if Input.is_action_just_pressed("1"):
-		change_weapons()
-		weapons = "Missile1"
-		$MobileController/FireShoot/CurrentMissile.texture = load("res://Assets/Extras/Missiles/Bullet.png")
-	if Input.is_action_just_pressed("2"):
-		change_weapons()
-		weapons = "Missile2"
-		$MobileController/FireShoot/CurrentMissile.texture = load("res://Assets/Extras/Missiles/Missile2.png")
-	if Input.is_action_just_pressed("3"):
-		change_weapons()
-		weapons = "Missile3"
-		$MobileController/FireShoot/CurrentMissile.texture = load("res://Assets/Extras/Missiles/Missile3.png")
-		
-	if Input.is_action_just_pressed("R"):
-		if GameManager.player_data.RepairKit >0:
+		$TopGun.rotation_degrees += rotationdegress * delta
+
+		if GameManager.crossenemy != null:
+			$TopGun.look_at(GameManager.crossenemy.global_position)
+	#		$TopGun/CrossHair.global_position = GameManager.crossenemy.global_position
+
+			
+
+
+		if Input.is_action_pressed("ui_up"):
+			if tankrepair == false:
+				$MoveSmokeTimer.start()
+	#			SoundController.tank_move()
+				pressgas = true
+				gas = true
+			
+		if Input.is_action_just_released("ui_up"):
+			pressgas = false
+			$SpeedTimer.start()
+			$MoveSmokeTimer.stop()
+		if Input.is_action_just_pressed("ui_down"):
+			if tankrepair == false:
+				gas = false 
+				speed = 0
+				$BreakTimer.start()
+		if Input.is_action_just_released("ui_down"):
+			backbreak = false
+	#		SoundController.tank_move_stop()
+			$BreakTimer.stop()
+		if Input.is_action_pressed("ui_right"):
+			rotationdegress = rotationspeed
+		if Input.is_action_just_released("ui_right"):
+			rotationdegress = 0
+		if Input.is_action_pressed("ui_left"):
+			rotationdegress = -rotationspeed
+		if Input.is_action_just_released("ui_left"):
+			rotationdegress = 0
+		if Input.is_action_just_pressed('Z'):
+			shoot()
+
+		if Input.is_action_just_pressed("1"):
 			change_weapons()
-			tank_repair()
-			GameManager.player_data.RepairKit -=1
-#	velocity.x = directionx
-#	velocity.y = directiony
+			weapons = "Missile1"
+			$MobileController/FireShoot/CurrentMissile.texture = load("res://Assets/Extras/Missiles/Bullet.png")
+		if Input.is_action_just_pressed("2"):
+			change_weapons()
+			weapons = "Missile2"
+			$MobileController/FireShoot/CurrentMissile.texture = load("res://Assets/Extras/Missiles/Missile2.png")
+		if Input.is_action_just_pressed("3"):
+			change_weapons()
+			weapons = "Missile3"
+			$MobileController/FireShoot/CurrentMissile.texture = load("res://Assets/Extras/Missiles/Missile3.png")
+			
+		if Input.is_action_just_pressed("R"):
+			if GameManager.player_data.RepairKit >0:
+				change_weapons()
+				tank_repair()
+				GameManager.player_data.RepairKit -=1
+	#	velocity.x = directionx
+	#	velocity.y = directiony
+	#	velocity = move_and_slide(velocity * speed * delta)
 
-#	velocity = move_and_slide(velocity * speed * delta)
 
-
-	velocity = $MobileController/Joystick.get_velo()
-	if tankrepair == false:
-		move_and_slide(velocity * speed)
-	if velocity != Vector2.ZERO and smoke == false:
-		smoke = true
-		$MoveSmokeTimer.start()
-	
+		
+		if tankrepair == false:
+			move_and_slide(velocity * speed)
+		if velocity != Vector2.ZERO and smoke == false:
+			smoke = true
+			$MoveSmokeTimer.start()
+		
 		
 func set_rotation(angle):
 	rotation = angle
@@ -444,3 +459,7 @@ func cross_shoot():
 
 
 
+#################################### MULTİPLAYER ################################
+
+#func set_player_name ():
+#	player_label.text = Server.players[int(name)]["Player_name"]

@@ -15,7 +15,7 @@ Python="C:/Users/emirc/AppData/Local/Programs/Python/Python311/python.exe"
 [application]
 
 config/name="Project Panzer"
-run/main_scene="res://MultiPlayer/lobby/lobby.tscn"
+run/main_scene="res://Scenes/Menu/Menu.tscn"
 boot_splash/image="res://Logo/42.5.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://Assets/Extras/Cinematics/portre.png"

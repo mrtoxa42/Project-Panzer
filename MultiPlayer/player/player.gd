@@ -5,14 +5,12 @@ const ACCELERATION = 300
 const FRICTION = 200
 
 var motion = Vector2.ZERO
-var playername 
 
 onready var player_label = $Label
 onready var camera = $Camera2D
 
 func _ready():
 	player_label.set_as_toplevel(true)
-	playername = player_label.text
 	set_player_name()
 
 func _physics_process(delta):
@@ -20,6 +18,7 @@ func _physics_process(delta):
 		camera.current = true
 		player_label.rect_position = Vector2(position.x - 40, position.y - 60)
 		var input_vector = get_input_vector()
+		print(input_vector)
 		apply_movement(input_vector, delta)
 		apply_friction(input_vector, delta)
 		motion = move_and_slide(motion)
@@ -35,8 +34,8 @@ remote func update_remote_player(transform):
 	
 func get_input_vector():
 	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	return input_vector.normalized()
 	
 	

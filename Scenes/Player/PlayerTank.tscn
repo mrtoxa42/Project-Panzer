@@ -457,6 +457,10 @@ texture = ExtResource( 9 )
 [node name="Shoot" type="AudioStreamPlayer" parent="Sfx"]
 stream = ExtResource( 24 )
 
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+
 [connection signal="timeout" from="MoveSmokeTimer" to="." method="_on_MoveSmokeTimer_timeout"]
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_PlayerArea_area_entered"]
 [connection signal="timeout" from="TankTracks/TrackTimer" to="." method="_on_TrackTimer_timeout"]
