@@ -6,12 +6,15 @@ onready var small_circle = $BigCircle/SmallCircle
 var rotspeed = 250
 onready var max_distance = $CollisionShape2D.shape.radius
 
+
+var defpos = Vector2.ZERO
+var postouch = false
 var touched = false
 
 func _ready():
 	GameManager.joystick = self
 	modulate.a = 0.5
-
+	defpos = global_position
 
 
 func _input(event):
@@ -41,9 +44,11 @@ func get_velo():
 
 
 func _on_TouchButton_pressed():
-	GameManager.playertank.track_timer()
-	touched = true
-	modulate.a = 1
+	if GameManager.playertank != null:
+		GameManager.playertank.track_timer()
+		touched = true
+		modulate.a = 1
+
 
 
 
@@ -51,5 +56,17 @@ func _on_TouchButton_released():
 	touched = false
 	$BigCircle/SmallCircle.position = Vector2.ZERO
 	modulate.a = 0.5
+	
 
 
+
+func _on_FreePosButton_pressed():
+	if postouch == false:
+		global_position = get_global_mouse_position()
+		postouch = true
+
+
+func _on_FreePosButton_released():
+	if postouch == true:
+		global_position = defpos
+		postouch = false

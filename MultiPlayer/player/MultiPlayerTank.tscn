@@ -187,7 +187,7 @@ bg_color = Color( 0.121569, 0.87451, 0.0666667, 1 )
 [sub_resource type="StyleBoxFlat" id=37]
 bg_color = Color( 0, 0, 0, 1 )
 
-[node name="PlayerTank" type="KinematicBody2D" groups=["Player"]]
+[node name="MultiPlayerTank" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

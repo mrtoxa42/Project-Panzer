@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/PlayerAssets/Joystick/JoystickSmall.png" type="Texture" id=1]
 [ext_resource path="res://Assets/PlayerAssets/Joystick/JoystickBig.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Player/GUI/Joystick.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 31.0
@@ -24,5 +25,13 @@ texture = ExtResource( 1 )
 position = Vector2( -32, -32 )
 normal = ExtResource( 2 )
 
+[node name="FreePosButton" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.00392157 )
+position = Vector2( -33.5, -102.5 )
+scale = Vector2( 2.50781, 3.98438 )
+normal = ExtResource( 4 )
+
 [connection signal="pressed" from="TouchButton" to="." method="_on_TouchButton_pressed"]
 [connection signal="released" from="TouchButton" to="." method="_on_TouchButton_released"]
+[connection signal="pressed" from="FreePosButton" to="." method="_on_FreePosButton_pressed"]
+[connection signal="released" from="FreePosButton" to="." method="_on_FreePosButton_released"]
