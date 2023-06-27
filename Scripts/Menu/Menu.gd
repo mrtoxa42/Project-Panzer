@@ -51,8 +51,8 @@ func _on_Credits_pressed():
 
 
 func _on_Logo42_pressed():
-
-	OS.shell_open("https://www.instagram.com/studyo42/")
+	if $Logo42.scale == Vector2(1,1):
+		OS.shell_open("https://www.instagram.com/studyo42/")
 
 
 func _on_AnimationPlayer3_animation_finished(anim_name):
@@ -60,8 +60,6 @@ func _on_AnimationPlayer3_animation_finished(anim_name):
 		get_tree().change_scene("res://Scenes/Game/Hangar.tscn")
 
 
-func explo():
-	$AnimationPlayer.play("ExplosionAni")
 
 
 func _on_FeedBackButton_pressed():
