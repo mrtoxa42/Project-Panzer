@@ -928,6 +928,30 @@ tracks/17/keys = {
 "method": "queue_free"
 } ]
 }
+tracks/18/type = "value"
+tracks/18/path = NodePath("Cinematic1/CircleShadow2:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Cinematic1/CircleShadow:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=44]
 resource_name = "Ani3"
@@ -1240,7 +1264,6 @@ position = Vector2( 6.10352e-05, 27 )
 shape = SubResource( 30 )
 
 [node name="FireTank2" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 478, 707 )
 frames = SubResource( 11 )
 animation = "Fire"
@@ -1248,7 +1271,6 @@ frame = 11
 playing = true
 
 [node name="FireTank" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 431, 433 )
 frames = SubResource( 11 )
 animation = "Fire"
@@ -1256,7 +1278,6 @@ frame = 11
 playing = true
 
 [node name="FireTank3" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 519, 438 )
 frames = SubResource( 11 )
 animation = "Fire"
@@ -1264,7 +1285,6 @@ frame = 11
 playing = true
 
 [node name="FireTank4" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 450, 688 )
 frames = SubResource( 11 )
 animation = "Fire"
@@ -1321,12 +1341,14 @@ anims/CameraShake = SubResource( 8 )
 anims/RESET = SubResource( 9 )
 
 [node name="CircleShadow" type="Sprite" parent="Cinematic1"]
+visible = false
 modulate = Color( 1, 1, 1, 0.215686 )
 position = Vector2( 483.5, 486 )
 scale = Vector2( 4.54688, 2.34375 )
 texture = ExtResource( 25 )
 
 [node name="CircleShadow2" type="Sprite" parent="Cinematic1"]
+visible = false
 modulate = Color( 1, 1, 1, 0.215686 )
 position = Vector2( 460, 225 )
 scale = Vector2( 4.54, 2.34 )
@@ -1405,7 +1427,6 @@ position = Vector2( 18.2857, 2.5022 )
 shape = SubResource( 5 )
 
 [node name="FireParticle" type="CPUParticles2D" parent="."]
-visible = false
 position = Vector2( 496, 424 )
 rotation = 0.523599
 scale = Vector2( 0.6, 0.6 )
@@ -1415,7 +1436,6 @@ texture = ExtResource( 53 )
 gravity = Vector2( -98, 0 )
 
 [node name="FireParticle2" type="CPUParticles2D" parent="."]
-visible = false
 position = Vector2( 506, 704 )
 rotation = 0.523599
 scale = Vector2( 0.6, 0.6 )
