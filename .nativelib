@@ -2,7 +2,10 @@
     "id": "2fb028bb-f8c6-49f9-bab3-276b995d2afc",
     "platforms": [
         "all",
-        "android"
+        "android",
+        "ios",
+        "osx",
+        "tvos"
     ],
     "packages": {}
 }
