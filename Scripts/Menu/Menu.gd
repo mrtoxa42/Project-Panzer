@@ -64,7 +64,7 @@ func _on_AnimationPlayer3_animation_finished(anim_name):
 
 func _on_FeedBackButton_pressed():
 	$FeedBack/LineEdit.show()
-	$FeedBack/GoMail.show()
+	$FeedBack/GoMail.show()  
 	$FeedBack/BackBlackButton.show()
 	$FeedBack/BlackSprite.show()
 	get_tree().paused = true
