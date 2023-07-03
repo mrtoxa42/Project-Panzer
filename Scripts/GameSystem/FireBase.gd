@@ -22,3 +22,4 @@ func firebase_config():
 	}
 
 	firebase.fcm_send_message(message)
+	print(message)
