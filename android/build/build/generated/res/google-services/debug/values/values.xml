@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">759723462404-l3q39r8p5glspa94hka31bd2smusffu0.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">759723462404</string>
+    <string name="google_api_key" translatable="false">AIzaSyAU6rsvtG9iyyIllrxMj1WuESclxRsYMl0</string>
+    <string name="google_app_id" translatable="false">1:759723462404:android:b7669a762e5ba2a9248a51</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAU6rsvtG9iyyIllrxMj1WuESclxRsYMl0</string>
+    <string name="google_storage_bucket" translatable="false">project-panzer-98899197.appspot.com</string>
+    <string name="project_id" translatable="false">project-panzer-98899197</string>
+</resources>

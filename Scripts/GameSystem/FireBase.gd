@@ -1,25 +1,11 @@
 extends Node
 
-# Firebase eklentisini içe aktarın
-var firebase = Engine.get_singleton("GodotFire")
-
-# Firebase yapılandırmasını yapın
+var firebase = null
 
 func _ready():
-	firebase_config()
-func firebase_config():
-	firebase.configure({
-		"google-services-file-path": "res://google-services.json"
-	})
-
-	# FCM bildirimi göndermek için bir işlevi çağırın
-	var message = {
-		"to": "<hedef_cihaz_tokenı>",
-		"notification": {
-			"title": "Bildirim başlığı",
-			"body": "Bildirim içeriği"
-		}
-	}
-
-	firebase.fcm_send_message(message)
-	print(message)
+	if Engine.has_singleton("Firebase"):
+		firebase  = Engine.get_singleton("Firebase")
+		print("Load Firebase")
+		if firebase:
+			firebase.init(get_instance_id())
+		firebase.cloudmessaging_subscribe_to_topic("topicName")

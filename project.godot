@@ -26,8 +26,7 @@ GameManager="*res://Scripts/GameSystem/GameManager.gd"
 PlayServices="*res://Scripts/GameSystem/PlayServicesController.gd"
 Save="*res://MultiPlayer/save/save.gd"
 Server="*res://MultiPlayer/server/server.gd"
-Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
-BaseFire="*res://Scripts/GameSystem/FireBase.gd"
+FireBase="*res://Scripts/GameSystem/FireBase.gd"
 
 [debug]
 
@@ -41,7 +40,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/godot-firebase/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [gui]
 
