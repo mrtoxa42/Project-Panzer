@@ -6,6 +6,8 @@ func _ready():
 	$NextLevelLabel.text = "PLAY NEXT LEVEL: " +"\n"+ "                      " + str(GameManager.game_data.nextlevel)
 	$AnimationPlayer.play("PlayerHangarAni")
 	GameManager._save()
+	if GameManager.game_data.nextlevel == 3:
+		faultshoot()
 
 
 
@@ -52,3 +54,25 @@ func _on_NextLevelButton_pressed():
 
 func _on_ResetLoad_pressed():
 	GameManager.delete_save()
+
+
+func faultshoot():
+	if $faultshoot/Label.rect_scale == Vector2(1,1):
+		var tween = get_tree().create_tween()
+	
+		tween.tween_property($faultshoot/Label, "rect_scale",Vector2(1.3,1.3),1)
+	
+		tween.play()
+
+
+		tween.connect("finished",self,"tween_finished")
+	if $faultshoot/Label.rect_scale == Vector2(1.3,1.3):
+		var tween = get_tree().create_tween()
+	
+		tween.tween_property($faultshoot/Label, "rect_scale",Vector2(1,1),1)
+	
+		tween.play()
+		tween.connect("finished",self,"tween_finished")
+
+func tween_finished():
+	faultshoot()

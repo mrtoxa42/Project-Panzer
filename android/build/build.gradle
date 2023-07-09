@@ -5,15 +5,14 @@
 buildscript {
     apply from: 'config.gradle'
     repositories {
-        google()
-        mavenCentral()
-//CHUNK_BUILDSCRIPT_REPOSITORIES_BEGIN
-//CHUNK_BUILDSCRIPT_REPOSITORIES_END
+        // Make sure that you have the following two repositories
+        google()  // Google's Maven repository
+        mavenCentral()  // Maven Central repository
     }
     dependencies {
         classpath libraries.androidGradlePlugin
         classpath libraries.kotlinGradlePlugin
-        classpath "com.google.gms:google-services:4.3.3"
+        classpath 'com.google.gms:google-services:4.3.15'
 //CHUNK_BUILDSCRIPT_DEPENDENCIES_BEGIN
 //CHUNK_BUILDSCRIPT_DEPENDENCIES_END
     }
@@ -22,7 +21,8 @@ buildscript {
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.google.gms.google-services' version '4.3.3' apply false
+    id 'com.google.gms.google-services' version '4.3.15' apply false
+
 
 
 }
@@ -33,7 +33,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter() //here
 //CHUNK_ALLPROJECTS_REPOSITORIES_BEGIN
 //CHUNK_ALLPROJECTS_REPOSITORIES_END
 
@@ -57,6 +56,7 @@ configurations {
 dependencies {
     implementation libraries.kotlinStdLib
     implementation libraries.androidxFragment
+
     
 
 
@@ -292,6 +292,6 @@ task copyAndRenameReleaseAab(type: Copy) {
     into getExportPath()
     rename "build-release.aab", getExportFilename()
 }
-apply plugin: "com.google.gms.google-services"
+apply plugin: 'com.google.gms.google-services'
 //CHUNK_GLOBAL_BEGIN
 //CHUNK_GLOBAL_END

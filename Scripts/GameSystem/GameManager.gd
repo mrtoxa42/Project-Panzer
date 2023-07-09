@@ -34,7 +34,7 @@ var level2station
 
 #Kaydedilecek oyun değişkenleri
 var game_data = {
-	nextlevel =12,
+	nextlevel =3,
 	currentlevel = 1,
 	firstopen = true,
 	Language = "Turkish",

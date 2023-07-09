@@ -20,9 +20,9 @@
         android:glEsVersion="0x00020000"
         android:required="true" />
 
-<!-- Custom user permissions XML added by add-ons. It's recommended to add them from the export preset, though. -->
-<!--CHUNK_USER_PERMISSIONS_BEGIN-->
-<!--CHUNK_USER_PERMISSIONS_END-->
+    <!-- Custom user permissions XML added by add-ons. It's recommended to add them from the export preset, though. -->
+    <!--CHUNK_USER_PERMISSIONS_BEGIN-->
+    <!--CHUNK_USER_PERMISSIONS_END-->
 
     <!-- Any tag in this line after android:icon will be erased when doing custom builds. -->
     <!-- If you want to add tags manually, do before it. -->
@@ -55,12 +55,12 @@
         <meta-data
             android:name="xr_hand_tracking_version_name"
             android:value="xr_hand_tracking_version_value"/>
-        
+
         <meta-data android:name="com.google.android.gms.games.APP_ID"
-   	    android:value="@string/app_id" />
-   
-   	    <meta-data android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version"/>
+            android:value="@string/app_id" />
+
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
 
         <!-- Supported Meta devices -->
         <!-- This is removed by the exporter if the xr mode is not VR. -->
@@ -93,12 +93,9 @@
             </intent-filter>
         </activity>
 
-<!-- Custom application XML added by add-ons. -->
-<meta-data
-    android:name="com.google.android.gms.ads.APPLICATION_ID"
-    android:value="ca-app-pub-2648019241443213~2479896207"/>
-<!--CHUNK_APPLICATION_BEGIN-->
-<!--CHUNK_APPLICATION_END-->
+        <!-- Custom application XML added by add-ons. -->
+        <!--CHUNK_APPLICATION_BEGIN-->
+        <!--CHUNK_APPLICATION_END-->
 
     </application>
 
