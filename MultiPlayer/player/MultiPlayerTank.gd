@@ -35,6 +35,12 @@ var gameend = preload("res://Scenes/Game/GameEnd.tscn")
 var reload = true
 
 #################################### MULTİPLAYER ################################
+const MAXSPEED = 100
+const ACCELERATION = 300
+const FRICTION = 200
+
+var motion = Vector2.ZERO
+
 onready var player_label = $Label
 var playername 
 onready var camera = $Camera2D
@@ -48,6 +54,18 @@ func _ready():
 	$MobileController/MoveRight.modulate.a = 0.5
 
 #	set_player_name()
+
+func _physics_process(delta):
+	if is_network_master():
+		camera.current = true
+		player_label.rect_position = Vector2(position.x - 40, position.y - 60)
+		motion = move_and_slide(motion)
+		
+		rpc_unreliable_id(1, "update_player", global_transform)
+remote func update_remote_player(transform):
+	if not is_network_master():
+		global_transform = transform
+		player_label.rect_position = Vector2(position.x - 40, position.y - 60)
 
 
 	

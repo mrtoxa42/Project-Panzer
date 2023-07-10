@@ -59,18 +59,12 @@ func _on_ResetLoad_pressed():
 func faultshoot():
 	if $faultshoot/Label.rect_scale == Vector2(1,1):
 		var tween = get_tree().create_tween()
-	
 		tween.tween_property($faultshoot/Label, "rect_scale",Vector2(1.3,1.3),1)
-	
 		tween.play()
-
-
 		tween.connect("finished",self,"tween_finished")
 	if $faultshoot/Label.rect_scale == Vector2(1.3,1.3):
 		var tween = get_tree().create_tween()
-	
 		tween.tween_property($faultshoot/Label, "rect_scale",Vector2(1,1),1)
-	
 		tween.play()
 		tween.connect("finished",self,"tween_finished")
 

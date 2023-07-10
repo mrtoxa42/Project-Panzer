@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Assets/Environment/Bush&Tree/Tree1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Environment/Bush&Tree/bush2.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Assets/Extras/Explosions/explosion-3.png" type="Texture" id=21]
 [ext_resource path="res://Assets/GUI/ArmyButton1.png" type="Texture" id=22]
 [ext_resource path="res://Assets/PlayerAssets/TankAssets/GeneralTank.png" type="Texture" id=23]
+[ext_resource path="res://Fonts/DynaPuff-VariableFont_wdth,wght.ttf" type="DynamicFontData" id=24]
 
 [sub_resource type="TileSet" id=29]
 0/name = "title12.png 0"
@@ -347,6 +348,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Cinematic2/FaultLabel:percent_visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 4.4, 5.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
 }
 
 [sub_resource type="Animation" id=39]
@@ -1061,6 +1074,9 @@ tracks/30/keys = {
 [sub_resource type="DynamicFont" id=34]
 font_data = ExtResource( 14 )
 
+[sub_resource type="DynamicFont" id=55]
+font_data = ExtResource( 24 )
+
 [sub_resource type="DynamicFont" id=41]
 
 [sub_resource type="StyleBoxFlat" id=36]
@@ -1211,12 +1227,22 @@ Biz oraya gelene kadar radyo istasyonunu koru.
 Unutma evlat orası bizim için çok önemli"
 percent_visible = 0.0
 
+[node name="FaultLabel" type="Label" parent="Cinematic2"]
+margin_left = 513.0
+margin_top = 51.0
+margin_right = 772.0
+margin_bottom = 94.0
+custom_fonts/font = SubResource( 55 )
+text = "Otomatik nişan alma arızası:
+OTOMATİK NİŞAN ALMA DEVRE DIŞI"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="StationHealth" type="ProgressBar" parent="CanvasLayer"]
-margin_left = 64.0
-margin_right = 1199.0
-margin_bottom = 30.0
+margin_left = 388.0
+margin_top = 3.0
+margin_right = 913.0
+margin_bottom = 33.0
 custom_fonts/font = SubResource( 41 )
 custom_styles/fg = SubResource( 36 )
 custom_styles/bg = SubResource( 37 )
@@ -1236,10 +1262,10 @@ KADAR KORU"
 percent_visible = 0.0
 
 [node name="StationHpLabel" type="Label" parent="CanvasLayer"]
-margin_left = 308.0
-margin_top = 6.0
-margin_right = 438.0
-margin_bottom = 26.0
+margin_left = 570.0
+margin_top = 9.0
+margin_right = 700.0
+margin_bottom = 29.0
 custom_fonts/font = SubResource( 42 )
 text = "STATION HEALTH"
 

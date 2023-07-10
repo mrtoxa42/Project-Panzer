@@ -53,8 +53,7 @@ func load_game():
 sync func start_game():
 	var world = preload("res://MultiPlayer/world/world.tscn").instance()
 	get_tree().get_root().add_child(world)
-	if get_tree().get_root().get_node("Lobby") != null:
-		get_tree().get_root().get_node("Lobby").queue_free()
+
 	
 	
 	

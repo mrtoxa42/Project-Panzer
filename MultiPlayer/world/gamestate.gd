@@ -1,12 +1,13 @@
 extends Node2D
 
-const PLAYER = preload("res://Scenes/Player/PlayerTank.tscn")
+const PLAYER = preload("res://MultiPlayer/player/MultiPlayerTank.tscn")
 
 onready var player_spawn = $PlayerSpawn
 onready var players = $Players
 
 func _ready():
 	rpc_id(1, "spawn_players", Server.local_player_id)
+	print("Dünya başlatıldı")
 	
 remote func spawn_player(id):
 	var player = PLAYER.instance()
