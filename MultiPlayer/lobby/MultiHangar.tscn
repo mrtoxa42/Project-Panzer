@@ -94,6 +94,7 @@ color = Color( 0, 0, 0, 0.490196 )
 position = Vector2( 640, 360 )
 scale = Vector2( 4, 4.09375 )
 frames = SubResource( 9 )
+frame = 1
 playing = true
 
 [node name="Label" type="Label" parent="wait"]

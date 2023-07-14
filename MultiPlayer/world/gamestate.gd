@@ -7,7 +7,6 @@ onready var players = $Players
 
 func _ready():
 	rpc_id(1, "spawn_players", Server.local_player_id)
-	print("Dünya başlatıldı")
 	
 remote func spawn_player(id):
 	var player = PLAYER.instance()

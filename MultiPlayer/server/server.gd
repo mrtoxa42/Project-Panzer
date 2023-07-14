@@ -11,6 +11,8 @@ var local_player_id = 0
 sync var players = {}
 sync var player_data = {}
 
+var loadworld = false
+
 func _ready():
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
@@ -35,7 +37,6 @@ func _connected_ok():
 	
 func _connected_fail():
 	print("Failed to connect")
-	
 func _server_disconnected():
 	print("Server Disconnected")
 	
@@ -45,19 +46,19 @@ func register_player():
 	players[local_player_id] = player_data
 	
 sync func update_waiting_room():
-	get_tree().call_group("WaitingRoom", "refresh_players", players)
+#	get_tree().call_group("WaitingRoom", "refresh_players", players)
+	pass
 	
 func load_game():
 	rpc_id(1, "load_world")
 	
+	
 sync func start_game():
-	var world = preload("res://MultiPlayer/world/world.tscn").instance()
-	get_tree().get_root().add_child(world)
+	if loadworld == false:
+		var world = preload("res://MultiPlayer/world/world.tscn").instance()
+		get_tree().get_root().add_child(world)
+		loadworld = true
+	
+	
+	
 
-	
-	
-	
-	
-	
-	
-	
