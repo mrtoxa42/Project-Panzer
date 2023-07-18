@@ -13,6 +13,8 @@ var look
 var joystick
 var TrackRotation = 0
 var crossenemy
+
+
 # Oyun için değişkenler
 var CurrentLevel = 1
 var levelend 
@@ -26,7 +28,8 @@ var level4move = false
 
 
 
-
+#Reklam değişkenleri
+var hangarinterstitialcounter = 0
 
 #Levellere özel değişkenler
 var level2station

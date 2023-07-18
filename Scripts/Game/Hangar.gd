@@ -8,8 +8,17 @@ func _ready():
 	GameManager._save()
 	if GameManager.game_data.nextlevel == 3:
 		faultshoot()
-
-
+	
+	GameManager.hangarinterstitialcounter +=1
+	
+	$AdMob.load_banner()
+	$AdMob.load_interstitial()
+	$AdMob.show_banner()
+	
+	if GameManager.hangarinterstitialcounter ==1 :
+		$AdMob.show_interstitial()
+		GameManager.hangarinterstitialcounter = 0
+	
 
 
 

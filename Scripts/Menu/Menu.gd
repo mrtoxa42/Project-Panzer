@@ -47,7 +47,7 @@ func _on_SettingsButton_pressed():
 
 
 func _on_Credits_pressed():
-	get_tree().change_scene("res://MultiPlayer/lobby/MultiHangar.tscn") 
+	get_tree().change_scene("res://MultiPlayer/lobby/lobby.tscn") 
 
 
 func _on_Logo42_pressed():
