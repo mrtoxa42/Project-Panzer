@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ProjectPanzerMenuMusic.wav-1ca8a875db9158bc2d05a3f06a776c15.sample"
+
+[deps]
+
+source_file="res://Sounds/Music/ProjectPanzerMenuMusic.wav"
+dest_files=[ "res://.import/ProjectPanzerMenuMusic.wav-1ca8a875db9158bc2d05a3f06a776c15.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

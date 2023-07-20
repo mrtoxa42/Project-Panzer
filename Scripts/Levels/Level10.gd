@@ -10,7 +10,6 @@ func _ready():
 	GameManager.levelcomplete = false
 	GameManager.playedlevel = self
 	GameManager.CurrentLevel = 10
-	$AnimationPlayer.play("Ani1")
 	$CanvasLayer/Particles2D.emitting = true
 
 
@@ -27,6 +26,8 @@ func game_started():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Ani0":
+		$AnimationPlayer.play("Ani1")
 	if anim_name == "Ani1":
 		game_started()
 	if anim_name == "GameEndAni":

@@ -1,13 +1,13 @@
 [gd_scene load_steps=22 format=2]
 
+[ext_resource path="res://Assets/PlayerAssets/TankAssets/PlayerPanzerGun.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player/MovePlayer.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Assets/GUI/ButtonTimeAni1.png" type="Texture" id=4]
-[ext_resource path="res://Assets/PlayerAssets/TankAssets/panzerpng1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/PlayerAssets/TankAssets/PlayerTankBody.png" type="Texture" id=5]
 [ext_resource path="res://Assets/PlayerAssets/TankAssets/tank gif2.png" type="Texture" id=6]
 [ext_resource path="res://Assets/PlayerAssets/TankAssets/tank gif1.png" type="Texture" id=7]
 [ext_resource path="res://Assets/PlayerAssets/TankAssets/tank gif3.png" type="Texture" id=8]
-[ext_resource path="res://Assets/PlayerAssets/TankAssets/FullTank.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 47, 84.5 )
@@ -66,12 +66,12 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Fire",
-"speed": 10.0
+"speed": 12.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -84,6 +84,11 @@ script = ExtResource( 2 )
 position = Vector2( -25, 0 )
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="TankBody" type="Sprite" parent="."]
+position = Vector2( -16, 0 )
+rotation = 1.5708
+texture = ExtResource( 5 )
 
 [node name="AreaMovePlayer" type="Area2D" parent="."]
 
@@ -119,6 +124,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="PlayerAnimated" type="AnimatedSprite" parent="."]
+position = Vector2( 30, 0 )
 rotation = 1.5708
 frames = SubResource( 14 )
 playing = true

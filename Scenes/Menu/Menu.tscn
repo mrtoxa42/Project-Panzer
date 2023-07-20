@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scripts/Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/UI/menu1.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/UI/menu2.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/RussoOne-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Logo/42png.png" type="Texture" id=6]
+[ext_resource path="res://Sounds/Music/ProjectPanzerMenuMusic.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Environment/GroundTile/tile3.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Environment/GroundTile/tile9.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Environment/GroundTile/tile11.png" type="Texture" id=10]
@@ -844,6 +845,10 @@ margin_top = 877.143
 margin_right = 1827.71
 margin_bottom = 1034.14
 text = "GÖNDER"
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]

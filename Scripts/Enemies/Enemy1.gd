@@ -127,8 +127,9 @@ func _on_DetectTimer_timeout():
 
 
 func _on_CrossButton_pressed():
-	GameManager.crossenemy = self
-	GameManager.playertank.cross_shoot()
+	if GameManager.crossfixed == true:
+		GameManager.crossenemy = self
+		GameManager.playertank.cross_shoot()
 
 
 func _on_TrackTimer_timeout():

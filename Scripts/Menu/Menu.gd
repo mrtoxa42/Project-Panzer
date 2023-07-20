@@ -6,7 +6,7 @@ func _ready():
 	$AnimationPlayer2.play("ProjectAni")
 	$LogoAnimation.play("LogoAni")
 	GameManager._load()
-#	PlayServices.play_service.signIn()
+	PlayServices.play_service.signIn()
 	
   
 

@@ -9,15 +9,15 @@ func _ready():
 	if GameManager.game_data.nextlevel == 3:
 		faultshoot()
 	
-	GameManager.hangarinterstitialcounter +=1
-	
+	GameManager.hangarinterstitialcounter+=1
 	$AdMob.load_banner()
 	$AdMob.load_interstitial()
+	$AdMob.load_rewarded_video()
 	$AdMob.show_banner()
 	
-	if GameManager.hangarinterstitialcounter ==1 :
+	if  GameManager.hangarinterstitialcounter==2 :
 		$AdMob.show_interstitial()
-		GameManager.hangarinterstitialcounter = 0
+		GameManager.hangarinterstitialcounter= 0
 	
 
 
@@ -66,16 +66,34 @@ func _on_ResetLoad_pressed():
 
 
 func faultshoot():
-	if $faultshoot/Label.rect_scale == Vector2(1,1):
+	if $faultshoot/Sprite.scale == Vector2(2,2):
 		var tween = get_tree().create_tween()
-		tween.tween_property($faultshoot/Label, "rect_scale",Vector2(1.3,1.3),1)
+		tween.tween_property($faultshoot/Sprite, "scale",Vector2(3,3),1)
 		tween.play()
 		tween.connect("finished",self,"tween_finished")
-	if $faultshoot/Label.rect_scale == Vector2(1.3,1.3):
+	if $faultshoot/Sprite.scale == Vector2(3,3):
 		var tween = get_tree().create_tween()
-		tween.tween_property($faultshoot/Label, "rect_scale",Vector2(1,1),1)
+		tween.tween_property($faultshoot/Sprite, "scale",Vector2(2,2),1)
 		tween.play()
 		tween.connect("finished",self,"tween_finished")
 
 func tween_finished():
 	faultshoot()
+
+
+func _on_AdMob_interstitial_loaded():
+#	$AdMob.show_interstitial()
+	pass
+
+
+func _on_AdMob_rewarded(currency, amount):
+	GameManager.crossfixed = true
+
+
+func _on_FaultButton_pressed():
+	$AdMob.load_rewarded_video()
+
+
+
+func _on_AdMob_rewarded_video_loaded():
+	$AdMob.show_rewarded_video()

@@ -37,6 +37,7 @@ PlayServices="*res://Scripts/GameSystem/PlayServicesController.gd"
 Save="*res://MultiPlayer/save/save.gd"
 Server="*res://MultiPlayer/server/server.gd"
 FireBase="*res://Scripts/GameSystem/FireBase.gd"
+AdsController="*res://Scenes/GameSystem/AdsController.tscn"
 
 [debug]
 

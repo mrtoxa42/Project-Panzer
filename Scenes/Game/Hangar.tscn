@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Assets/PlayerAssets/TankAssets/panzerpng1.png" type="Texture" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -22,6 +22,8 @@
 [ext_resource path="res://Assets/GUI/BuyButton.png" type="Texture" id=20]
 [ext_resource path="res://Assets/GUI/ArmyButton1.png" type="Texture" id=21]
 [ext_resource path="res://admob-lib/admob.gd" type="Script" id=22]
+[ext_resource path="res://Assets/EnemyAssets/tank_enemy.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Extras/TankTools/Crosshair.png" type="Texture" id=24]
 
 [sub_resource type="TileSet" id=2]
 0/name = "title12.png 0"
@@ -165,6 +167,12 @@
 9/shapes = [  ]
 9/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 60, 14 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 58, 15 )
+
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 4 )
 
@@ -240,6 +248,7 @@ texture = ExtResource( 1 )
 position = Vector2( 989, 537 )
 scale = Vector2( 1.8, 1.8 )
 normal = ExtResource( 21 )
+shape = SubResource( 11 )
 
 [node name="RepairKitBuyButton" type="TouchScreenButton" parent="."]
 position = Vector2( 480, 111 )
@@ -260,6 +269,7 @@ normal = ExtResource( 20 )
 position = Vector2( 1020, 433 )
 scale = Vector2( 1.5, 1.8 )
 normal = ExtResource( 21 )
+shape = SubResource( 10 )
 
 [node name="BackButton" type="TouchScreenButton" parent="."]
 position = Vector2( 0, 3 )
@@ -402,27 +412,33 @@ scale = Vector2( 2.25, 1.59375 )
 normal = ExtResource( 2 )
 
 [node name="faultshoot" type="Node2D" parent="."]
-position = Vector2( 0, 3 )
+position = Vector2( 0, 16 )
 
-[node name="Sprite" type="Sprite" parent="faultshoot"]
-position = Vector2( 573, 540.5 )
-scale = Vector2( 1.95703, 2.70312 )
-texture = ExtResource( 2 )
+[node name="FaultButton" type="TouchScreenButton" parent="faultshoot"]
+position = Vector2( 830, 135 )
+normal = ExtResource( 23 )
 
 [node name="Label" type="Label" parent="faultshoot"]
-margin_left = 447.0
-margin_top = 591.0
-margin_right = 737.0
-margin_bottom = 616.0
-rect_rotation = -29.7299
+margin_left = 763.0
+margin_top = 378.0
+margin_right = 1053.0
+margin_bottom = 403.0
+rect_rotation = -0.0338982
 custom_fonts/font = SubResource( 9 )
 text = "Otomatik nişan tamiri için video izle"
+
+[node name="Sprite" type="Sprite" parent="faultshoot"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 894, 275 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 24 )
 
 [node name="AdMob" type="Node" parent="."]
 script = ExtResource( 22 )
 banner_on_top = false
-banner_id = "ca-app-pub-3940256099942544/6300978111"
-interstitial_id = "ca-app-pub-3940256099942544/1033173712"
+banner_id = "ca-app-pub-2648019241443213/7057439034"
+interstitial_id = "ca-app-pub-2648019241443213/2812169745"
+rewarded_id = "ca-app-pub-2648019241443213/5541494616"
 
 [connection signal="pressed" from="NextLevelButton" to="." method="_on_NextLevelButton_pressed"]
 [connection signal="pressed" from="RepairKitBuyButton" to="." method="_on_RepairKitBuyButton_pressed"]
@@ -431,3 +447,7 @@ interstitial_id = "ca-app-pub-3940256099942544/1033173712"
 [connection signal="pressed" from="LevelsButton" to="." method="_on_LevelsButton_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
 [connection signal="pressed" from="ResetLoad" to="." method="_on_ResetLoad_pressed"]
+[connection signal="pressed" from="faultshoot/FaultButton" to="." method="_on_FaultButton_pressed"]
+[connection signal="interstitial_loaded" from="AdMob" to="." method="_on_AdMob_interstitial_loaded"]
+[connection signal="rewarded" from="AdMob" to="." method="_on_AdMob_rewarded"]
+[connection signal="rewarded_video_loaded" from="AdMob" to="." method="_on_AdMob_rewarded_video_loaded"]

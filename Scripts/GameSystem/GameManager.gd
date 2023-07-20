@@ -25,11 +25,13 @@ var gathermedal = 0
 var gathermedal2 = false
 var inlevel = true
 var level4move = false
+var crossfixed = false
 
 
 
 #Reklam değişkenleri
 var hangarinterstitialcounter = 0
+var gameendinterstitialcounter = 0
 
 #Levellere özel değişkenler
 var level2station

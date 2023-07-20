@@ -6,7 +6,14 @@ func _ready():
 	GameManager.inlevel = false
 	$AnimationPlayer.play("Ani")
 	GameManager._save()
+	$AdMob.load_banner()
+	$AdMob.load_interstitial()
+	$AdMob.show_banner()
 	
+	GameManager.gameendinterstitialcounter +=1
+	if GameManager.gameendinterstitialcounter == 2:
+		$AdMob.show_interstitial()
+		GameManager.gameendinterstitialcounter = 0
 	if GameManager.levelcomplete == true:
 		$LabBut/RichTextLabel.bbcode_text = "[wave amp=100sss freq=2] MISSION COMPLETE"
 		$LabBut/NexLevelLabel.modulate.a = 1

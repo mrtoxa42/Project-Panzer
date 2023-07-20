@@ -3,9 +3,10 @@ extends KinematicBody2D
 
 var missile = preload("res://Scenes/Missiles/PlayerMissiles/ObstacleMissile.tscn")
 var shoot = true
-var speed = 200
+var speed = 15000
 var up = false
 var down = false
+var velocity = Vector2.ZERO
 
 func _on_AreaMovePlayer_area_entered(area):
 	if area.is_in_group("Obstacle"):
@@ -14,11 +15,13 @@ func _on_AreaMovePlayer_area_entered(area):
 
 
 func _process(delta):
+	velocity = Vector2.ZERO
 	if up == true:
-		position.y -= speed * delta
+		velocity.y = -1
 	elif down == true:
-			position.y += speed * delta
-
+			velocity.y = 1
+	
+	move_and_slide(velocity * speed * delta)
 func _on_UpDown_pressed():
 	up = true
 
