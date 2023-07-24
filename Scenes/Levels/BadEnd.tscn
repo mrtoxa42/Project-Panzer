@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/PlayerAssets/TankAssets/FullTank.png" type="Texture" id=1]
+
+[node name="BadEnd" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1370.0
+margin_bottom = 784.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="cine1" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="cine1"]
+texture = ExtResource( 1 )

@@ -82,6 +82,8 @@ func _on_BossHitlerArea_area_entered(area):
 			movement = true
 #		if hp == 30:
 #			faze = 3
+		if hp <= 0:
+			badend()
 
 
 func _on_ShootTimer_timeout():
@@ -112,4 +114,10 @@ func _on_Faze2Timer_timeout():
 	$MoveTimer.start()
 
 func faze3():
+	pass
+
+func goodend():
+	pass
+	
+func badend():
 	pass
