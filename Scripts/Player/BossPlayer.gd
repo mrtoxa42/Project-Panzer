@@ -4,7 +4,7 @@ extends KinematicBody2D
 var velocity = Vector2.ZERO
 var hp = 10
 var explosion = preload("res://Scenes/Extras/Explosions/TankExplosion1.tscn")
-
+var shoottime = true
 export var speed = 200
 var missile1 = preload("res://Scenes/Missiles/PlayerMissiles/BossPlayerMissile/BossPlayerMissile1.tscn")
 
@@ -52,4 +52,4 @@ func _on_BossPlayerArea_area_entered(area):
 
 
 func _on_ShootTimer_timeout():
-	pass # Replace with function body.
+	shoottime = true

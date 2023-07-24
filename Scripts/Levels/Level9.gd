@@ -13,7 +13,7 @@ func _ready():
 	GameManager.playedlevel = self
 	GameManager.CurrentLevel = 9
 	$AnimationPlayer.play("Ani1")
-	PlayServices.emret_komutanim()
+#	PlayServices.emret_komutanim()
 
 
 
