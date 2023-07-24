@@ -19,7 +19,7 @@ func _ready():
 	GameManager.game_data.currentlevel = 1
 	GameManager.playedlevel = self
 	GameManager.CurrentLevel = 1
-	PlayServices.ilk_gorev()
+#	PlayServices.ilk_gorev()
 #	GameManager.levelend = $Level1EndArea.global_position 
 	if GameManager.game_data.Language == "Turkish":
 		$Tutorial/DirectionLabel.text = "                                        [CEPHANE]" + "\n" + "Buradan oyuncu kalan mermi sayısını görebilir," + "\n"+ "Cephanesindeki diğer mermilerlle  burdan ulaşır" + "\n" + "Tamir kitine buradan ulaşır"

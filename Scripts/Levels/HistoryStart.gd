@@ -14,7 +14,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		tween_label()
 		$Cine1/SkipLabel.show()
 		$Cine1/SkipButton.show()
-		PlayServices.yeni_baslangic()
+#		PlayServices.yeni_baslangic()
 		
 	if anim_name == "Ani2":
 		get_tree().change_scene("res://Scenes/Levels/Level1.tscn")

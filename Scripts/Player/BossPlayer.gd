@@ -49,3 +49,7 @@ func _on_BossPlayerArea_area_entered(area):
 		get_tree().get_root().add_child(Explosion)
 		Explosion.global_position = $MissileExplosionPosition.global_position
 		hp -= 1
+
+
+func _on_ShootTimer_timeout():
+	pass # Replace with function body.
