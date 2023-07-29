@@ -27,8 +27,6 @@ func _player_connected(id):
 	
 func _player_disconnected(id):
 	print("Player: " + str(id) + " Disconnected")
-	if get_tree().get_root().has_node("World"):
-		get_tree().get_root().get_node("World").delete_player(id)
 	
 func _connected_ok():
 	print("Successfully connected to server")
@@ -53,34 +51,13 @@ func load_game():
 	rpc_id(1, "load_world")
 	
 sync func start_game():
-#	var world = preload("res://MultiPlayer/world/world.tscn").instance()
-#	var chatmenu = preload("res://MultiPlayer/gui/gui.tscn").instance()
-#	get_tree().get_root().add_child(world)
-#	get_tree().get_root().add_child(chatmenu)
-#	get_tree().get_root().get_node("Lobby").queue_free()
-	pass
-func end_game():
-	rpc_id(1, "game_ended")
-	var world = get_node("/root/World")
-	
-	if has_node("/root/World"):
-		world.queue_free()
-		get_tree().get_root().get_node("Chat").queue_free()
-		
-	get_tree().change_scene("res://MultiPlayer/lobby/lobby.tscn")
-	network.close_connection()
-	get_tree().disconnect("connected_to_server", self, "_connected_ok")
-	get_tree().set_network_peer(null)
-	
-	
-func add_to_chat(message):
-	rpc_id(1, "message_send", players[local_player_id]["Player_name"], message)
-	
-sync func message_received(player_name, data):
-	get_tree().get_root().get_node("Chat").message(player_name, data)
-	
-
+	var world = preload("res://MultiPlayer/world/world.tscn").instance()
+	get_tree().get_root().add_child(world)
+	get_tree().get_root().get_node("Lobby").queue_free()
 	
 	
 	
-
+	
+	
+	
+	

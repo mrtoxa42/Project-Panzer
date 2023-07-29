@@ -1,38 +1,36 @@
 extends Control
 
-onready var player_name = $CenterContainer/VBoxContainer/GridContainer/NameTextBox
-onready var selected_IP = $CenterContainer/VBoxContainer/GridContainer/IPTextBox
-onready var selected_port = $CenterContainer/VBoxContainer/GridContainer/PortTextBox
-onready var waiting_room = $WaitingRoom
-onready var ready_btn = $WaitingRoom/CenterContainer/VBoxContainer/ReadyBtn
-onready var color_picker = $CenterContainer/VBoxContainer/GridContainer/ColorPickerButton
+onready var player_name = $NameTextBox
+onready var selected_IP = "192.168.1.112"
+onready var selected_port = 4242
+
 
 func _ready():
 	player_name.text = Save.save_data["Player_name"]
-	selected_IP.text = Server.DEFAULT_IP
-	selected_port.text = str(Server.DEFAULT_PORT)
-#	color_picker.color = Save.save_data["local_color"]
+	selected_IP = Server.DEFAULT_IP
+	selected_port = str(Server.DEFAULT_PORT)
+
 
 func _on_JoinBtn_pressed():
-	Server.selected_IP = selected_IP.text
-	Server.selected_port = int(selected_port.text)
-	Server._connect_to_server()
-	show_waiting_room()
+		Server.selected_IP = selected_IP
+		Server.selected_port = int(selected_port)
+		Server._connect_to_server()
+		$Timer.start()
+		$CanvasLayer.show()
+		$CanvasLayer/AnimatedSprite.play("default")
+
+
 
 
 func _on_NameTextBox_text_changed(new_text):
 	Save.save_data["Player_name"] = player_name.text
 	Save.save_game()
 	
-func show_waiting_room():
-	waiting_room.popup_centered()
 
 
-func _on_ReadyBtn_pressed():
+
+
+
+
+func _on_Timer_timeout():
 	Server.load_game()
-	ready_btn.disabled = true
-
-
-func _on_ColorPickerButton_color_changed(color):
-	Save.save_data["local_color"] = color.to_html()
-	Save.save_game()
