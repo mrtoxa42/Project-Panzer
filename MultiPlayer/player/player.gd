@@ -27,7 +27,7 @@ func _physics_process(delta):
 		
 remote func update_remote_player(transform):
 	if not is_network_master():
-		global_transform = transform
+		global_transform = global_transform
 		player_label.rect_position = Vector2(position.x - 40, position.y - 60)
 		
 	

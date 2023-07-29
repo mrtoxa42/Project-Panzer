@@ -2,7 +2,7 @@ extends Control
 
 onready var player_name = $NameTextBox
 onready var selected_IP = "192.168.1.112"
-onready var selected_port = 4242
+onready var selected_port = 3234
 
 
 func _ready():

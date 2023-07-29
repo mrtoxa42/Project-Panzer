@@ -70,9 +70,10 @@ func _process(delta):
 	GameManager.playerweapon = weapons
 	$PlayerStat/HealthBar.value = hp
 	$PlayerStat/ArmorBar.value = GameManager.player_data.Armor
-	
-
+	if is_network_master():
+		rpc_unreliable_id(1, "update_player", global_position)
 #	 (speed)
+
 	move = global_position - CrossHair.global_position 
 	
 
@@ -149,7 +150,10 @@ func _process(delta):
 		smoke = true
 		$MoveSmokeTimer.start()
 	
-	
+remote func update_remote_player(transform):
+	if not is_network_master():
+		global_transform = global_transform
+		player_label.rect_position = Vector2(position.x - 40, position.y - 60)
 func set_rotation(angle):
 	rotation = angle
 
