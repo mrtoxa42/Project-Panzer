@@ -53,12 +53,12 @@ func load_game():
 	rpc_id(1, "load_world")
 	
 sync func start_game():
-	var world = preload("res://MultiPlayer/world/world.tscn").instance()
-	var chatmenu = preload("res://MultiPlayer/gui/gui.tscn").instance()
-	get_tree().get_root().add_child(world)
-	get_tree().get_root().add_child(chatmenu)
-	get_tree().get_root().get_node("Lobby").queue_free()
-	
+#	var world = preload("res://MultiPlayer/world/world.tscn").instance()
+#	var chatmenu = preload("res://MultiPlayer/gui/gui.tscn").instance()
+#	get_tree().get_root().add_child(world)
+#	get_tree().get_root().add_child(chatmenu)
+#	get_tree().get_root().get_node("Lobby").queue_free()
+	pass
 func end_game():
 	rpc_id(1, "game_ended")
 	var world = get_node("/root/World")
@@ -83,7 +83,4 @@ sync func message_received(player_name, data):
 	
 	
 	
-	
-	
-	
-	
+

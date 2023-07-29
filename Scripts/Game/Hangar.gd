@@ -91,8 +91,8 @@ func _on_AdMob_rewarded(currency, amount):
 
 
 func _on_FaultButton_pressed():
-	$AdMob.load_rewarded_video()
-
+	$AdMob.show_rewarded_video()
+	
 
 
 func _on_AdMob_rewarded_video_loaded():
