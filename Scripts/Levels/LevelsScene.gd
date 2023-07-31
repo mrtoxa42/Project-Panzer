@@ -1,6 +1,7 @@
 extends Node2D
 
 var level = 1
+var openinfo = false
 
 func _ready():
 	$AnimationPlayer.play("ReadyAni")
@@ -94,53 +95,76 @@ func level_enter():
 
 
 func _on_LevelButton1_pressed():
-	level = 1
-	level_info()
+	if openinfo == false:
+		level = 1
+		level_info()
+		openinfo = true
 
 func _on_LevelButton2_pressed():
-	level = 2
-	level_info()
+	if openinfo == false:
+		level = 1
+		level_info()
+		openinfo = true
 
 func _on_LevelButton3_pressed():
-	level = 3
-	level_info()
+	if openinfo == false:
+		level = 1
+		level_info()
+		openinfo = true
 
 func _on_LevelButton4_pressed():
-	level = 4
-	level_info()
-
+	if openinfo == false:
+		level = 1
+		level_info()
+		openinfo = true
 func _on_LevelButton5_pressed():
-	level = 5
-	level_info()
+	if openinfo == false:
+		level = 1
+		level_info()
+		openinfo = true
 
 func _on_LevelButton6_pressed():
-	level = 6
-	level_info()
+	if openinfo == false:
+		level = 1
+		level_info()
+		openinfo = true
 
 func _on_LevelButton7_pressed():
-	level = 7
-	level_info()
+	if openinfo == false:
+		level = 1
+		level_info()
+		openinfo = true
 
 func _on_LevelButton8_pressed():
-	level = 8
-	level_info()
+	if openinfo == false:
+		level = 1
+		level_info()
+		openinfo = true
 
 func _on_LevelButton9_pressed():
-	level = 9
-	level_info()
+	if openinfo == false:
+		level = 1
+		level_info()
+		openinfo = true
 
 func _on_LevelButton10_pressed():
-	level = 10
-	level_info()
+	if openinfo == false:
+		level = 1
+		level_info()
+		openinfo = true
 
 func _on_LevelButton11_pressed():
-	level = 11
-	level_info()
+	if openinfo == false:
+		level = 1
+		level_info()
+		openinfo = true
 
 
 func _on_LevelButton12_pressed():
-	level = 12
-	level_info()
+	if openinfo == false:
+		level = 1
+		level_info()
+		openinfo = true
 
 func level_info():
 	$AnimationPlayer.play("LevelInfoAni")
@@ -186,6 +210,7 @@ func level_info():
 
 
 func _on_CloseButton_pressed():
+	openinfo = false
 	$InfoTab.hide()
 
 

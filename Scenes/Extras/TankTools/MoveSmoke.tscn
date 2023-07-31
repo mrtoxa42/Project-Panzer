@@ -35,17 +35,18 @@ tracks/0/keys = {
 }
 
 [node name="MoveSmoke" type="CPUParticles2D"]
+self_modulate = Color( 1, 1, 1, 0.529412 )
 position = Vector2( -17, 0 )
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 0.5, 0.5 )
 z_index = 1
 amount = 1
 lifetime = 10.0
 texture = ExtResource( 1 )
-gravity = Vector2( -58, 0 )
+gravity = Vector2( -38, 0 )
 script = ExtResource( 2 )
 
 [node name="DeathTimer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 1.5
 one_shot = true
 autostart = true
 
@@ -53,4 +54,7 @@ autostart = true
 anims/ParticleAni = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

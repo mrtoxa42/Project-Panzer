@@ -28,7 +28,7 @@ normal = ExtResource( 2 )
 [node name="FreePosButton" type="TouchScreenButton" parent="."]
 modulate = Color( 1, 1, 1, 0.00392157 )
 position = Vector2( -33.5, -102.5 )
-scale = Vector2( 2.50781, 3.98438 )
+scale = Vector2( 2.50781, 2.24219 )
 normal = ExtResource( 4 )
 
 [connection signal="pressed" from="TouchButton" to="." method="_on_TouchButton_pressed"]

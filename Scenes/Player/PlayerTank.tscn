@@ -195,8 +195,20 @@ position = Vector2( -16, 1 )
 rotation = 1.5708
 shape = SubResource( 1 )
 
+[node name="TankTracks" type="Node2D" parent="."]
+
+[node name="TankTrackPos" type="Position2D" parent="TankTracks"]
+position = Vector2( -112, -1 )
+
+[node name="TankTrackPos2" type="Position2D" parent="TankTracks"]
+position = Vector2( 48, -1 )
+
+[node name="TrackTimer" type="Timer" parent="TankTracks"]
+wait_time = 0.06
+one_shot = true
+
 [node name="MoveSmokeTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 one_shot = true
 
 [node name="PlayerArea" type="Area2D" parent="." groups=["Player"]]
@@ -213,18 +225,6 @@ scale = Vector2( 1, 0.995404 )
 frames = SubResource( 3 )
 animation = "Idle"
 playing = true
-
-[node name="TankTracks" type="Node2D" parent="."]
-
-[node name="TankTrackPos" type="Position2D" parent="TankTracks"]
-position = Vector2( -112, -1 )
-
-[node name="TankTrackPos2" type="Position2D" parent="TankTracks"]
-position = Vector2( 48, -1 )
-
-[node name="TrackTimer" type="Timer" parent="TankTracks"]
-wait_time = 0.06
-one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -28 )
@@ -458,9 +458,9 @@ texture = ExtResource( 9 )
 [node name="Shoot" type="AudioStreamPlayer" parent="Sfx"]
 stream = ExtResource( 24 )
 
+[connection signal="timeout" from="TankTracks/TrackTimer" to="." method="_on_TrackTimer_timeout"]
 [connection signal="timeout" from="MoveSmokeTimer" to="." method="_on_MoveSmokeTimer_timeout"]
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_PlayerArea_area_entered"]
-[connection signal="timeout" from="TankTracks/TrackTimer" to="." method="_on_TrackTimer_timeout"]
 [connection signal="pressed" from="MobileController/ChangeWeaponsButton" to="." method="_on_ChangeWeaponsButton_pressed"]
 [connection signal="pressed" from="MobileController/ChangeWeaponsButton/Missile1" to="." method="_on_Missile1_pressed"]
 [connection signal="pressed" from="MobileController/ChangeWeaponsButton/Missile2" to="." method="_on_Missile2_pressed"]
