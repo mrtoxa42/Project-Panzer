@@ -83,7 +83,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1.4 ),
+"times": PoolRealArray( 0, 0.5, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 1.0 ]
@@ -183,10 +183,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0 ]
+"values": [ 1.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("EndRect:modulate")
@@ -311,34 +311,33 @@ texture = ExtResource( 4 )
 position = Vector2( 647, 556 )
 rotation = -0.0116448
 frames = SubResource( 11 )
-frame = 5
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="cine1"]
 position = Vector2( 611, 614 )
 rotation = -0.0116448
 frames = SubResource( 11 )
-frame = 9
+frame = 3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="cine1"]
 position = Vector2( 709, 615 )
 rotation = -0.0116448
 frames = SubResource( 11 )
-frame = 5
+frame = 11
 playing = true
 
 [node name="HitlerLabel" type="Label" parent="cine1"]
 margin_left = 306.0
-margin_top = 332.0
+margin_top = 353.0
 margin_right = 1026.0
-margin_bottom = 382.0
+margin_bottom = 403.0
 custom_fonts/font = SubResource( 12 )
 text = "Büyük almanyanın zaferini tüm dünya görücek sen ve senin gibiler sadece işimi kolaşlaştı"
-percent_visible = 0.0
 
 [node name="EndRect" type="ColorRect" parent="cine1"]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.686275 )
 margin_left = 6.0
 margin_top = 3.0
 margin_right = 1307.0
