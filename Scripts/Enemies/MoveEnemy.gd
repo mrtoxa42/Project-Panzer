@@ -10,7 +10,7 @@ func _ready():
 	
 
 func _process(delta):
-	if playmove == false and GameManager.level4move == true:
+	if GameManager.level4move == true and playmove == false:
 		$MoveTimer.start()
 		playmove = true
 	if GameManager.inlevel == false:

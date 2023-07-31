@@ -34,7 +34,7 @@ var gameend = preload("res://Scenes/Game/GameEnd.tscn")
 
 var reload = true
 
-#################################### MULTİPLAYER ################################
+#################################### MULTIPLAYER ################################
 onready var player_label = $Label
 var playername 
 onready var camera = $Camera2D

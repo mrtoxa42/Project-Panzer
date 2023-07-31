@@ -20,6 +20,7 @@ func _ready():
 	$CanvasLayer/Particles2D.emitting = true
 	GameManager.inlevel = true
 	GameManager.playedlevel = self
+	GameManager.level4move = false
 	GameManager.CurrentLevel = 4
 
 
@@ -32,6 +33,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		Player.global_position = $Cinematic2/TankSprite.global_position
 		$Cinematic2.hide()
 		$Cinematic2/DialogueBox.hide()
+		GameManager.level4move = true
 	if anim_name == "ExplosionAni":
 		$AnimationPlayer.play("EndAni")
 	if anim_name == "EndAni":
