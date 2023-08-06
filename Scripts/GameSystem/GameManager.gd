@@ -44,7 +44,9 @@ var game_data = {
 	firstopen = true,
 	Language = "Turkish",
 	musicvalue = -40,
-	sfxvalue = -40
+	sfxvalue = -40,
+	music = true,
+	sfx = true
 }
 
 var player_data = {

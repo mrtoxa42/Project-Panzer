@@ -12,6 +12,7 @@ func _ready():
 		
 		
 func level_enter():
+	SoundController.UIClickSound()
 	if GameManager.game_data.nextlevel <2:
 		$LevelAni/Level2/LevelButton2.modulate.a = 0.5
 		$LevelAni/Level3/LevelButton3.modulate.a = 0.5

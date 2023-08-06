@@ -47,14 +47,17 @@ func _on_Missile2BuyButton_pressed():
 
 
 func _on_LevelsButton_pressed():
+	SoundController.UIClickSound()
 	get_tree().change_scene("res://Scenes/Levels/LevelsScene.tscn")
 
 
 func _on_BackButton_pressed():
+	SoundController.UIClickSound()
 	get_tree().change_scene("res://Scenes/Menu/Menu.tscn")
 
 
 func _on_NextLevelButton_pressed():
+	SoundController.UIClickSound()
 	if GameManager.game_data.nextlevel == 1:
 		get_tree().change_scene("res://Scenes/Levels/HistoryStart.tscn")
 	else:

@@ -158,7 +158,8 @@ func set_rotation(angle):
 
 func shoot():
 	if reload == true and tankrepair == false and bush == false: 
-		$Sfx/Shoot.play()
+		if GameManager.game_data.sfx == true:
+			$PlayerSound/PlayerShoot.play()
 		if weapons == "Missile1":
 			$MobileController/ShootButtonAni.play("Shoot")
 			var Missile1 = missile1.instance()
@@ -250,6 +251,7 @@ func _on_RepairButton_pressed():
 
 
 func _on_MoveRight_pressed():
+	$PlayerSound/ReturnSound.play()
 	GameManager.crossenemy = null
 	$TopGun/CroosHair.modulate = Color.green
 	$TopGun/CroosHair.scale = Vector2(2,2)
@@ -260,11 +262,13 @@ func _on_MoveRight_pressed():
 
 
 func _on_MoveRight_released():
+	$PlayerSound/ReturnSound.stop()
 	rotationdegress = 0
 	$MobileController/MoveRight.modulate.a = 0.5
 
 
 func _on_MoveLeft_pressed():
+	$PlayerSound/ReturnSound.play()
 	$TopGun/CroosHair.modulate = Color.green
 	$TopGun/CroosHair.scale = Vector2(2,2)
 	GameManager.crossenemy = null
@@ -274,6 +278,7 @@ func _on_MoveLeft_pressed():
 
 
 func _on_MoveLeft_released():
+	$PlayerSound/ReturnSound.stop()
 	rotationdegress = 0
 	$MobileController/MoveLeft.modulate.a = 0.5
 

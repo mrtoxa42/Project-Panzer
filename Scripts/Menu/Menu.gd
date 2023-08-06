@@ -5,7 +5,8 @@ extends Node2D
 func _ready():
 	$AnimationPlayer2.play("ProjectAni")
 	$LogoAnimation.play("LogoAni")
-	GameManager._load()
+#	GameManager.delete_save()
+#	GameManager._load()
 #	PlayServices.play_service.signIn()
 	
 
@@ -33,12 +34,14 @@ func _process(delta):
 
 
 func _on_PlayButton_pressed():
+	SoundController.UIClickSound()
 	$AnimationPlayer3.play("PlayAni")
 
 
 
 
 func _on_SettingsButton_pressed():
+	SoundController.UIClickSound()
 	get_tree().change_scene('res://Scenes/Menu/Settings.tscn')
 	
 	
@@ -46,15 +49,18 @@ func _on_SettingsButton_pressed():
 
 
 func _on_Credits_pressed():
+	SoundController.UIClickSound()
 	get_tree().change_scene("res://MultiPlayer/lobby/lobby.tscn") 
 
 
 func _on_Logo42_pressed():
+	SoundController.UIClickSound()
 	if $Logo42.scale == Vector2(1,1):
 		OS.shell_open("https://www.instagram.com/studyo42/")
 
 
 func _on_AnimationPlayer3_animation_finished(anim_name):
+	SoundController.UIClickSound()
 	if anim_name == 'PlayAni' :
 		get_tree().change_scene("res://Scenes/Game/Hangar.tscn")
 
@@ -62,6 +68,7 @@ func _on_AnimationPlayer3_animation_finished(anim_name):
 
 
 func _on_FeedBackButton_pressed():
+	SoundController.UIClickSound()
 	$FeedBack/LineEdit.show()
 	$FeedBack/GoMail.show()  
 	$FeedBack/BackBlackButton.show()
@@ -70,11 +77,13 @@ func _on_FeedBackButton_pressed():
 
 
 func _on_GoMail_pressed():
+	SoundController.UIClickSound()
 	var body = $FeedBack/LineEdit.text
 	OS.shell_open("mailto:studyo42@outlook.com.tr?subject=Project Panzer Geri Bildirimi&body=" + body)
 
 
 func _on_BackBlackButton_pressed():
+	SoundController.UIClickSound()
 	$FeedBack/LineEdit.hide()
 	$FeedBack/GoMail.hide()
 	$FeedBack/BackBlackButton.hide()

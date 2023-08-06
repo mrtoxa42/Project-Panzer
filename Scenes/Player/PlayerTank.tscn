@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Assets/PlayerAssets/TankAssets/PlayerPanzerGun.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player/PlayerTank.gd" type="Script" id=2]
@@ -23,8 +23,9 @@
 [ext_resource path="res://Assets/PlayerAssets/TankAssets/PlayerTankBody.png" type="Texture" id=21]
 [ext_resource path="res://Scenes/Player/GUI/Joystick.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/Menu/PauseMenu.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Sounds/Sfx/Player/ShootPanzer1.wav" type="AudioStream" id=24]
+[ext_resource path="res://Sounds/Sfx/Player/PlayerShoot1.wav" type="AudioStream" id=24]
 [ext_resource path="res://Assets/Extras/Missiles/Missile2.png" type="Texture" id=25]
+[ext_resource path="res://Sounds/Sfx/Player/ReturnSound.mp3" type="AudioStream" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46, 93.5 )
@@ -453,10 +454,23 @@ texture = ExtResource( 9 )
 
 [node name="PauseMenu" parent="." instance=ExtResource( 23 )]
 
-[node name="Sfx" type="Node2D" parent="."]
+[node name="PlayerSound" type="Node" parent="."]
 
-[node name="Shoot" type="AudioStreamPlayer" parent="Sfx"]
+[node name="ReturnSound" type="AudioStreamPlayer" parent="PlayerSound"]
+stream = ExtResource( 26 )
+volume_db = 9.37
+
+[node name="PlayerShoot" type="AudioStreamPlayer" parent="PlayerSound"]
 stream = ExtResource( 24 )
+volume_db = 2.811
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="PlayerSound"]
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="PlayerSound"]
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="PlayerSound"]
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="PlayerSound"]
 
 [connection signal="timeout" from="TankTracks/TrackTimer" to="." method="_on_TrackTimer_timeout"]
 [connection signal="timeout" from="MoveSmokeTimer" to="." method="_on_MoveSmokeTimer_timeout"]

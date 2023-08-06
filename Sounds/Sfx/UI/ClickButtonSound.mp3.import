@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ClickButtonSound.mp3-20aa77ef43bb295f07c0f8ec6bbcfcb3.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Sfx/UI/ClickButtonSound.mp3"
+dest_files=[ "res://.import/ClickButtonSound.mp3-20aa77ef43bb295f07c0f8ec6bbcfcb3.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
