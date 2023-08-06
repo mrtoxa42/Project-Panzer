@@ -263,6 +263,7 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+<<<<<<< HEAD
 margin_right = 1288.0
 margin_bottom = 720.0
 color = Color( 0, 0, 0, 1 )
@@ -280,6 +281,14 @@ margin_bottom = 101.0
 custom_fonts/font = SubResource( 12 )
 text = "The meaning of life"
 percent_visible = 0.0
+=======
+margin_left = -182.0
+margin_top = -112.0
+margin_right = 1383.0
+margin_bottom = 811.0
+rect_pivot_offset = Vector2( 147, 106 )
+color = Color( 0, 0, 0, 0.137688 )
+>>>>>>> 8e7883d0052786c5227e4930992df28d8efb05cf
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "EntertaimentAnimation"
