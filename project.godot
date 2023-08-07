@@ -34,10 +34,10 @@ config/icon="res://Assets/Extras/Cinematics/portre.png"
 
 GameManager="*res://Scripts/GameSystem/GameManager.gd"
 PlayServices="*res://Scripts/GameSystem/PlayServicesController.gd"
-Save="*res://MultiPlayer/save/save.gd"
 FireBase="*res://Scripts/GameSystem/FireBase.gd"
 AdsController="*res://Scenes/GameSystem/AdsController.tscn"
 SoundController="*res://Scenes/GameSystem/SoundController.tscn"
+Server="*res://MultiPlayer/server.gd"
 
 [debug]
 
