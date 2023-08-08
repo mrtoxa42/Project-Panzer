@@ -6,6 +6,7 @@ var puppet_pos = Vector2(0,0)
 var puppet_rot = 0
 var puppet_vel = Vector2(0,0)
 
+
 func _physics_process(delta):
     rotation_degrees = lerp(rotation_degrees, puppet_rot, 15*delta)
 
