@@ -52,6 +52,7 @@ func _ready():
 
 	
 func _process(delta):
+	Server.rpc_unreliable_id(1,"update_transform",global_position,rotationdegress,velocity)
 	if GameManager.inlevel == false:
 		GameManager.playertank = null
 		queue_free()

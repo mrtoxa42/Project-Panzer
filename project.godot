@@ -38,6 +38,8 @@ FireBase="*res://Scripts/GameSystem/FireBase.gd"
 AdsController="*res://Scenes/GameSystem/AdsController.tscn"
 SoundController="*res://Scenes/GameSystem/SoundController.tscn"
 Server="*res://MultiPlayer/server.gd"
+Global="*res://MultiPlayer/global.gd"
+Nodes="*res://MultiPlayer/nodes.gd"
 
 [debug]
 
