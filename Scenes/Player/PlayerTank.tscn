@@ -472,6 +472,10 @@ volume_db = 2.811
 
 [node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="PlayerSound"]
 
+[node name="MultiSycnTimer" type="Timer" parent="."]
+wait_time = 0.04
+autostart = true
+
 [connection signal="timeout" from="TankTracks/TrackTimer" to="." method="_on_TrackTimer_timeout"]
 [connection signal="timeout" from="MoveSmokeTimer" to="." method="_on_MoveSmokeTimer_timeout"]
 [connection signal="area_entered" from="PlayerArea" to="." method="_on_PlayerArea_area_entered"]
@@ -495,3 +499,4 @@ volume_db = 2.811
 [connection signal="area_exited" from="BushArea" to="." method="_on_BushArea_area_exited"]
 [connection signal="area_entered" from="TopGun/CroosHair/CrossArea" to="." method="_on_CrossArea_area_entered"]
 [connection signal="area_exited" from="TopGun/CroosHair/CrossArea" to="." method="_on_CrossArea_area_exited"]
+[connection signal="timeout" from="MultiSycnTimer" to="." method="_on_MultiSycnTimer_timeout"]

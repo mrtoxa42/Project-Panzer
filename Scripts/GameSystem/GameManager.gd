@@ -26,6 +26,7 @@ var gathermedal2 = false
 var inlevel = true
 var level4move = false
 var crossfixed = true
+var level10
 
 
 

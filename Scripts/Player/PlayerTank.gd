@@ -34,10 +34,7 @@ var gameend = preload("res://Scenes/Game/GameEnd.tscn")
 
 var reload = true
 
-#################################### MULTIPLAYER ################################
-onready var player_label = $Label
-var playername 
-onready var camera = $Camera2D
+
 func _ready():
 	$TopGun/CroosHair.modulate = Color.green
 	GameManager.levelcomplete = false 
@@ -49,10 +46,8 @@ func _ready():
 
 #	set_player_name()
 
-
 	
 func _process(delta):
-	Server.rpc_unreliable_id(1,"update_transform",global_position,rotationdegress,velocity)
 	if GameManager.inlevel == false:
 		GameManager.playertank = null
 		queue_free()
@@ -71,8 +66,7 @@ func _process(delta):
 	GameManager.playerweapon = weapons
 	$PlayerStat/HealthBar.value = hp
 	$PlayerStat/ArmorBar.value = GameManager.player_data.Armor
-	if is_network_master():
-		rpc_unreliable_id(1, "update_player", global_position)
+	
 #	 (speed)
 
 	move = global_position - CrossHair.global_position 
@@ -448,7 +442,7 @@ func _on_TrackTimer_timeout():
 		$TankTracks/TrackTimer.start()
 	
 func cross_default():
-#	$TopGun/CroosHair.global_position = $DefaultCrossPos.global_position
+#	$TopGun/CroosHair.global_position = $DefaultCrossPos.global_position	
 	$TopGun/CroosHair.modulate = Color.green
 	$TopGun/CroosHair.scale = Vector2(2,2)
 func cross_shoot():
@@ -461,3 +455,7 @@ func cross_shoot():
 
 
 
+
+
+func _on_MultiSycnTimer_timeout():
+	Server.rpc_unreliable_id(1,"update_transform",global_position,rotation_degrees,velocity)

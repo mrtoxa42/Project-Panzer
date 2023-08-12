@@ -22,3 +22,4 @@ func _on_SpawnTimer_timeout():
 		var Rock = rock.instance()
 		get_tree().get_root().add_child(Rock)
 		Rock.global_position = global_position - Vector2(0,y)
+		Rock.z_index = -1

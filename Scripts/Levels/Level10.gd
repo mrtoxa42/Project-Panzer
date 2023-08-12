@@ -11,6 +11,7 @@ func _ready():
 	GameManager.playedlevel = self
 	GameManager.CurrentLevel = 10
 	$CanvasLayer/Particles2D.emitting = true
+	GameManager.level10 = self
 
 
 
@@ -19,6 +20,8 @@ func game_started():
 	var MovePlayer = moveplayer.instance()
 	get_tree().get_root().add_child(MovePlayer) 
 	MovePlayer.global_position = $Cinematic/PlayerSprite.global_position
+	MovePlayer.z_index = -1
+
 	
 
 
@@ -48,3 +51,5 @@ func _on_SkipAniButton_pressed():
 func _on_SkipAniTimer_timeout():
 	$AnimationPlayer.playback_speed = 1
 	
+
+

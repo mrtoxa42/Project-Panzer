@@ -26,12 +26,15 @@ func _on_UpDown_pressed():
 	up = true
 
 
+
 func _on_UpDown_released():
 	up = false
 
 
+
 func _on_DownButton_pressed():
 	down = true
+
 
 
 func _on_DownButton_released():
@@ -47,6 +50,7 @@ func _on_ShootButton_pressed():
 		$CanvasLayer/ShootButtonAni.play("Shoot")
 		shoot = false
 		$ShootTimer.start()
+		Missile.z_index = -1
 		
 
 
