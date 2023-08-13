@@ -14,7 +14,7 @@ func _ready():
 
 func join_server():
 	var client = NetworkedMultiplayerENet.new()
-	var err = client.create_client("127.0.0.1", 4242)
+	var err = client.create_client("161.35.239.33", 4242)
 	if err != OK:
 		print("unable_to_connect")
 		return
