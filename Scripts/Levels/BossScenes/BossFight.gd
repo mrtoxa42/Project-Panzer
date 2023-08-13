@@ -54,3 +54,10 @@ func _on_DontPressButton_pressed():
 		$PlayerLabel.text = "* Aslında ben nazileri çok severim"
 		$ExploTimer.start()
 
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Talking":
+		$AnimationPlayer.play("ExplosionAni")
+	
+	
