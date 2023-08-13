@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "AdMob",
 "language": "GDScript",
 "path": "res://admob-lib/admob.gd"
+}, {
+"base": "Node2D",
+"class": "Bullet",
+"language": "GDScript",
+"path": "res://Multiplayer/classes/bullets.gd"
 } ]
 _global_script_class_icons={
-"AdMob": "res://admob-lib/icon.png"
+"AdMob": "res://admob-lib/icon.png",
+"Bullet": ""
 }
 
 [NativeLib]
