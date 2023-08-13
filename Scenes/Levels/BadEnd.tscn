@@ -311,21 +311,21 @@ texture = ExtResource( 4 )
 position = Vector2( 647, 556 )
 rotation = -0.0116448
 frames = SubResource( 11 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="cine1"]
 position = Vector2( 611, 614 )
 rotation = -0.0116448
 frames = SubResource( 11 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="cine1"]
 position = Vector2( 709, 615 )
 rotation = -0.0116448
 frames = SubResource( 11 )
-frame = 11
+frame = 10
 playing = true
 
 [node name="HitlerLabel" type="Label" parent="cine1"]
