@@ -1,11 +1,11 @@
 extends Node
 
-var player = preload("res://MultiPlayer/objects/player.tscn")
-var otherplayer = preload("res://MultiPlayer/objects/otherplayer.tscn")
-var map = preload("res://MultiPlayer/scenes/map.tscn")
+var player = preload("res://Multiplayer/objects/player.tscn")
+var otherplayer = preload("res://Multiplayer/objects/otherplayer.tscn")
+var map = preload("res://Multiplayer/scenes/map.tscn")
 
-var enemy_bullet = preload("res://MultiPlayer/objects/otherplayerbullet.tscn")
-var bullet = preload("res://MultiPlayer/objects/playerbullet.tscn")
+var enemy_bullet = preload("res://Multiplayer/objects/otherplayerbullet.tscn")
+var bullet = preload("res://Multiplayer/objects/playerbullet.tscn")
 
 func _ready():
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
@@ -29,7 +29,7 @@ func _server_disconnected():
 	print("server disconnected")
 
 func _connected_to_server():
-	get_node("/root/lobby").hide()
+	get_node("/root/lobby").queue_free()
 	print("Connected to server")
 	var scene = map.instance()
 	scene.name = "Map"

@@ -43,9 +43,9 @@ PlayServices="*res://Scripts/GameSystem/PlayServicesController.gd"
 FireBase="*res://Scripts/GameSystem/FireBase.gd"
 AdsController="*res://Scenes/GameSystem/AdsController.tscn"
 SoundController="*res://Scenes/GameSystem/SoundController.tscn"
-Global="*res://MultiPlayer/global.gd"
-Nodes="*res://MultiPlayer/nodes.gd"
-Server="*res://MultiPlayer/server.gd"
+Server="*res://Multiplayer/server.gd"
+Nodes="*res://Multiplayer/nodes.gd"
+Global="*res://Multiplayer/global.gd"
 
 [debug]
 
