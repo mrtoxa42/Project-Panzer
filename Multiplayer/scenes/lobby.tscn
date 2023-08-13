@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/lobby.gd" type="Script" id=1]
+[ext_resource path="res://MultiPlayer/scenes/lobby.gd" type="Script" id=1]
 [ext_resource path="res://assets/AGENCYB.TTF" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
@@ -24,4 +24,5 @@ margin_right = 776.0
 margin_bottom = 399.0
 custom_fonts/font = SubResource( 1 )
 text = "Join game"
+
 [connection signal="pressed" from="join" to="." method="_on_join_pressed"]

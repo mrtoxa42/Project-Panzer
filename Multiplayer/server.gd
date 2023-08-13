@@ -1,11 +1,11 @@
 extends Node
 
-var player = preload("res://objects/player.tscn")
-var otherplayer = preload("res://objects/otherplayer.tscn")
-var map = preload("res://scenes/map.tscn")
+var player = preload("res://MultiPlayer/objects/player.tscn")
+var otherplayer = preload("res://MultiPlayer/objects/otherplayer.tscn")
+var map = preload("res://MultiPlayer/scenes/map.tscn")
 
-var enemy_bullet = preload("res://objects/otherplayerbullet.tscn")
-var bullet = preload("res://objects/playerbullet.tscn")
+var enemy_bullet = preload("res://MultiPlayer/objects/otherplayerbullet.tscn")
+var bullet = preload("res://MultiPlayer/objects/playerbullet.tscn")
 
 func _ready():
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
@@ -14,7 +14,7 @@ func _ready():
 
 func join_server():
 	var client = NetworkedMultiplayerENet.new()
-	var err = client.create_client("159.223.209.73", 4242)
+	var err = client.create_client("127.0.0.1", 4242)
 	if err != OK:
 		print("unable_to_connect")
 		return
