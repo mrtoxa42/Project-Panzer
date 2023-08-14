@@ -29,7 +29,7 @@ func _server_disconnected():
 	print("server disconnected")
 
 func _connected_to_server():
-	get_node("/root/lobby").queue_free()
+	get_node("/root/lobby").hide()
 	print("Connected to server")
 	var scene = map.instance()
 	scene.name = "Map"
