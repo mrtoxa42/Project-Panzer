@@ -39,8 +39,9 @@ func _server_disconnected():
 	print("Server Disconnected")
 	
 
-remote func start_game():
+sync func start_game():
 	print("start game")
+	rpc("start_game")
 	get_tree().change_scene("res://MultiPlayer/MultiMap1.tscn")
 	
 	
