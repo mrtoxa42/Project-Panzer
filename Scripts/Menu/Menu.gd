@@ -50,7 +50,7 @@ func _on_SettingsButton_pressed():
 
 func _on_Credits_pressed():
 	SoundController.UIClickSound()
-	get_tree().change_scene("res://MultiPlayer/scenes/lobby.tscn") 
+	get_tree().change_scene("res://MultiPlayer/MultiHangar.tscn") 
 
 
 func _on_Logo42_pressed():

@@ -13,15 +13,9 @@ _global_script_classes=[ {
 "class": "AdMob",
 "language": "GDScript",
 "path": "res://admob-lib/admob.gd"
-}, {
-"base": "Node2D",
-"class": "Bullet",
-"language": "GDScript",
-"path": "res://Multiplayer/classes/bullets.gd"
 } ]
 _global_script_class_icons={
-"AdMob": "res://admob-lib/icon.png",
-"Bullet": ""
+"AdMob": "res://admob-lib/icon.png"
 }
 
 [NativeLib]
@@ -43,9 +37,7 @@ PlayServices="*res://Scripts/GameSystem/PlayServicesController.gd"
 FireBase="*res://Scripts/GameSystem/FireBase.gd"
 AdsController="*res://Scenes/GameSystem/AdsController.tscn"
 SoundController="*res://Scenes/GameSystem/SoundController.tscn"
-Server="*res://Multiplayer/server.gd"
-Nodes="*res://Multiplayer/nodes.gd"
-Global="*res://Multiplayer/global.gd"
+Client="*res://MultiPlayer/client.gd"
 
 [debug]
 

@@ -77,6 +77,12 @@ func _process(delta):
 
 	$TopGun.rotation_degrees += rotationdegress * delta
 
+
+
+	
+
+	
+
 	if GameManager.crossenemy != null:
 		$TopGun.look_at(GameManager.crossenemy.global_position)
 #		$TopGun/CrossHair.global_position = GameManager.crossenemy.global_position
@@ -144,10 +150,7 @@ func _process(delta):
 	if velocity != Vector2.ZERO and smoke == false:
 		smoke = true
 		$MoveSmokeTimer.start()
-	
-remote func update_remote_player(transform):
-	if not is_network_master():
-		global_transform = global_transform
+
 func set_rotation(angle):
 	rotation = angle
 
@@ -454,8 +457,3 @@ func cross_shoot():
 
 
 
-
-
-
-func _on_MultiSycnTimer_timeout():
-	Server.rpc_unreliable_id(1,"update_transform",global_position,rotation_degrees,velocity)
