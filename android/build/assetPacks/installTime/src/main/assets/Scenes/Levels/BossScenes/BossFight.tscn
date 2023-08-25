@@ -1,0 +1,1132 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Scenes/Enemies/BossHitler.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player/BossPlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Extras/BossLevels/whiteFrames.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/AGENCYB.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Extras/BossLevels/AttackButtonUn.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Extras/BossLevels/SpeakButtonUn.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Extras/BossLevels/MercyButton.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Extras/BossLevels/DontPressButton.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/Levels/BossScenes/BossFight.gd" type="Script" id=9]
+[ext_resource path="res://Fonts/RussoOne-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Fonts/DynaPuff-VariableFont_wdth,wght(1)(1).ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Fonts/new_dynamicfont.tres" type="DynamicFont" id=12]
+
+[sub_resource type="Animation" id=13]
+resource_name = "AniPull"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Invisible/WhiteFrames:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -242, 217 ), Vector2( 657, 379 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Invisible/AttackButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1340, 473 ), Vector2( 204, 531 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Invisible/SpeakButton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -145, 213 ), Vector2( 438, 532 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Invisible/DontPressButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1308, 95 ), Vector2( 712, 536 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Invisible/MercyButton:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1003, -71 ), Vector2( 978, 536 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Invisible/HitlerLabel:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1396, 122 ), Vector2( 375, 322 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Invisible/WhiteFrames:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5.40323, 3 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Invisible/DontPressButton:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -58.2, 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Invisible/MercyButton:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -57.7, 0.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Invisible/SpeakButton:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 72.7, 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Invisible/AttackButton:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -101.8, 0.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Invisible/WhiteFrames:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -65.5, 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Invisible/HitlerLabel:rect_rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 77.4, 0.0 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Invisible/ATTACKLABEL:rect_position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -49, 427 ), Vector2( 226, 543 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Invisible/ATTACKLABEL:rect_rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 108.3, 0.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Invisible/SPEAKLABEL:rect_position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 291, -91 ), Vector2( 477, 543 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Invisible/SPEAKLABEL:rect_rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 77.4, 0.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Invisible/DontPressLabel:rect_position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -81, 204 ), Vector2( 751, 557 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Invisible/DontPressLabel:rect_rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 85.2, 0.0 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Invisible/MERCYLABEL:rect_position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1398, 210 ), Vector2( 1018.28, 545 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Invisible/MERCYLABEL:rect_rotation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 139.4, 0.0 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Invisible/PlayerLabel:rect_position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1400, 548 ), Vector2( 501, 421 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Invisible/PlayerLabel:rect_rotation")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -108.4, 0.0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Invisible:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "ExplosionAni"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Invisible/WhiteFrames:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 657, 379 ), Vector2( -242, 217 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Invisible/AttackButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 204, 531 ), Vector2( 1340, 473 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Invisible/SpeakButton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 438, 532 ), Vector2( -145, 213 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Invisible/DontPressButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 712, 536 ), Vector2( 1308, 95 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Invisible/MercyButton:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 978, 536 ), Vector2( 1003, -71 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Invisible/HitlerLabel:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 375, 322 ), Vector2( 1396, 122 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Invisible/WhiteFrames:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5.40323, 3 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Invisible/DontPressButton:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -58.2 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Invisible/MercyButton:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -57.7 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Invisible/SpeakButton:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 72.7 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Invisible/AttackButton:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -101.8 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Invisible/WhiteFrames:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -65.5 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Invisible/HitlerLabel:rect_rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 77.4 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Invisible/ATTACKLABEL:rect_position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 226, 543 ), Vector2( -49, 427 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Invisible/ATTACKLABEL:rect_rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 108.3 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Invisible/SPEAKLABEL:rect_position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 477, 543 ), Vector2( 291, -91 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Invisible/SPEAKLABEL:rect_rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 77.4 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Invisible/DontPressLabel:rect_position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 751, 557 ), Vector2( -81, 204 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Invisible/DontPressLabel:rect_rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 85.2 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Invisible/MERCYLABEL:rect_position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1018.28, 545 ), Vector2( 1398, 210 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Invisible/MERCYLABEL:rect_rotation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 139.4 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Invisible/PlayerLabel:rect_position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 501, 421 ), Vector2( 1400, 548 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Invisible/PlayerLabel:rect_rotation")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -108.4 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Invisible/WhiteFrames:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 657, 379 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Invisible/AttackButton:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 204, 531 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Invisible/SpeakButton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 438, 532 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Invisible/DontPressButton:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 712, 536 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Invisible/MercyButton:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 978, 536 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Invisible/HitlerLabel:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 375, 322 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Invisible/WhiteFrames:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5.40323, 3 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Invisible/DontPressButton:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Invisible/MercyButton:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Invisible/SpeakButton:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Invisible/AttackButton:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Invisible/WhiteFrames:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Invisible/HitlerLabel:rect_rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Invisible/ATTACKLABEL:rect_position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 226, 538 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Invisible/ATTACKLABEL:rect_rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Invisible/SPEAKLABEL:rect_position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 480, 540 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Invisible/SPEAKLABEL:rect_rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Invisible/DontPressLabel:rect_position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 752, 557 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Invisible/DontPressLabel:rect_rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Invisible/MERCYLABEL:rect_position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1019, 546 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Invisible/MERCYLABEL:rect_rotation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Invisible/PlayerLabel:rect_position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 501, 421 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Invisible/PlayerLabel:rect_rotation")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "Talking"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.5, 6.5, 9.5, 12.5, 23 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3, 6, 6.5, 8.5, 12.2, 12.5, 19 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3.5, 6.5, 9.5, 12.5, 23, 30 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label2:percent_visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 3.5, 6, 9, 9.5, 11.5, 20, 23, 26 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3.5, 6.5, 12.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Beni yenebileceğini mi sanıyorsun ? Artık hiçbir güç beni durduramaz. ", "Beni yenebileceğini mi sanıyorsun ? Artık hiçbir güç beni durduramaz. ", "Sizi sefalet hayatından kurtarıyorum bana teşekkür etmelisiniz ?!", "Yıkım ve kanı siz yapıyorsunuz. Değişime karşı çıkıyorsunuz. İstila ettiğimi
+düşündüğünüz her yer artık daha güvende ve daha mutlu. Asıl korkaklar yok 
+ettiğim baban ve komutanlarındır." ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Label2:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 6.5, 9.5, 11.5, 23 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Neden bunları yapıyorsun ?", "Neden bunları yapıyorsun ?", "Yıkım ve kan ile mi ? Bunu sadece korkaklar yapar.", "Yıkım ve kan ile mi ? Bunu sadece korkaklar yapar.", "İstila ettiğin yerlerde artık yaşam yok ! Masumları katletmene 
+daha fazla müsaade etmeyeceğim ! GEBER !" ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Invisible:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+
+[node name="BossFight" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Talking"
+playback_speed = 64.0
+anims/AniPull = SubResource( 13 )
+anims/ExplosionAni = SubResource( 4 )
+anims/RESET = SubResource( 5 )
+anims/Talking = SubResource( 12 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1291.0
+margin_bottom = 737.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BossHitler" parent="." instance=ExtResource( 1 )]
+position = Vector2( 640, 131 )
+
+[node name="BossPlayer" parent="." instance=ExtResource( 2 )]
+position = Vector2( 640, 694 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 291.0
+margin_top = 277.0
+margin_right = 991.0
+margin_bottom = 299.0
+rect_pivot_offset = Vector2( 1937, 823 )
+custom_fonts/font = ExtResource( 12 )
+text = "Beni yenebileceğini mi sanıyorsun ? Artık hiçbir güç beni durduramaz. "
+percent_visible = 0.0
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+margin_left = 341.0
+margin_top = 497.0
+margin_right = 1034.0
+margin_bottom = 552.0
+custom_fonts/font = ExtResource( 12 )
+text = "Neden bunları yapıyorsun ?"
+align = 1
+
+[node name="Invisible" type="Node2D" parent="."]
+
+[node name="HitlerLabel" type="Label" parent="Invisible"]
+margin_left = 375.0
+margin_top = 322.0
+margin_right = 822.0
+margin_bottom = 367.0
+custom_fonts/font = SubResource( 2 )
+text = "* Hitler sakin görünüyor"
+
+[node name="WhiteFrames" type="Sprite" parent="Invisible"]
+position = Vector2( 657, 379 )
+scale = Vector2( 5.40323, 3 )
+texture = ExtResource( 3 )
+
+[node name="ATTACKLABEL" type="Label" parent="Invisible"]
+modulate = Color( 0.952941, 0.580392, 0.00392157, 1 )
+margin_left = 226.0
+margin_top = 538.0
+margin_right = 322.0
+margin_bottom = 582.001
+custom_fonts/font = SubResource( 1 )
+text = "ATTACK"
+
+[node name="AttackButton" type="TouchScreenButton" parent="Invisible"]
+position = Vector2( 204, 531 )
+normal = ExtResource( 5 )
+
+[node name="SPEAKLABEL" type="Label" parent="Invisible"]
+modulate = Color( 0.952941, 0.580392, 0.00392157, 1 )
+margin_left = 480.0
+margin_top = 540.0
+margin_right = 568.0
+margin_bottom = 584.0
+custom_fonts/font = SubResource( 1 )
+text = "SPEAK"
+
+[node name="SpeakButton" type="TouchScreenButton" parent="Invisible"]
+position = Vector2( 438, 532 )
+normal = ExtResource( 6 )
+
+[node name="DontPressLabel" type="Label" parent="Invisible"]
+modulate = Color( 1, 0.521569, 0.0156863, 1 )
+margin_left = 752.0
+margin_top = 557.0
+margin_right = 824.0
+margin_bottom = 577.0
+custom_fonts/font = SubResource( 3 )
+text = "DON'T PRESS"
+
+[node name="DontPressButton" type="TouchScreenButton" parent="Invisible"]
+position = Vector2( 712, 536 )
+normal = ExtResource( 8 )
+
+[node name="MercyButton" type="TouchScreenButton" parent="Invisible"]
+position = Vector2( 978, 536 )
+scale = Vector2( 1.08871, 1 )
+normal = ExtResource( 7 )
+
+[node name="MERCYLABEL" type="Label" parent="Invisible"]
+modulate = Color( 0.952941, 0.580392, 0.00392157, 1 )
+margin_left = 1019.0
+margin_top = 546.0
+margin_right = 1108.0
+margin_bottom = 590.0
+custom_fonts/font = SubResource( 1 )
+text = "MERCY"
+
+[node name="ExploTimer" type="Timer" parent="Invisible"]
+wait_time = 3.0
+one_shot = true
+
+[node name="PlayerLabel" type="Label" parent="Invisible"]
+margin_left = 501.0
+margin_top = 421.0
+margin_right = 767.0
+margin_bottom = 441.0
+custom_fonts/font = SubResource( 6 )
+
+[node name="HitlerHp" type="ProgressBar" parent="Invisible"]
+visible = false
+margin_right = 1270.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 7 )
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
+value = 50.0
+
+[node name="PlayerHp" type="ProgressBar" parent="Invisible"]
+visible = false
+margin_left = 15.0
+margin_top = 703.0
+margin_right = 1295.0
+margin_bottom = 717.0
+custom_styles/fg = SubResource( 10 )
+custom_styles/bg = SubResource( 11 )
+max_value = 10.0
+value = 10.0
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="Invisible/AttackButton" to="." method="_on_AttackButton_pressed"]
+[connection signal="pressed" from="Invisible/SpeakButton" to="." method="_on_SpeakButton_pressed"]
+[connection signal="pressed" from="Invisible/DontPressButton" to="." method="_on_DontPressButton_pressed"]
+[connection signal="pressed" from="Invisible/MercyButton" to="." method="_on_MercyButton_pressed"]
+[connection signal="timeout" from="Invisible/ExploTimer" to="." method="_on_ExploTimer_timeout"]

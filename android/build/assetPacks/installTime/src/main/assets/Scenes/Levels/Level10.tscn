@@ -1,0 +1,611 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Assets/PlayerAssets/TankAssets/panzerpng1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Levels/Level10.gd" type="Script" id=2]
+[ext_resource path="res://Assets/GUI/DialogueBox.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/DynaPuff-VariableFont_wdth,wght(1)(1).ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scenes/Extras/Enrivorment&Pull/Level10BackgroundMove.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Extras/Obstacle/ObstaclesSpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Extras/Enrivorment/snow.png" type="Texture" id=7]
+[ext_resource path="res://Assets/GUI/ArmyButton1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Environment/Bush&Tree/Tree1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Environment/Bush&Tree/bush2.png" type="Texture" id=15]
+
+[sub_resource type="Shader" id=11]
+code = "shader_type canvas_item;
+
+uniform float level : hint_range(0.0, 1.0) = 0.5; 
+uniform vec4 water_albedo : hint_color = vec4(0.26, 0.23, 0.73, 1.0);
+uniform float water_opacity : hint_range(0.0, 1.0) = 0.35;
+uniform float water_speed = 0.05;
+uniform float wave_distortion = 0.2;
+uniform int wave_multiplyer = 7;
+uniform bool water_texture_on = true;
+uniform float reflection_X_offset = 0.0;
+uniform float reflection_Y_offset = 0.0;
+uniform sampler2D noise_texture : hint_albedo;
+uniform sampler2D noise_texture2 : hint_albedo;
+
+
+void fragment() {
+	vec2 uv = UV;
+	COLOR = vec4(0.0);
+	
+	if (uv.y >= level) {
+		COLOR.a = 1.0;
+		
+		// distorted reflections
+		vec2 water_uv = vec2(uv.x, uv.y * float(wave_multiplyer));
+		float noise = texture(noise_texture, vec2(water_uv.x + TIME * water_speed, water_uv.y)).x * wave_distortion;
+		noise -= (0.5 * wave_distortion);
+		
+		// water texture
+		if (water_texture_on) {
+			float water_texture_limit = 0.35;
+			vec4 water_texture = texture(noise_texture2, uv * vec2(0.5, 4.0) + vec2(noise, 0.0));
+			float water_texture_value = (water_texture.x < water_texture_limit) ? 1.0 : 0.0;	
+			COLOR.xyz = vec3(water_texture_value);
+		}
+	
+		// putting everything toghether 
+		vec4 current_texture = texture(SCREEN_TEXTURE, vec2(SCREEN_UV.x + noise + reflection_X_offset, 1.0 - SCREEN_UV.y - (level - 0.5) * 2.0 + reflection_Y_offset));
+		COLOR = mix(COLOR, current_texture, 0.5);
+		COLOR = mix(COLOR, water_albedo, water_opacity);
+	}
+}"
+
+[sub_resource type="OpenSimplexNoise" id=14]
+
+[sub_resource type="NoiseTexture" id=12]
+seamless = true
+noise = SubResource( 14 )
+
+[sub_resource type="OpenSimplexNoise" id=15]
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=13]
+seamless = true
+noise = SubResource( 15 )
+
+[sub_resource type="ShaderMaterial" id=16]
+shader = SubResource( 11 )
+shader_param/level = 0.5
+shader_param/water_albedo = Color( 0.258824, 0.231373, 0.729412, 1 )
+shader_param/water_opacity = 0.35
+shader_param/water_speed = 0.05
+shader_param/wave_distortion = 0.2
+shader_param/wave_multiplyer = 7
+shader_param/water_texture_on = true
+shader_param/reflection_X_offset = 0.0
+shader_param/reflection_Y_offset = 0.0
+shader_param/noise_texture = SubResource( 12 )
+shader_param/noise_texture2 = SubResource( 13 )
+
+[sub_resource type="Animation" id=17]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer:layer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -1, 1 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Ani1"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Cinematic:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Cinematic/PlayerLabel1:percent_visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Cinematic/PlayerSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -17, 265 ), Vector2( 265, 265 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Cinematic/PlayerLabel1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Cinematic/PlayerBox:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CanvasLayer2/SkipAniButton:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("CanvasLayer2/SkinAniLabel:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("ColorRect:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("CanvasLayer/Particles2D:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "GameEndAni"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("EndCinematic/PlayerSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 470, 261 ), Vector2( 742, 261 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("EndCinematic:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("EndCinematic/EnemyLabelEnd:percent_visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("EndCinematic/EnemyBoxEnd:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("EndCinematic/EnemyLabelEnd:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("EndCinematic/PlayerBoxEnd:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("EndCinematic/PlayerLabelEnd:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("EndCinematic/PlayerLabelEnd:percent_visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 4, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Cinematic:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("CanvasLayer2/SkinAniLabel:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("CanvasLayer2/SkipAniButton:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 22
+font_data = ExtResource( 4 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 82, 79, 0, 79, 0, 0, 82, 0.544746 )
+
+[sub_resource type="TileSet" id=7]
+0/name = "bush2.png 0"
+0/texture = ExtResource( 15 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 5 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Tree1.png 1"
+1/texture = ExtResource( 10 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 14, 29, 82, 79 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 6 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[sub_resource type="DynamicFont" id=9]
+size = 22
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 22
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=18]
+font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 678.75, 25 )
+
+[node name="Level10" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Water" type="ColorRect" parent="."]
+material = SubResource( 16 )
+margin_left = 2.0
+margin_top = -10.0
+margin_right = 1363.0
+margin_bottom = 1018.0
+
+[node name="Level10BackgroundMove" parent="." instance=ExtResource( 5 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Ani0"
+anims/Ani0 = SubResource( 17 )
+anims/Ani1 = SubResource( 1 )
+anims/GameEndAni = SubResource( 8 )
+
+[node name="Cinematic" type="Node2D" parent="."]
+
+[node name="PlayerSprite" type="Sprite" parent="Cinematic"]
+position = Vector2( -17, 265 )
+rotation = 1.56234
+texture = ExtResource( 1 )
+
+[node name="PlayerBox" type="Sprite" parent="Cinematic"]
+visible = false
+modulate = Color( 0.0431373, 0.843137, 0.109804, 1 )
+position = Vector2( 627, 581 )
+scale = Vector2( 4, 3 )
+texture = ExtResource( 3 )
+
+[node name="PlayerLabel1" type="Label" parent="Cinematic"]
+visible = false
+margin_left = 419.0
+margin_top = 533.0
+margin_right = 832.0
+margin_bottom = 623.0
+custom_fonts/font = SubResource( 3 )
+text = "Şu konvoyu takip edersem 
+aradığıma ulaşacağım sanırsam.
+Beni fark etmemeleri lazım."
+percent_visible = 0.0
+
+[node name="Boundary" type="TileMap" parent="."]
+visible = false
+tile_set = SubResource( 7 )
+cell_size = Vector2( 75, 64 )
+format = 1
+tile_data = PoolIntArray( -196609, 1, 0, -131073, 1, 0, -65537, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, -65517, 1, 0, -65516, 1, 0, -65515, 1, 0, -65514, 1, 0, -65513, 1, 0, -65512, 1, 0, -65511, 1, 0, -65510, 1, 0, -65509, 1, 0, -65508, 1, 0, -65507, 1, 0, -65506, 1, 0, -65505, 1, 0, -65504, 1, 0, -65503, 1, 0, -65502, 1, 0, -65501, 1, 0, -65500, 1, 0, -65499, 1, 0, -65498, 1, 0, -65497, 1, 0, -65496, 1, 0, -65495, 1, 0, -65494, 1, 0, -65493, 1, 0, -65492, 1, 0, -65491, 1, 0, -65490, 1, 0, -65489, 1, 0, -65488, 1, 0, -65487, 1, 0, -65486, 1, 0, -65485, 1, 0, -65484, 1, 0, -65483, 1, 0, -65482, 1, 0, -65481, 1, 0, -65480, 1, 0, -65479, 1, 0, -65478, 1, 0, -65477, 1, 0, -65476, 1, 0, -65475, 1, 0, -65474, 1, 0, -65473, 1, 0, -65472, 1, 0, -65471, 1, 0, -65470, 1, 0, -65469, 1, 0, -65468, 1, 0, -65467, 1, 0, -65466, 1, 0, -65465, 1, 0, -65464, 1, 0, -65463, 1, 0, -65462, 1, 0, -65461, 1, 0, -65460, 1, 0, -65459, 1, 0, -65458, 1, 0, -65457, 1, 0, -65456, 1, 0, -65455, 1, 0, -65454, 1, 0, -65453, 1, 0, 65535, 1, 0, 18, -1610612736, 0, 83, 1, 0, 131071, 1, 0, 65554, -1610612736, 0, 65619, 1, 0, 196607, 1, 0, 131090, -1610612736, 0, 131155, 1, 0, 262143, 1, 0, 196626, -1610612736, 0, 196691, 1, 0, 327679, 1, 0, 262162, -1610612736, 0, 262227, 1, 0, 393215, 1, 0, 327698, -1610612736, 0, 327763, 1, 0, 458751, 1, 0, 393234, -1610612736, 0, 393299, 1, 0, 524287, 1, 0, 458770, -1610612736, 0, 458835, 1, 0, 589823, 1, 0, 524371, 1, 0, 655359, 1, 0, 589907, 1, 0, 720895, 1, 0, 655443, 1, 0, 786431, 1, 0, 720979, 1, 0, 851967, 1, 0, 786515, 1, 0, 917503, 1, 0, 852051, 1, 0, 983039, 1, 0, 917587, 1, 0, 1048575, 1, 0, 983123, 1, 0, 1114111, 1, 0, 1048659, 1, 0, 1179647, 1, 0, 1114195, 1, 0, 1245183, 1, 0, 1179731, 1, 0, 1310719, 1, 0, 1245267, 1, 0, 1376255, 1, 0, 1310803, 1, 0, 1441791, 1, 0, 1376339, 1, 0, 1507327, 1, 0, 1441875, 1, 0, 1572863, 1, 0, 1507411, 1, 0, 1638399, 1, 0, 1572947, 1, 0, 1703935, 1, 0, 1638483, 1, 0, 1769471, 1, 0, 1704019, 1, 0, 1835007, 1, 0, 1769555, 1, 0, 1900543, 1, 0, 1835091, 1, 0, 1966079, 1, 0, 1900627, 1, 0, 2031615, 1, 0, 1966163, 1, 0, 2097151, 1, 0, 2031699, 1, 0, 2162687, 1, 0, 2097235, 1, 0, 2228223, 1, 0, 2162771, 1, 0, 2293759, 1, 0, 2228307, 1, 0, 2359295, 1, 0, 2293843, 1, 0, 2424831, 1, 0, 2359379, 1, 0, 2490367, 1, 0, 2424915, 1, 0, 2555903, 1, 0, 2490451, 1, 0, 2621439, 1, 0, 2555987, 1, 0, 2686975, 1, 0, 2621523, 1, 0, 2752511, 1, 0, 2687059, 1, 0, 2818047, 1, 0, 2752595, 1, 0, 2883583, 1, 0, 2818131, 1, 0, 2949119, 1, 0, 2883667, 1, 0, 3014655, 1, 0, 2949203, 1, 0, 3080191, 1, 0, 3014739, 1, 0, 3145727, 1, 0, 3080275, 1, 0, 3211263, 1, 0, 3145811, 1, 0, 3276799, 1, 0, 3211347, 1, 0, 3342335, 1, 0, 3276883, 1, 0, 3407871, 1, 0, 3342419, 1, 0, 3473407, 1, 0, 3407955, 1, 0, 3538943, 1, 0, 3473491, 1, 0, 3604479, 1, 0, 3538944, 1, 0, 3538945, 1, 0, 3538946, 1, 0, 3538947, 1, 0, 3538948, 1, 0, 3538949, 1, 0, 3538950, 1, 0, 3538951, 1, 0, 3538952, 1, 0, 3538953, 1, 0, 3538954, 1, 0, 3538955, 1, 0, 3538956, 1, 0, 3538957, 1, 0, 3538958, 1, 0, 3538959, 1, 0, 3538960, 1, 0, 3538961, 1, 0, 3538962, 1, 0, 3538963, 1, 0, 3538964, 1, 0, 3538965, 1, 0, 3538966, 1, 0, 3538967, 1, 0, 3538968, 1, 0, 3538969, 1, 0, 3538970, 1, 0, 3538971, 1, 0, 3538972, 1, 0, 3538973, 1, 0, 3538974, 1, 0, 3538975, 1, 0, 3538976, 1, 0, 3538977, 1, 0, 3538978, 1, 0, 3538979, 1, 0, 3538980, 1, 0, 3538981, 1, 0, 3538982, 1, 0, 3538983, 1, 0, 3538984, 1, 0, 3538985, 1, 0, 3538986, 1, 0, 3538987, 1, 0, 3538988, 1, 0, 3538989, 1, 0, 3538990, 1, 0, 3538991, 1, 0, 3538992, 1, 0, 3538993, 1, 0, 3538994, 1, 0, 3538995, 1, 0, 3538996, 1, 0, 3538997, 1, 0, 3538998, 1, 0, 3538999, 1, 0, 3539000, 1, 0, 3539001, 1, 0, 3539002, 1, 0, 3539003, 1, 0, 3539004, 1, 0, 3539005, 1, 0, 3539006, 1, 0, 3539007, 1, 0, 3539008, 1, 0, 3539009, 1, 0, 3539010, 1, 0, 3539011, 1, 0, 3539012, 1, 0, 3539013, 1, 0, 3539014, 1, 0, 3539015, 1, 0, 3539016, 1, 0, 3539017, 1, 0, 3539018, 1, 0, 3539019, 1, 0, 3539020, 1, 0, 3539021, 1, 0, 3539022, 1, 0, 3539023, 1, 0, 3539024, 1, 0, 3539025, 1, 0, 3539026, 1, 0, 3539027, 1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ObstaclesSpawner" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1044, 275 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 1114, 7 )
+
+[node name="LevelEndTimer" type="Timer" parent="."]
+wait_time = 50.0
+autostart = true
+
+[node name="EndCinematic" type="Node2D" parent="."]
+visible = false
+
+[node name="PlayerSprite" type="Sprite" parent="EndCinematic"]
+position = Vector2( 470, 261 )
+rotation = 1.56234
+texture = ExtResource( 1 )
+
+[node name="bush" type="Sprite" parent="EndCinematic"]
+position = Vector2( 857, 275 )
+texture = ExtResource( 15 )
+
+[node name="bush2" type="Sprite" parent="EndCinematic/bush"]
+position = Vector2( -21, 67 )
+texture = ExtResource( 15 )
+
+[node name="bush3" type="Sprite" parent="EndCinematic/bush"]
+position = Vector2( -65, 116 )
+texture = ExtResource( 15 )
+
+[node name="bush4" type="Sprite" parent="EndCinematic/bush"]
+position = Vector2( -116, 154 )
+texture = ExtResource( 15 )
+
+[node name="bush5" type="Sprite" parent="EndCinematic/bush"]
+position = Vector2( -178, 181 )
+texture = ExtResource( 15 )
+
+[node name="bush6" type="Sprite" parent="EndCinematic/bush"]
+position = Vector2( 10, -60 )
+texture = ExtResource( 15 )
+
+[node name="bush7" type="Sprite" parent="EndCinematic/bush"]
+position = Vector2( 3, -120 )
+texture = ExtResource( 15 )
+
+[node name="bush8" type="Sprite" parent="EndCinematic/bush"]
+position = Vector2( -30, -161 )
+texture = ExtResource( 15 )
+
+[node name="EnemyBoxEnd" type="Sprite" parent="EndCinematic"]
+visible = false
+modulate = Color( 0.0235294, 0, 0, 1 )
+position = Vector2( 469, 644 )
+scale = Vector2( 4, 3 )
+texture = ExtResource( 3 )
+
+[node name="EnemyLabelEnd" type="Label" parent="EndCinematic"]
+visible = false
+margin_left = 233.0
+margin_top = 601.0
+margin_right = 786.0
+margin_bottom = 691.0
+custom_fonts/font = SubResource( 9 )
+text = "Buluşma noktasına geldik.
+O gelene kadar burda 
+dinlenelim."
+percent_visible = 0.0
+
+[node name="PlayerBoxEnd" type="Sprite" parent="EndCinematic"]
+visible = false
+modulate = Color( 0.0431373, 0.843137, 0.109804, 1 )
+position = Vector2( 639, 558 )
+scale = Vector2( 4, 3 )
+texture = ExtResource( 3 )
+
+[node name="PlayerLabelEnd" type="Label" parent="EndCinematic"]
+visible = false
+margin_left = 433.0
+margin_top = 515.0
+margin_right = 846.0
+margin_bottom = 605.0
+custom_fonts/font = SubResource( 10 )
+text = "Galiba geceyi burada
+ geçirmem gerekecek."
+percent_visible = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="EndCinematic"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Particles2D" type="CPUParticles2D" parent="CanvasLayer"]
+visible = false
+position = Vector2( 617, -554 )
+amount = 12
+lifetime = 15.0
+draw_order = 1
+texture = ExtResource( 7 )
+emission_shape = 2
+emission_rect_extents = Vector2( 0, 0 )
+gravity = Vector2( 0, 50 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="SkipAniButton" type="TouchScreenButton" parent="CanvasLayer2"]
+position = Vector2( 1153, 4 )
+normal = ExtResource( 8 )
+
+[node name="SkipAniTimer" type="Timer" parent="CanvasLayer2"]
+wait_time = 2.0
+one_shot = true
+
+[node name="SkinAniLabel" type="Label" parent="CanvasLayer2"]
+margin_left = 1110.0
+margin_top = 60.0
+margin_right = 1278.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 18 )
+text = "GEÇMEK İÇİN TIKLAYIN"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 693.75, 482 )
+shape = SubResource( 19 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = -12.0
+margin_right = 1394.0
+margin_bottom = 893.0
+color = Color( 0, 0, 0, 1 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="LevelEndTimer" to="." method="_on_LevelEndTimer_timeout"]
+[connection signal="pressed" from="CanvasLayer2/SkipAniButton" to="." method="_on_SkipAniButton_pressed"]
+[connection signal="timeout" from="CanvasLayer2/SkipAniTimer" to="." method="_on_SkipAniTimer_timeout"]
