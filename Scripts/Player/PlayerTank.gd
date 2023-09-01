@@ -48,6 +48,11 @@ func _ready():
 
 	
 func _process(delta):
+	if Input.is_action_just_pressed("K"):
+		if $MobileController.visible == true:
+			$MobileController.visible = false
+		else:
+			$MobileController.visible = true
 	if GameManager.inlevel == false:
 		GameManager.playertank = null
 		queue_free()

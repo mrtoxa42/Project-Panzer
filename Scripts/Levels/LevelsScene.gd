@@ -103,67 +103,67 @@ func _on_LevelButton1_pressed():
 
 func _on_LevelButton2_pressed():
 	if openinfo == false:
-		level = 1
+		level = 2
 		level_info()
 		openinfo = true
 
 func _on_LevelButton3_pressed():
 	if openinfo == false:
-		level = 1
+		level = 3
 		level_info()
 		openinfo = true
 
 func _on_LevelButton4_pressed():
 	if openinfo == false:
-		level = 1
+		level = 4
 		level_info()
 		openinfo = true
 func _on_LevelButton5_pressed():
 	if openinfo == false:
-		level = 1
+		level = 5
 		level_info()
 		openinfo = true
 
 func _on_LevelButton6_pressed():
 	if openinfo == false:
-		level = 1
+		level = 6
 		level_info()
 		openinfo = true
 
 func _on_LevelButton7_pressed():
 	if openinfo == false:
-		level = 1
+		level = 7
 		level_info()
 		openinfo = true
 
 func _on_LevelButton8_pressed():
 	if openinfo == false:
-		level = 1
+		level = 8
 		level_info()
 		openinfo = true
 
 func _on_LevelButton9_pressed():
 	if openinfo == false:
-		level = 1
+		level = 9
 		level_info()
 		openinfo = true
 
 func _on_LevelButton10_pressed():
 	if openinfo == false:
-		level = 1
+		level = 10
 		level_info()
 		openinfo = true
 
 func _on_LevelButton11_pressed():
 	if openinfo == false:
-		level = 1
+		level = 11
 		level_info()
 		openinfo = true
 
 
 func _on_LevelButton12_pressed():
 	if openinfo == false:
-		level = 1
+		level = 12
 		level_info()
 		openinfo = true
 
@@ -177,6 +177,7 @@ func level_info():
 		$InfoTab/LevelLabel.text = "LEVEL 2"
 		$InfoTab/InfoLabel.text = "Radyo istasyonu en büyük iletişim kaynağıdır." + "\n" + "\n" + "- Radyo istasyonunu koru" +"\n"+"\n"+"- 3 madalyayı topla"+"\n"+"\n"+"- x düşman öldür"
 	if level == 3:
+		print(level)
 		$InfoTab/LevelLabel.text = "LEVEL 3"
 		$InfoTab/InfoLabel.text = "Düşman cephaneliği hakkında bilgi alman " + "\n" + "gerekiyor." + "\n" + "\n" + "- Radyo sinyallerini takip et" +"\n"+"\n"+"- 3 Madalyayı topla"+"\n"+"\n"+"- 13 Düşman öldür"
 	if level == 4:
@@ -211,8 +212,7 @@ func level_info():
 
 
 func _on_CloseButton_pressed():
-	openinfo = false
-	$InfoTab.hide()
+	$InfoTab/CloseTimer.start()
 
 
 func _on_PlayButton_pressed():
@@ -222,3 +222,8 @@ func _on_PlayButton_pressed():
 
 func _on_BackButton_pressed():
 	get_tree().change_scene("res://Scenes/Game/Hangar.tscn")
+
+
+func _on_CloseTimer_timeout():
+	openinfo = false
+	$InfoTab.hide()

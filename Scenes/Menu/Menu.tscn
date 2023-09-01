@@ -867,7 +867,7 @@ margin_top = 312.857
 margin_right = 1822.43
 margin_bottom = 389.857
 custom_fonts/font = SubResource( 23 )
-text = "Version 1.000"
+text = "Version 1.009"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Environment/GroundTile/tile1.png" type="Texture" id=2]
@@ -16,7 +16,8 @@
 [ext_resource path="res://Assets/Environment/GroundTile/tile7.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Environment/GroundTile/tile8.png" type="Texture" id=15]
 [ext_resource path="res://Assets/UI/CloseButton.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Extras/Nothing.png" type="Texture" id=17]
+[ext_resource path="res://Assets/UI/InfoBg.png" type="Texture" id=17]
+[ext_resource path="res://Assets/UI/menu1.png" type="Texture" id=18]
 
 [sub_resource type="TileSet" id=7]
 0/name = "title12.png 0"
@@ -478,9 +479,7 @@ text = "12"
 scale = Vector2( 0.1, 0.1 )
 
 [node name="BlackBg" type="Sprite" parent="InfoTab"]
-self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 640, 360 )
-scale = Vector2( 10, 8 )
 texture = ExtResource( 17 )
 
 [node name="LevelLabel" type="Label" parent="InfoTab"]
@@ -504,10 +503,9 @@ text = "- 5 Düşman öldür
 - Radyo sinyallerini takip et"
 
 [node name="PlayButton" type="TouchScreenButton" parent="InfoTab"]
-self_modulate = Color( 0.215686, 0.105882, 0.396078, 1 )
-position = Vector2( 555, 509 )
-scale = Vector2( 3, 1 )
-normal = ExtResource( 1 )
+position = Vector2( 550, 514 )
+scale = Vector2( 1.5, 1 )
+normal = ExtResource( 18 )
 
 [node name="PlayLabel" type="Label" parent="InfoTab"]
 margin_left = 613.0
@@ -518,8 +516,12 @@ custom_fonts/font = SubResource( 4 )
 text = "PLAY"
 
 [node name="CloseButton" type="TouchScreenButton" parent="InfoTab"]
-position = Vector2( 892, 136 )
+position = Vector2( 986, 151 )
 normal = ExtResource( 16 )
+
+[node name="CloseTimer" type="Timer" parent="InfoTab"]
+wait_time = 0.1
+one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/LevelInfoAni = SubResource( 5 )
@@ -545,4 +547,5 @@ pressed = ExtResource( 4 )
 [connection signal="pressed" from="LevelAni/Level12/LevelButton12" to="." method="_on_LevelButton12_pressed"]
 [connection signal="pressed" from="InfoTab/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="InfoTab/CloseButton" to="." method="_on_CloseButton_pressed"]
+[connection signal="timeout" from="InfoTab/CloseTimer" to="." method="_on_CloseTimer_timeout"]
 [connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
